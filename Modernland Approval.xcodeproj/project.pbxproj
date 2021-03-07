@@ -8,22 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		EEFDD0B925EBCD9300B926BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0B825EBCD9300B926BA /* AppDelegate.swift */; };
-		EEFDD0BB25EBCD9300B926BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0BA25EBCD9300B926BA /* SceneDelegate.swift */; };
-		EEFDD0BD25EBCD9300B926BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0BC25EBCD9300B926BA /* ViewController.swift */; };
-		EEFDD0C025EBCD9300B926BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0BE25EBCD9300B926BA /* Main.storyboard */; };
 		EEFDD0C225EBCD9500B926BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0C125EBCD9500B926BA /* Assets.xcassets */; };
 		EEFDD0C525EBCD9500B926BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0C325EBCD9500B926BA /* LaunchScreen.storyboard */; };
+		EEFDD0CE25EBCE4D00B926BA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0CD25EBCE4D00B926BA /* Login.storyboard */; };
+		EEFDD0D025EBCE7000B926BA /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0CF25EBCE7000B926BA /* Storyboards.swift */; };
+		EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0D225EBCED700B926BA /* LoginViewController.swift */; };
+		EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0D625EBD3E300B926BA /* ButtonTemplate.swift */; };
+		EEFDD0D925EBD52C00B926BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0D825EBD52C00B926BA /* Default-568h@2x.png */; };
+		EEFDD0DB25EBD6A500B926BA /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0DA25EBD6A500B926BA /* Dashboard.storyboard */; };
+		EEFDD0DD25EBD7AE00B926BA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0DC25EBD7AE00B926BA /* Home.storyboard */; };
+		EEFDD0DF25EBD7DF00B926BA /* Comparasion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0DE25EBD7DF00B926BA /* Comparasion.storyboard */; };
+		EEFDD0E125EBD7E800B926BA /* IOM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0E025EBD7E800B926BA /* IOM.storyboard */; };
+		EEFDD0E325EBD7F000B926BA /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0E225EBD7F000B926BA /* Setting.storyboard */; };
+		EEFDD0E725EBDA8C00B926BA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */; };
+		EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */; };
+		EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */; };
+		EEFDD0ED25EBDE3800B926BA /* ComparasionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */; };
+		EEFDD0EF25EBDE4000B926BA /* IOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */; };
+		EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */; };
+		EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EEFDD0B525EBCD9300B926BA /* Modernland Approval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modernland Approval.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFDD0B825EBCD9300B926BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EEFDD0BA25EBCD9300B926BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EEFDD0BC25EBCD9300B926BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EEFDD0BF25EBCD9300B926BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEFDD0C125EBCD9500B926BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEFDD0C425EBCD9500B926BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEFDD0C625EBCD9500B926BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEFDD0CD25EBCE4D00B926BA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		EEFDD0CF25EBCE7000B926BA /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		EEFDD0D225EBCED700B926BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EEFDD0D625EBD3E300B926BA /* ButtonTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTemplate.swift; sourceTree = "<group>"; };
+		EEFDD0D825EBD52C00B926BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EEFDD0DA25EBD6A500B926BA /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		EEFDD0DC25EBD7AE00B926BA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		EEFDD0DE25EBD7DF00B926BA /* Comparasion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comparasion.storyboard; sourceTree = "<group>"; };
+		EEFDD0E025EBD7E800B926BA /* IOM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IOM.storyboard; sourceTree = "<group>"; };
+		EEFDD0E225EBD7F000B926BA /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigationController.swift; sourceTree = "<group>"; };
+		EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparasionViewController.swift; sourceTree = "<group>"; };
+		EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMViewController.swift; sourceTree = "<group>"; };
+		EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +68,7 @@
 		EEFDD0AC25EBCD9300B926BA = {
 			isa = PBXGroup;
 			children = (
+				EEFDD0D825EBD52C00B926BA /* Default-568h@2x.png */,
 				EEFDD0B725EBCD9300B926BA /* Modernland Approval */,
 				EEFDD0B625EBCD9300B926BA /* Products */,
 			);
@@ -56,15 +85,60 @@
 		EEFDD0B725EBCD9300B926BA /* Modernland Approval */ = {
 			isa = PBXGroup;
 			children = (
-				EEFDD0B825EBCD9300B926BA /* AppDelegate.swift */,
-				EEFDD0BA25EBCD9300B926BA /* SceneDelegate.swift */,
-				EEFDD0BC25EBCD9300B926BA /* ViewController.swift */,
-				EEFDD0BE25EBCD9300B926BA /* Main.storyboard */,
-				EEFDD0C125EBCD9500B926BA /* Assets.xcassets */,
-				EEFDD0C325EBCD9500B926BA /* LaunchScreen.storyboard */,
 				EEFDD0C625EBCD9500B926BA /* Info.plist */,
+				EEFDD0C125EBCD9500B926BA /* Assets.xcassets */,
+				EEFDD0D425EBD11C00B926BA /* Configurations */,
+				EEFDD0D525EBD3C500B926BA /* Utilities */,
+				EEFDD0D125EBCEB900B926BA /* View Controllers */,
+				EEFDD0CC25EBCE1300B926BA /* Storyboards */,
 			);
 			path = "Modernland Approval";
+			sourceTree = "<group>";
+		};
+		EEFDD0CC25EBCE1300B926BA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0C325EBCD9500B926BA /* LaunchScreen.storyboard */,
+				EEFDD0CD25EBCE4D00B926BA /* Login.storyboard */,
+				EEFDD0CF25EBCE7000B926BA /* Storyboards.swift */,
+				EEFDD0DA25EBD6A500B926BA /* Dashboard.storyboard */,
+				EEFDD0DC25EBD7AE00B926BA /* Home.storyboard */,
+				EEFDD0DE25EBD7DF00B926BA /* Comparasion.storyboard */,
+				EEFDD0E025EBD7E800B926BA /* IOM.storyboard */,
+				EEFDD0E225EBD7F000B926BA /* Setting.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EEFDD0D125EBCEB900B926BA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0D225EBCED700B926BA /* LoginViewController.swift */,
+				EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */,
+				EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */,
+				EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */,
+				EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */,
+				EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */,
+				EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */,
+				EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EEFDD0D425EBD11C00B926BA /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0B825EBCD9300B926BA /* AppDelegate.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		EEFDD0D525EBD3C500B926BA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0D625EBD3E300B926BA /* ButtonTemplate.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +199,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEFDD0CE25EBCE4D00B926BA /* Login.storyboard in Resources */,
+				EEFDD0DB25EBD6A500B926BA /* Dashboard.storyboard in Resources */,
+				EEFDD0E125EBD7E800B926BA /* IOM.storyboard in Resources */,
+				EEFDD0D925EBD52C00B926BA /* Default-568h@2x.png in Resources */,
+				EEFDD0DD25EBD7AE00B926BA /* Home.storyboard in Resources */,
+				EEFDD0E325EBD7F000B926BA /* Setting.storyboard in Resources */,
+				EEFDD0DF25EBD7DF00B926BA /* Comparasion.storyboard in Resources */,
 				EEFDD0C525EBCD9500B926BA /* LaunchScreen.storyboard in Resources */,
 				EEFDD0C225EBCD9500B926BA /* Assets.xcassets in Resources */,
-				EEFDD0C025EBCD9300B926BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +218,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEFDD0BD25EBCD9300B926BA /* ViewController.swift in Sources */,
+				EEFDD0EF25EBDE4000B926BA /* IOMViewController.swift in Sources */,
+				EEFDD0D025EBCE7000B926BA /* Storyboards.swift in Sources */,
+				EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */,
 				EEFDD0B925EBCD9300B926BA /* AppDelegate.swift in Sources */,
-				EEFDD0BB25EBCD9300B926BA /* SceneDelegate.swift in Sources */,
+				EEFDD0E725EBDA8C00B926BA /* DashboardViewController.swift in Sources */,
+				EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */,
+				EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */,
+				EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */,
+				EEFDD0ED25EBDE3800B926BA /* ComparasionViewController.swift in Sources */,
+				EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */,
+				EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EEFDD0BE25EBCD9300B926BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EEFDD0BF25EBCD9300B926BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EEFDD0C325EBCD9500B926BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
