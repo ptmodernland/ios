@@ -1,19 +1,20 @@
 //
-//  ComparasionViewController.swift
+//  PBJViewController.swift
 //  Modernland Approval
 //
-//  Created by Kevin Correzian on 28/02/21.
+//  Created by Kevin Correzian on 07/03/21.
 //  Copyright © 2021 Modernland. All rights reserved.
 //
 
 import UIKit
 
-class ComparasionViewController: UIViewController {
+class PBJViewController: BaseViewController {
     
     @IBOutlet weak var cvList: UICollectionView!
     
-    let buttonTitleList = ["Waiting Approval for Comparison",
-                           "History Approval for Comparison"]
+    let buttonTitleList = ["Waiting Approval for PBJ",
+                           "History Approval for PBJ",
+                           "List Recommendation"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +32,11 @@ class ComparasionViewController: UIViewController {
         let nearestNib = UINib.init(nibName: "ListBoxCollectionViewCell", bundle: nil)
         cvList.register(nearestNib, forCellWithReuseIdentifier: "ListBox")
         cvList.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
-        
     }
     
 }
 
-extension ComparasionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension PBJViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return buttonTitleList.count
     }
@@ -57,15 +57,29 @@ extension ComparasionViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if buttonTitleList[indexPath.row].contains("Waiting") {
+            let vc = StoryboardScene.PBJ.listPBJViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if buttonTitleList[indexPath.row].contains("History") {
+            print("histori")
+        }
+        if buttonTitleList[indexPath.row].contains("Recommendation") {
+            print("rekomendasi")
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout
         
         flowlayout!.minimumInteritemSpacing = 10
         flowlayout!.minimumLineSpacing = 25
-        
+
         let space: CGFloat = (flowlayout?.minimumInteritemSpacing ?? 0.0) + (flowlayout?.sectionInset.left ?? 0.0) + (flowlayout?.sectionInset.right ?? 0.0)
-        
+
         let size:CGFloat = (cvList.frame.size.width - space - 60) / 2.0
         return CGSize(width: size, height: size)
     }
+    
 }

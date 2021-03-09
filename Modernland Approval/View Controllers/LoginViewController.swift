@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTap(_ sender: Any) {
-        print("p")
         let vc = StoryboardScene.Dashboard.dashboardViewController.instantiate()
         self.navigationController?.setViewControllers([vc], animated: true)
     }

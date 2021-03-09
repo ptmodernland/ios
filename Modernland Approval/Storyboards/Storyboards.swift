@@ -18,9 +18,18 @@ internal enum StoryboardScene {
     }
     
     internal enum Dashboard: StoryboardType {
-      internal static let storyboardName = "Dashboard"
-
-      internal static let dashboardViewController = SceneType<DashboardViewController>(storyboard: Dashboard.self, identifier: "DashboardViewController")
+        internal static let storyboardName = "Dashboard"
+        
+        internal static let dashboardViewController = SceneType<DashboardViewController>(storyboard: Dashboard.self, identifier: "DashboardViewController")
+    }
+    
+    internal enum PBJ: StoryboardType {
+        internal static let storyboardName = "PBJ"
+        
+        internal static let listPBJViewController = SceneType<ListPBJViewController>(storyboard: PBJ.self, identifier: "ListPBJViewController")
+        
+        internal static let detailMenuPBJViewController = SceneType<DetailMenuPBJViewController>(storyboard: PBJ.self, identifier: "DetailMenuPBJViewController")
+        
     }
 }
 

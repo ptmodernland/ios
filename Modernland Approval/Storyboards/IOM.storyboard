@@ -15,17 +15,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IOM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4O-EZ-WFK">
-                                <rect key="frame" x="191" y="437.5" width="32" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4O-EZ-WFK">
+                                <rect key="frame" x="20" y="64" width="374" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internal Office Memo (IOM)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBB-NB-nEc">
+                                <rect key="frame" x="20" y="93" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ec-eZ-3YV">
+                                <rect key="frame" x="0.0" y="147" width="414" height="646"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HLB-mJ-nEQ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconModernland" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-JB-6Td">
+                                <rect key="frame" x="341" y="64" width="53" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jGk-JB-6Td" secondAttribute="height" multiplier="1:1" id="IPh-Ug-UJL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="wBB-NB-nEc" firstAttribute="leading" secondItem="cp1-uS-72q" secondAttribute="leading" constant="20" id="40o-AU-AaX"/>
+                            <constraint firstItem="cp1-uS-72q" firstAttribute="trailing" secondItem="5ec-eZ-3YV" secondAttribute="trailing" id="9pu-Ho-Kmk"/>
                             <constraint firstItem="B4O-EZ-WFK" firstAttribute="centerX" secondItem="MKa-f3-bAL" secondAttribute="centerX" id="Dcf-mL-JJh"/>
-                            <constraint firstItem="B4O-EZ-WFK" firstAttribute="centerY" secondItem="MKa-f3-bAL" secondAttribute="centerY" id="gB7-v3-6VV"/>
+                            <constraint firstItem="jGk-JB-6Td" firstAttribute="top" secondItem="B4O-EZ-WFK" secondAttribute="top" id="GQo-d7-KIx"/>
+                            <constraint firstItem="cp1-uS-72q" firstAttribute="bottom" secondItem="5ec-eZ-3YV" secondAttribute="bottom" constant="20" id="I9g-Mf-lfd"/>
+                            <constraint firstItem="jGk-JB-6Td" firstAttribute="width" secondItem="jGk-JB-6Td" secondAttribute="height" multiplier="1:1" id="Kkn-mr-xGF"/>
+                            <constraint firstItem="jGk-JB-6Td" firstAttribute="bottom" secondItem="wBB-NB-nEc" secondAttribute="bottom" id="M9F-gB-od0"/>
+                            <constraint firstItem="5ec-eZ-3YV" firstAttribute="leading" secondItem="cp1-uS-72q" secondAttribute="leading" id="NeL-F2-LWE"/>
+                            <constraint firstItem="cp1-uS-72q" firstAttribute="trailing" secondItem="B4O-EZ-WFK" secondAttribute="trailing" constant="20" id="OMs-dm-QwU"/>
+                            <constraint firstItem="cp1-uS-72q" firstAttribute="trailing" secondItem="wBB-NB-nEc" secondAttribute="trailing" constant="20" id="Rir-vg-gmN"/>
+                            <constraint firstItem="wBB-NB-nEc" firstAttribute="top" secondItem="B4O-EZ-WFK" secondAttribute="bottom" id="Tbn-EL-6kX"/>
+                            <constraint firstItem="B4O-EZ-WFK" firstAttribute="leading" secondItem="cp1-uS-72q" secondAttribute="leading" constant="20" id="izf-Wl-q4v"/>
+                            <constraint firstItem="B4O-EZ-WFK" firstAttribute="top" secondItem="cp1-uS-72q" secondAttribute="top" constant="20" id="lDV-F2-feI"/>
+                            <constraint firstItem="5ec-eZ-3YV" firstAttribute="top" secondItem="wBB-NB-nEc" secondAttribute="bottom" constant="30" id="lak-K2-Hy4"/>
+                            <constraint firstItem="cp1-uS-72q" firstAttribute="trailing" secondItem="jGk-JB-6Td" secondAttribute="trailing" constant="20" id="tmq-gd-sRP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cp1-uS-72q"/>
                     </view>
@@ -33,6 +69,9 @@
                         <color key="badgeColor" red="0.66666666669999997" green="0.098039215690000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cvList" destination="5ec-eZ-3YV" id="Mjg-XA-lae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suk-1B-BKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,5 +80,6 @@
     </scenes>
     <resources>
         <image name="folder.fill" catalog="system" width="128" height="95"/>
+        <image name="iconModernland" width="24" height="17.5"/>
     </resources>
 </document>
