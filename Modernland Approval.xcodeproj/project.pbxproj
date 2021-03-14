@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55105A223C3B1F47523527B5 /* Pods_Modernland_Approval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472ABB8D1F47FEB75FC3CFD0 /* Pods_Modernland_Approval.framework */; };
+		EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */; };
+		EE2FF1EB25FDCC4300CE1459 /* DetailIOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */; };
+		EEAD3EC025FDABC8007D08A5 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */; };
+		EEAD3EC225FDAF09007D08A5 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */; };
+		EEAD3EC425FDB2FA007D08A5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */; };
+		EEAD3EC625FDB919007D08A5 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAD3EC525FDB919007D08A5 /* SplashScreen.storyboard */; };
+		EEAD3EC825FDBBCC007D08A5 /* IOMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EC725FDBBCC007D08A5 /* IOMViewModel.swift */; };
+		EEAD3ECA25FDBBFE007D08A5 /* ListIOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EC925FDBBFE007D08A5 /* ListIOM.swift */; };
+		EEAD3ECD25FDBE6F007D08A5 /* ListIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3ECC25FDBE6F007D08A5 /* ListIOMViewController.swift */; };
+		EECF43E725F52B9F007447F1 /* PBJ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECF43E625F52B9F007447F1 /* PBJ.storyboard */; };
+		EECF43E925F52BD1007447F1 /* PBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF43E825F52BD1007447F1 /* PBJViewController.swift */; };
+		EECF43ED25F5322F007447F1 /* ListBoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF43EB25F5322F007447F1 /* ListBoxCollectionViewCell.swift */; };
+		EECF43EE25F5322F007447F1 /* ListBoxCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECF43EC25F5322F007447F1 /* ListBoxCollectionViewCell.xib */; };
+		EECF43F025F550BC007447F1 /* ListPBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF43EF25F550BC007447F1 /* ListPBJViewController.swift */; };
+		EECF43F325F5BFD5007447F1 /* ListMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF43F125F5BFD5007447F1 /* ListMenuTableViewCell.swift */; };
+		EECF43F425F5BFD5007447F1 /* ListMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECF43F225F5BFD5007447F1 /* ListMenuTableViewCell.xib */; };
+		EEF192BA25F726A8003E62A6 /* ListMenu2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF192B825F726A8003E62A6 /* ListMenu2TableViewCell.swift */; };
+		EEF192BB25F726A8003E62A6 /* ListMenu2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF192B925F726A8003E62A6 /* ListMenu2TableViewCell.xib */; };
+		EEF192BD25F72AFE003E62A6 /* DetailMenuPBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF192BC25F72AFE003E62A6 /* DetailMenuPBJViewController.swift */; };
+		EEF758C525F87B72005568D9 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF758C425F87B72005568D9 /* ApiHelper.swift */; };
+		EEF758C725F8820A005568D9 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF758C625F8820A005568D9 /* BaseResponse.swift */; };
+		EEF758CB25F88270005568D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF758CA25F88270005568D9 /* Constants.swift */; };
+		EEF758CF25F887F6005568D9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF758CE25F887F6005568D9 /* LoginViewModel.swift */; };
+		EEF758D325F88B94005568D9 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF758D225F88B94005568D9 /* UIDevice.swift */; };
+		EEF758D725F89CE6005568D9 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF758D625F89CE6005568D9 /* Toast.swift */; };
+		EEFDD0B925EBCD9300B926BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0B825EBCD9300B926BA /* AppDelegate.swift */; };
+		EEFDD0C225EBCD9500B926BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0C125EBCD9500B926BA /* Assets.xcassets */; };
+		EEFDD0C525EBCD9500B926BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0C325EBCD9500B926BA /* LaunchScreen.storyboard */; };
+		EEFDD0CE25EBCE4D00B926BA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0CD25EBCE4D00B926BA /* Login.storyboard */; };
+		EEFDD0D025EBCE7000B926BA /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0CF25EBCE7000B926BA /* Storyboards.swift */; };
+		EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0D225EBCED700B926BA /* LoginViewController.swift */; };
+		EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0D625EBD3E300B926BA /* ButtonTemplate.swift */; };
+		EEFDD0D925EBD52C00B926BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0D825EBD52C00B926BA /* Default-568h@2x.png */; };
+		EEFDD0DB25EBD6A500B926BA /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0DA25EBD6A500B926BA /* Dashboard.storyboard */; };
+		EEFDD0DD25EBD7AE00B926BA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0DC25EBD7AE00B926BA /* Home.storyboard */; };
+		EEFDD0DF25EBD7DF00B926BA /* Comparasion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0DE25EBD7DF00B926BA /* Comparasion.storyboard */; };
+		EEFDD0E125EBD7E800B926BA /* IOM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0E025EBD7E800B926BA /* IOM.storyboard */; };
+		EEFDD0E325EBD7F000B926BA /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDD0E225EBD7F000B926BA /* Setting.storyboard */; };
+		EEFDD0E725EBDA8C00B926BA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */; };
+		EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */; };
+		EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */; };
+		EEFDD0ED25EBDE3800B926BA /* ComparasionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */; };
+		EEFDD0EF25EBDE4000B926BA /* IOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */; };
+		EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */; };
+		EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		472ABB8D1F47FEB75FC3CFD0 /* Pods_Modernland_Approval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modernland_Approval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B12BD16D852EEDCC7BDC48E9 /* Pods-Modernland Approval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.release.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.release.xcconfig"; sourceTree = "<group>"; };
+		DAD3CF777A466B9F41361AAB /* Pods-Modernland Approval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.debug.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.debug.xcconfig"; sourceTree = "<group>"; };
+		EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIOMViewController.swift; sourceTree = "<group>"; };
+		EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIOM.swift; sourceTree = "<group>"; };
+		EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
+		EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		EEAD3EC525FDB919007D08A5 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		EEAD3EC725FDBBCC007D08A5 /* IOMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMViewModel.swift; sourceTree = "<group>"; };
+		EEAD3EC925FDBBFE007D08A5 /* ListIOM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListIOM.swift; sourceTree = "<group>"; };
+		EEAD3ECC25FDBE6F007D08A5 /* ListIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListIOMViewController.swift; sourceTree = "<group>"; };
+		EECF43E625F52B9F007447F1 /* PBJ.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PBJ.storyboard; sourceTree = "<group>"; };
+		EECF43E825F52BD1007447F1 /* PBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBJViewController.swift; sourceTree = "<group>"; };
+		EECF43EB25F5322F007447F1 /* ListBoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoxCollectionViewCell.swift; sourceTree = "<group>"; };
+		EECF43EC25F5322F007447F1 /* ListBoxCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBoxCollectionViewCell.xib; sourceTree = "<group>"; };
+		EECF43EF25F550BC007447F1 /* ListPBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPBJViewController.swift; sourceTree = "<group>"; };
+		EECF43F125F5BFD5007447F1 /* ListMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuTableViewCell.swift; sourceTree = "<group>"; };
+		EECF43F225F5BFD5007447F1 /* ListMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMenuTableViewCell.xib; sourceTree = "<group>"; };
+		EEF192B825F726A8003E62A6 /* ListMenu2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenu2TableViewCell.swift; sourceTree = "<group>"; };
+		EEF192B925F726A8003E62A6 /* ListMenu2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMenu2TableViewCell.xib; sourceTree = "<group>"; };
+		EEF192BC25F72AFE003E62A6 /* DetailMenuPBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuPBJViewController.swift; sourceTree = "<group>"; };
+		EEF758C425F87B72005568D9 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		EEF758C625F8820A005568D9 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseResponse.swift; path = ../Utilities/Networking/BaseResponse.swift; sourceTree = "<group>"; };
+		EEF758CA25F88270005568D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EEF758CE25F887F6005568D9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EEF758D225F88B94005568D9 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		EEF758D625F89CE6005568D9 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		EEFDD0B525EBCD9300B926BA /* Modernland Approval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modernland Approval.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEFDD0B825EBCD9300B926BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEFDD0C125EBCD9500B926BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEFDD0C425EBCD9500B926BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEFDD0C625EBCD9500B926BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEFDD0CD25EBCE4D00B926BA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		EEFDD0CF25EBCE7000B926BA /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		EEFDD0D225EBCED700B926BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EEFDD0D625EBD3E300B926BA /* ButtonTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTemplate.swift; sourceTree = "<group>"; };
+		EEFDD0D825EBD52C00B926BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EEFDD0DA25EBD6A500B926BA /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		EEFDD0DC25EBD7AE00B926BA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		EEFDD0DE25EBD7DF00B926BA /* Comparasion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comparasion.storyboard; sourceTree = "<group>"; };
+		EEFDD0E025EBD7E800B926BA /* IOM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IOM.storyboard; sourceTree = "<group>"; };
+		EEFDD0E225EBD7F000B926BA /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigationController.swift; sourceTree = "<group>"; };
+		EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparasionViewController.swift; sourceTree = "<group>"; };
+		EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMViewController.swift; sourceTree = "<group>"; };
+		EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEFDD0B225EBCD9300B926BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55105A223C3B1F47523527B5 /* Pods_Modernland_Approval.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02940383D79C1E3D31C50C24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAD3CF777A466B9F41361AAB /* Pods-Modernland Approval.debug.xcconfig */,
+				B12BD16D852EEDCC7BDC48E9 /* Pods-Modernland Approval.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E265F49773ECE813448EA75D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				472ABB8D1F47FEB75FC3CFD0 /* Pods_Modernland_Approval.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEAD3ECB25FDBE5F007D08A5 /* IOM */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */,
+				EEAD3ECC25FDBE6F007D08A5 /* ListIOMViewController.swift */,
+				EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */,
+			);
+			path = IOM;
+			sourceTree = "<group>";
+		};
+		EECF43EA25F5320A007447F1 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				EECF43EB25F5322F007447F1 /* ListBoxCollectionViewCell.swift */,
+				EECF43EC25F5322F007447F1 /* ListBoxCollectionViewCell.xib */,
+				EECF43F125F5BFD5007447F1 /* ListMenuTableViewCell.swift */,
+				EECF43F225F5BFD5007447F1 /* ListMenuTableViewCell.xib */,
+				EEF192B825F726A8003E62A6 /* ListMenu2TableViewCell.swift */,
+				EEF192B925F726A8003E62A6 /* ListMenu2TableViewCell.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		EEF758C825F8823C005568D9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EEF758C425F87B72005568D9 /* ApiHelper.swift */,
+				EEF758CA25F88270005568D9 /* Constants.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		EEF758C925F88249005568D9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0D625EBD3E300B926BA /* ButtonTemplate.swift */,
+				EEF758D625F89CE6005568D9 /* Toast.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EEF758CC25F887C8005568D9 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEF758CE25F887F6005568D9 /* LoginViewModel.swift */,
+				EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */,
+				EEAD3EC725FDBBCC007D08A5 /* IOMViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		EEF758CD25F887D3005568D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEF758C625F8820A005568D9 /* BaseResponse.swift */,
+				EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */,
+				EEAD3EC925FDBBFE007D08A5 /* ListIOM.swift */,
+				EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EEFDD0AC25EBCD9300B926BA = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0D825EBD52C00B926BA /* Default-568h@2x.png */,
+				EEFDD0B725EBCD9300B926BA /* Modernland Approval */,
+				EEFDD0B625EBCD9300B926BA /* Products */,
+				02940383D79C1E3D31C50C24 /* Pods */,
+				E265F49773ECE813448EA75D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EEFDD0B625EBCD9300B926BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0B525EBCD9300B926BA /* Modernland Approval.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEFDD0B725EBCD9300B926BA /* Modernland Approval */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0C625EBCD9500B926BA /* Info.plist */,
+				EEFDD0C125EBCD9500B926BA /* Assets.xcassets */,
+				EECF43EA25F5320A007447F1 /* CustomView */,
+				EEFDD0D425EBD11C00B926BA /* Configurations */,
+				EEFDD0D525EBD3C500B926BA /* Utilities */,
+				EEF758CD25F887D3005568D9 /* Model */,
+				EEF758CC25F887C8005568D9 /* View Model */,
+				EEFDD0D125EBCEB900B926BA /* View Controllers */,
+				EEFDD0CC25EBCE1300B926BA /* Storyboards */,
+			);
+			path = "Modernland Approval";
+			sourceTree = "<group>";
+		};
+		EEFDD0CC25EBCE1300B926BA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0C325EBCD9500B926BA /* LaunchScreen.storyboard */,
+				EEFDD0CD25EBCE4D00B926BA /* Login.storyboard */,
+				EEFDD0CF25EBCE7000B926BA /* Storyboards.swift */,
+				EEFDD0DA25EBD6A500B926BA /* Dashboard.storyboard */,
+				EEFDD0DC25EBD7AE00B926BA /* Home.storyboard */,
+				EEFDD0DE25EBD7DF00B926BA /* Comparasion.storyboard */,
+				EEFDD0E025EBD7E800B926BA /* IOM.storyboard */,
+				EEFDD0E225EBD7F000B926BA /* Setting.storyboard */,
+				EECF43E625F52B9F007447F1 /* PBJ.storyboard */,
+				EEAD3EC525FDB919007D08A5 /* SplashScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EEFDD0D125EBCEB900B926BA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD3ECB25FDBE5F007D08A5 /* IOM */,
+				EEFDD0D225EBCED700B926BA /* LoginViewController.swift */,
+				EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */,
+				EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */,
+				EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */,
+				EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */,
+				EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */,
+				EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */,
+				EECF43E825F52BD1007447F1 /* PBJViewController.swift */,
+				EECF43EF25F550BC007447F1 /* ListPBJViewController.swift */,
+				EEF192BC25F72AFE003E62A6 /* DetailMenuPBJViewController.swift */,
+				EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EEFDD0D425EBD11C00B926BA /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0B825EBCD9300B926BA /* AppDelegate.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		EEFDD0D525EBD3C500B926BA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EEF758C925F88249005568D9 /* UI */,
+				EEF758C825F8823C005568D9 /* Networking */,
+				EEF758D225F88B94005568D9 /* UIDevice.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEFDD0B425EBCD9300B926BA /* Modernland Approval */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEFDD0C925EBCD9500B926BA /* Build configuration list for PBXNativeTarget "Modernland Approval" */;
+			buildPhases = (
+				FAC7FFD55309111B39DCCF88 /* [CP] Check Pods Manifest.lock */,
+				EEFDD0B125EBCD9300B926BA /* Sources */,
+				EEFDD0B225EBCD9300B926BA /* Frameworks */,
+				EEFDD0B325EBCD9300B926BA /* Resources */,
+				6AB5C26F2A4B9A6881DD5228 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Modernland Approval";
+			productName = "Modernland Approval";
+			productReference = EEFDD0B525EBCD9300B926BA /* Modernland Approval.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEFDD0AD25EBCD9300B926BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = Modernland;
+				TargetAttributes = {
+					EEFDD0B425EBCD9300B926BA = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = EEFDD0B025EBCD9300B926BA /* Build configuration list for PBXProject "Modernland Approval" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEFDD0AC25EBCD9300B926BA;
+			productRefGroup = EEFDD0B625EBCD9300B926BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEFDD0B425EBCD9300B926BA /* Modernland Approval */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEFDD0B325EBCD9300B926BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EECF43EE25F5322F007447F1 /* ListBoxCollectionViewCell.xib in Resources */,
+				EEFDD0CE25EBCE4D00B926BA /* Login.storyboard in Resources */,
+				EECF43F425F5BFD5007447F1 /* ListMenuTableViewCell.xib in Resources */,
+				EEFDD0DB25EBD6A500B926BA /* Dashboard.storyboard in Resources */,
+				EEFDD0E125EBD7E800B926BA /* IOM.storyboard in Resources */,
+				EEFDD0D925EBD52C00B926BA /* Default-568h@2x.png in Resources */,
+				EEF192BB25F726A8003E62A6 /* ListMenu2TableViewCell.xib in Resources */,
+				EEFDD0DD25EBD7AE00B926BA /* Home.storyboard in Resources */,
+				EECF43E725F52B9F007447F1 /* PBJ.storyboard in Resources */,
+				EEFDD0E325EBD7F000B926BA /* Setting.storyboard in Resources */,
+				EEFDD0DF25EBD7DF00B926BA /* Comparasion.storyboard in Resources */,
+				EEFDD0C525EBCD9500B926BA /* LaunchScreen.storyboard in Resources */,
+				EEFDD0C225EBCD9500B926BA /* Assets.xcassets in Resources */,
+				EEAD3EC625FDB919007D08A5 /* SplashScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AB5C26F2A4B9A6881DD5228 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAC7FFD55309111B39DCCF88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Modernland Approval-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEFDD0B125EBCD9300B926BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEFDD0EF25EBDE4000B926BA /* IOMViewController.swift in Sources */,
+				EEF758D725F89CE6005568D9 /* Toast.swift in Sources */,
+				EECF43F025F550BC007447F1 /* ListPBJViewController.swift in Sources */,
+				EEAD3EC225FDAF09007D08A5 /* SettingViewModel.swift in Sources */,
+				EEFDD0D025EBCE7000B926BA /* Storyboards.swift in Sources */,
+				EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */,
+				EECF43ED25F5322F007447F1 /* ListBoxCollectionViewCell.swift in Sources */,
+				EEF758C725F8820A005568D9 /* BaseResponse.swift in Sources */,
+				EEAD3EC825FDBBCC007D08A5 /* IOMViewModel.swift in Sources */,
+				EEF192BD25F72AFE003E62A6 /* DetailMenuPBJViewController.swift in Sources */,
+				EEFDD0B925EBCD9300B926BA /* AppDelegate.swift in Sources */,
+				EEF758D325F88B94005568D9 /* UIDevice.swift in Sources */,
+				EE2FF1EB25FDCC4300CE1459 /* DetailIOM.swift in Sources */,
+				EEFDD0E725EBDA8C00B926BA /* DashboardViewController.swift in Sources */,
+				EEAD3ECA25FDBBFE007D08A5 /* ListIOM.swift in Sources */,
+				EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */,
+				EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */,
+				EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */,
+				EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */,
+				EEFDD0ED25EBDE3800B926BA /* ComparasionViewController.swift in Sources */,
+				EEF758C525F87B72005568D9 /* ApiHelper.swift in Sources */,
+				EECF43E925F52BD1007447F1 /* PBJViewController.swift in Sources */,
+				EEF758CB25F88270005568D9 /* Constants.swift in Sources */,
+				EEAD3EC425FDB2FA007D08A5 /* SplashViewController.swift in Sources */,
+				EEAD3ECD25FDBE6F007D08A5 /* ListIOMViewController.swift in Sources */,
+				EECF43F325F5BFD5007447F1 /* ListMenuTableViewCell.swift in Sources */,
+				EEF192BA25F726A8003E62A6 /* ListMenu2TableViewCell.swift in Sources */,
+				EEAD3EC025FDABC8007D08A5 /* LoginSuccess.swift in Sources */,
+				EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */,
+				EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */,
+				EEF758CF25F887F6005568D9 /* LoginViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EEFDD0C325EBCD9500B926BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFDD0C425EBCD9500B926BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEFDD0C725EBCD9500B926BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EEFDD0C825EBCD9500B926BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEFDD0CA25EBCD9500B926BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAD3CF777A466B9F41361AAB /* Pods-Modernland Approval.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W4FWM87L9U;
+				INFOPLIST_FILE = "Modernland Approval/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Modernland.Modernland-Approval";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEFDD0CB25EBCD9500B926BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12BD16D852EEDCC7BDC48E9 /* Pods-Modernland Approval.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W4FWM87L9U;
+				INFOPLIST_FILE = "Modernland Approval/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Modernland.Modernland-Approval";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEFDD0B025EBCD9300B926BA /* Build configuration list for PBXProject "Modernland Approval" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEFDD0C725EBCD9500B926BA /* Debug */,
+				EEFDD0C825EBCD9500B926BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEFDD0C925EBCD9500B926BA /* Build configuration list for PBXNativeTarget "Modernland Approval" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEFDD0CA25EBCD9500B926BA /* Debug */,
+				EEFDD0CB25EBCD9500B926BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEFDD0AD25EBCD9300B926BA /* Project object */;
+}

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4I-fC-gSm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="8cA-g3-TIR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="uBv-w6-yMj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="zzS-Zh-wtm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m1a-gH-eQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="-579"/>
+        </scene>
+        <!--IOM-->
+        <scene sceneID="0om-eo-4zM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="IOM" id="YTj-qN-c4m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="IOM" image="book" catalog="system" id="v9J-XG-jKY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSy-4Y-0bG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="-501"/>
+        </scene>
+        <!--Comparasion-->
+        <scene sceneID="Mse-eo-FbI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Comparasion" id="Qu8-M4-JJf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Comp'" image="arrow.up.arrow.down" catalog="system" id="dFR-9y-0B3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhV-JJ-JZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275" y="-255"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nnv-1M-959">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="u4I-fC-gSm" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="B7n-DE-EEO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="q7V-fZ-5WG" kind="relationship" relationship="rootViewController" id="WmW-YI-BKd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcZ-oO-qka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1194" y="-378"/>
+        </scene>
+        <!--Dashboard View Controller-->
+        <scene sceneID="DMO-55-nUb">
+            <objects>
+                <tabBarController storyboardIdentifier="DashboardViewController" id="q7V-fZ-5WG" customClass="DashboardViewController" customModule="Modernland_Approval" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wHw-fq-LQP"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Az6-CF-T0H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.66666666669999997" green="0.098039215690000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="uBv-w6-yMj" kind="relationship" relationship="viewControllers" id="weI-SI-LAR"/>
+                        <segue destination="YTj-qN-c4m" kind="relationship" relationship="viewControllers" id="i4Y-nW-NU8"/>
+                        <segue destination="BWS-qp-Ttt" kind="relationship" relationship="viewControllers" id="DXo-Ps-2tn"/>
+                        <segue destination="Qu8-M4-JJf" kind="relationship" relationship="viewControllers" id="u7W-h5-4LI"/>
+                        <segue destination="NgY-sJ-Z0a" kind="relationship" relationship="viewControllers" id="ESF-KD-gT4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crK-c0-oi1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-407" y="-378"/>
+        </scene>
+        <!--PBJ-->
+        <scene sceneID="lKQ-QJ-THo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PBJ" id="BWS-qp-Ttt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="PBJ" image="archivebox" catalog="system" id="54t-XW-NFw">
+                        <color key="badgeColor" red="0.66666666669999997" green="0.098039215690000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LlK-NW-G5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="-396"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="bzv-37-iFd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="NgY-sJ-Z0a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="hLI-dJ-iiN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCy-S1-w1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="281" y="-334"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="archivebox" catalog="system" width="128" height="106"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
+        <image name="book" catalog="system" width="128" height="101"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+    </resources>
+</document>
