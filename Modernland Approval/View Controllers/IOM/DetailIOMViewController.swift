@@ -10,8 +10,12 @@ import UIKit
 
 class DetailIOMViewController: BaseViewController {
     
+    @IBOutlet weak var lblTitle: UILabel!
+    
     let vm = IOMViewModel()
     var idIom = 0
+    var assetPdf = ""
+    var type = "recommendation"
     
     @IBOutlet weak var lblRecipient: UILabel!
     @IBOutlet weak var lblCc: UILabel!
@@ -22,11 +26,18 @@ class DetailIOMViewController: BaseViewController {
     @IBOutlet weak var lblAbout: UILabel!
     @IBOutlet weak var btnFile: UIButton!
     @IBOutlet weak var textViewNotes: UITextView!
+    @IBOutlet weak var stackButton: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getApiDetail()
-        // Do any additional setup after loading the view.
+        if type == "history" {
+            lblTitle.text = "Menu History"
+            stackButton.isHidden = true
+        } else {
+            lblTitle.text = "Menu Approval"
+            stackButton.isHidden = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +59,7 @@ class DetailIOMViewController: BaseViewController {
                 self.lblCategory.text = response.kategoriIom ?? ""
                 self.lblAbout.text = response.perihal ?? ""
                 self.btnFile.setTitle(response.attachments ?? "", for: .normal)
+                self.assetPdf = response.attachments ?? ""
         },
             onError: { error in
                 self.hideLoading()
@@ -61,30 +73,87 @@ class DetailIOMViewController: BaseViewController {
         })
     }
     
-    func callAlertTextBox() {
+    func apiApproveIom(pin: String) {
+        let idUser = UserDefaults().string(forKey: "idUser")
+        
+        let param = [
+            "nomor" : self.lblNomor.text ?? "",
+            "id_user" : idUser ?? "",
+            "komen" : self.textViewNotes.text ?? "",
+            "id_iom" : idIom,
+            "passwordUser" : pin
+            ] as [String : Any]
+        vm.approveIom(
+            param: param,
+            onSuccess: { response in
+                self.navigationController?.popViewController(animated: true)
+        }, onError: { error in
+            print(error)
+        }, onFailed: { failed in
+            print(failed)
+            Toast.show(message: failed, controller: self)
+        })
+    }
+    
+    func apiRejectIom(pin: String) {
+        let idUser = UserDefaults().string(forKey: "idUser")
+        
+        let param = [
+            "nomor" : self.lblNomor.text ?? "",
+            "id_user" : idUser ?? "",
+            "komen" : self.textViewNotes.text ?? "",
+            "id_iom" : idIom,
+            "passwordUser" : pin
+            ] as [String : Any]
+        vm.rejectIom(
+            param: param,
+            onSuccess: { response in
+                self.navigationController?.popViewController(animated: true)
+        }, onError: { error in
+            print(error)
+        }, onFailed: { failed in
+            print(failed)
+            Toast.show(message: failed, controller: self)
+        })
+    }
+    
+    func callAlertTextBox(type: String) {
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "Masukkan Pin Anda", message: "", preferredStyle: .alert)
-
+        let alert = UIAlertController(title: "\(type)", message: "Masukkan Pin Anda", preferredStyle: .alert)
+        
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
             textField.keyboardType = .numberPad
         }
-
+        
         // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
             print("Text field: \(textField?.text ?? "")")
+            if type == "Approve" {
+                self.apiApproveIom(pin: textField?.text ?? "")
+            } else {
+                self.apiRejectIom(pin: textField?.text ?? "")
+            }
         }))
-
+        
         // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func buttonApproveTap(_ sender: Any) {
-        callAlertTextBox()
+        callAlertTextBox(type: "Approve")
     }
     
     @IBAction func buttonRejectTap(_ sender: Any) {
-        callAlertTextBox()
+        callAlertTextBox(type: "Reject")
     }
+    
+    @IBAction func buttonDetailWebviewTap(_ sender: Any) {
+        let vc = StoryboardScene.WebView.webViewViewController.instantiate()
+        vc.url = "https://approval.modernland.co.id/memo/view_mobile/\(idIom)"
+//        vc.url = "https://approval.modernland.co.id/assets/file/\(assetPdf)"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

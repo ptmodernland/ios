@@ -29,4 +29,10 @@ class Constants {
     static let COUNTER_ALL = "/androidiom/counter_all.jsp"
     static let COUNTER_MEMO = "/androidiom/counter_memo.jsp"
 
+    //REKOMENDASI
+    static let LIST_HEAD = "/androidiom/get_head.jsp"
+    static let PROSES_KOORDINASI = "/androidiom/proses_kordinasi.jsp"
+    static let LIST_KOORDINASI = "/androidiom/list_kordinasi.jsp"
+    static let PROSES_APPROVE_KOORDINASI = "/androidiom/proses_approve_kordinasi.jsp"
+    static let PROSES_CANCEL_KOORDINASI = "/androidiom/proses_cancel_kordinasi.jsp"
 }

@@ -37,9 +37,18 @@ internal enum StoryboardScene {
         
         internal static let listIOMViewController = SceneType<ListIOMViewController>(storyboard: IOM.self, identifier: "ListIOMViewController")
         
+        internal static let listHistoryIOMViewController = SceneType<ListHistoryIOMViewController>(storyboard: IOM.self, identifier: "ListHistoryIOMViewController")
+
         internal static let iOMViewController = SceneType<IOMViewController>(storyboard: IOM.self, identifier: "IOMViewController")
         
         internal static let detailIOMViewController = SceneType<DetailIOMViewController>(storyboard: IOM.self, identifier: "DetailIOMViewController")
+        
+    }
+    
+    internal enum WebView: StoryboardType {
+        internal static let storyboardName = "WebView"
+        
+        internal static let webViewViewController = SceneType<WebViewViewController>(storyboard: WebView.self, identifier: "WebViewViewController")
         
     }
 }

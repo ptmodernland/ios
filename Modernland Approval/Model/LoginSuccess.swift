@@ -13,7 +13,9 @@ struct LoginSuccess: Codable {
     let idUser: String?
     let username: String?
     let name: String?
-    let level: String
+    let level: String?
+    let email: String?
+    let gender: String?
     
     enum CodingKeys: String, CodingKey {
         case status
@@ -21,5 +23,7 @@ struct LoginSuccess: Codable {
         case username
         case name = "nama"
         case level
+        case email
+        case gender = "jk"
     }
 }

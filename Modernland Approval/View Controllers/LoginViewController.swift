@@ -48,6 +48,11 @@ class LoginViewController: BaseViewController {
             let defaults = UserDefaults.standard
             print(response.username ?? "")
             defaults.set(response.username, forKey: "username")
+            defaults.set(response.idUser, forKey: "idUser")
+            defaults.set(response.level, forKey: "level")
+            defaults.set(response.name, forKey: "name")
+            defaults.set(response.email, forKey: "email")
+            defaults.set(response.gender, forKey: "gender")
             self.goToHome()
         }, onError: { error in
             self.hideLoading()

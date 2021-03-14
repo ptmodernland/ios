@@ -1,5 +1,5 @@
 //
-//  ListIOMViewController.swift
+//  ListHistoryIOMViewController.swift
 //  Modernland Approval
 //
 //  Created by Kevin Correzian on 14/03/21.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ListIOMViewController: BaseViewController {
+class ListHistoryIOMViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
     
     let vm = IOMViewModel()
     var listIOM = [ListIOM]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,7 +35,7 @@ class ListIOMViewController: BaseViewController {
     
     func getListIom() {
         showLoading()
-        vm.postListIom(
+        vm.postListHistoryIom(
             body: ["username": self.username ?? ""],
             onSuccess: { response in
                 self.hideLoading()
@@ -55,7 +55,7 @@ class ListIOMViewController: BaseViewController {
         })
     }
 }
-extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListHistoryIOMViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listIOM.count
     }
@@ -79,7 +79,7 @@ extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = StoryboardScene.IOM.detailIOMViewController.instantiate()
         vc.idIom = Int("\(listIOM[indexPath.row].idIom ?? "")") ?? 0
-        vc.type = "recommendation"
+        vc.type = "history"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

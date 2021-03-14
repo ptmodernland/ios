@@ -9,21 +9,43 @@
 import UIKit
 
 class SettingViewController: BaseViewController {
+    
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var imgGender: UIImageView!
+    
     let vm = SettingViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        lblName.text = UserDefaults().string(forKey: "name")
+        lblEmail.text = UserDefaults().string(forKey: "email")
+        if UserDefaults().string(forKey: "gender") == "P" {
+            imgGender.image = UIImage(named: "imgFemale")
+        }
+    }
+    
     func callApiLogout(username: String) {
+        self.showLoading()
         let paramLogout = ["username" : username] as [String : Any]
         
         vm.postLogout(body: paramLogout, onSuccess: { response in
+            self.hideLoading()
             UserDefaults.standard.set("", forKey: "username")
+            UserDefaults.standard.set("", forKey: "idUser")
+            UserDefaults.standard.set("", forKey: "level")
+            UserDefaults.standard.set("", forKey: "name")
+            UserDefaults.standard.set("", forKey: "email")
+            UserDefaults.standard.set("", forKey: "gender")
             self.goToLogin()
         }, onError: { error in
+            self.hideLoading()
             print(error)
         }, onFailed: { failed in
+            self.hideLoading()
             Toast.show(message: failed, controller: self)
         })
     }

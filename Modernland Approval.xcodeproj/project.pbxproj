@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		55105A223C3B1F47523527B5 /* Pods_Modernland_Approval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472ABB8D1F47FEB75FC3CFD0 /* Pods_Modernland_Approval.framework */; };
+		EE2E70C125FDFBD00000F2A5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C025FDFBD00000F2A5 /* Status.swift */; };
+		EE2E70C325FE03830000F2A5 /* ListHistoryIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */; };
+		EE2E70C525FE03940000F2A5 /* ListRekomendasiIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C425FE03940000F2A5 /* ListRekomendasiIOMViewController.swift */; };
+		EE2E70C725FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C625FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift */; };
+		EE2E70C925FE06730000F2A5 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2E70C825FE06730000F2A5 /* WebView.storyboard */; };
+		EE2E70CB25FE06CB0000F2A5 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70CA25FE06CB0000F2A5 /* WebViewViewController.swift */; };
 		EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */; };
 		EE2FF1EB25FDCC4300CE1459 /* DetailIOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */; };
 		EEAD3EC025FDABC8007D08A5 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */; };
@@ -59,6 +65,12 @@
 		472ABB8D1F47FEB75FC3CFD0 /* Pods_Modernland_Approval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modernland_Approval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12BD16D852EEDCC7BDC48E9 /* Pods-Modernland Approval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.release.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.release.xcconfig"; sourceTree = "<group>"; };
 		DAD3CF777A466B9F41361AAB /* Pods-Modernland Approval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.debug.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.debug.xcconfig"; sourceTree = "<group>"; };
+		EE2E70C025FDFBD00000F2A5 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryIOMViewController.swift; sourceTree = "<group>"; };
+		EE2E70C425FE03940000F2A5 /* ListRekomendasiIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRekomendasiIOMViewController.swift; sourceTree = "<group>"; };
+		EE2E70C625FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeadKoordinasiViewController.swift; sourceTree = "<group>"; };
+		EE2E70C825FE06730000F2A5 /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		EE2E70CA25FE06CB0000F2A5 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIOMViewController.swift; sourceTree = "<group>"; };
 		EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIOM.swift; sourceTree = "<group>"; };
 		EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
@@ -143,6 +155,9 @@
 				EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */,
 				EEAD3ECC25FDBE6F007D08A5 /* ListIOMViewController.swift */,
 				EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */,
+				EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */,
+				EE2E70C425FE03940000F2A5 /* ListRekomendasiIOMViewController.swift */,
+				EE2E70C625FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift */,
 			);
 			path = IOM;
 			sourceTree = "<group>";
@@ -195,6 +210,7 @@
 				EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */,
 				EEAD3EC925FDBBFE007D08A5 /* ListIOM.swift */,
 				EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */,
+				EE2E70C025FDFBD00000F2A5 /* Status.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +263,7 @@
 				EEFDD0E225EBD7F000B926BA /* Setting.storyboard */,
 				EECF43E625F52B9F007447F1 /* PBJ.storyboard */,
 				EEAD3EC525FDB919007D08A5 /* SplashScreen.storyboard */,
+				EE2E70C825FE06730000F2A5 /* WebView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -266,6 +283,7 @@
 				EECF43EF25F550BC007447F1 /* ListPBJViewController.swift */,
 				EEF192BC25F72AFE003E62A6 /* DetailMenuPBJViewController.swift */,
 				EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */,
+				EE2E70CA25FE06CB0000F2A5 /* WebViewViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -358,6 +376,7 @@
 				EEFDD0DD25EBD7AE00B926BA /* Home.storyboard in Resources */,
 				EECF43E725F52B9F007447F1 /* PBJ.storyboard in Resources */,
 				EEFDD0E325EBD7F000B926BA /* Setting.storyboard in Resources */,
+				EE2E70C925FE06730000F2A5 /* WebView.storyboard in Resources */,
 				EEFDD0DF25EBD7DF00B926BA /* Comparasion.storyboard in Resources */,
 				EEFDD0C525EBCD9500B926BA /* LaunchScreen.storyboard in Resources */,
 				EEFDD0C225EBCD9500B926BA /* Assets.xcassets in Resources */,
@@ -425,16 +444,20 @@
 				EEAD3EC825FDBBCC007D08A5 /* IOMViewModel.swift in Sources */,
 				EEF192BD25F72AFE003E62A6 /* DetailMenuPBJViewController.swift in Sources */,
 				EEFDD0B925EBCD9300B926BA /* AppDelegate.swift in Sources */,
+				EE2E70C125FDFBD00000F2A5 /* Status.swift in Sources */,
 				EEF758D325F88B94005568D9 /* UIDevice.swift in Sources */,
 				EE2FF1EB25FDCC4300CE1459 /* DetailIOM.swift in Sources */,
 				EEFDD0E725EBDA8C00B926BA /* DashboardViewController.swift in Sources */,
 				EEAD3ECA25FDBBFE007D08A5 /* ListIOM.swift in Sources */,
 				EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */,
 				EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */,
+				EE2E70C325FE03830000F2A5 /* ListHistoryIOMViewController.swift in Sources */,
+				EE2E70C525FE03940000F2A5 /* ListRekomendasiIOMViewController.swift in Sources */,
 				EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */,
 				EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */,
 				EEFDD0ED25EBDE3800B926BA /* ComparasionViewController.swift in Sources */,
 				EEF758C525F87B72005568D9 /* ApiHelper.swift in Sources */,
+				EE2E70C725FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift in Sources */,
 				EECF43E925F52BD1007447F1 /* PBJViewController.swift in Sources */,
 				EEF758CB25F88270005568D9 /* Constants.swift in Sources */,
 				EEAD3EC425FDB2FA007D08A5 /* SplashViewController.swift in Sources */,
@@ -444,6 +467,7 @@
 				EEAD3EC025FDABC8007D08A5 /* LoginSuccess.swift in Sources */,
 				EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */,
 				EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */,
+				EE2E70CB25FE06CB0000F2A5 /* WebViewViewController.swift in Sources */,
 				EEF758CF25F887F6005568D9 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
