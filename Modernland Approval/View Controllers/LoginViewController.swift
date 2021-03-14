@@ -27,6 +27,7 @@ class LoginViewController: BaseViewController {
     }
     
     func callApiLogin(username: String, password: String, token: String) {
+        showLoading()
         let device = UIDevice.modelName
         let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
         let ipAddress = UIDevice.current.ipAddress()
@@ -43,13 +44,16 @@ class LoginViewController: BaseViewController {
         ] as [String : Any]
         
         vm.postLogin(body: paramLogin, onSuccess: { response in
+            self.hideLoading()
             let defaults = UserDefaults.standard
             print(response.username ?? "")
             defaults.set(response.username, forKey: "username")
             self.goToHome()
         }, onError: { error in
+            self.hideLoading()
             Toast.show(message: "Terjadi Kesalahan", controller: self)
         }, onFailed: { failed in
+            self.hideLoading()
             Toast.show(message: failed, controller: self)
         })
     }
