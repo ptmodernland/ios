@@ -8,10 +8,11 @@
 
 import UIKit
 
-class IOMViewController: UIViewController {
+class IOMViewController: BaseViewController {
     
     @IBOutlet weak var cvList: UICollectionView!
     
+    let vm = IOMViewModel()
     let buttonTitleList = ["Waiting Approval for IOM",
                            "History Approval for IOM",
                            "List Recommendation"]
@@ -32,7 +33,7 @@ class IOMViewController: UIViewController {
         let nearestNib = UINib.init(nibName: "ListBoxCollectionViewCell", bundle: nil)
         cvList.register(nearestNib, forCellWithReuseIdentifier: "ListBox")
         cvList.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
-
+        
     }
     
 }
@@ -56,6 +57,19 @@ extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             cell.ivTitle.image = UIImage(named: "imgCandidates")
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if buttonTitleList[indexPath.row].contains("Waiting") {
+            let vc = StoryboardScene.IOM.listIOMViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if buttonTitleList[indexPath.row].contains("History") {
+            print("histori")
+        }
+        if buttonTitleList[indexPath.row].contains("Recommendation") {
+            print("rekomendasi")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

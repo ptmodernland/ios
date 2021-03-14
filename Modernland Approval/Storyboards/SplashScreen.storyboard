@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dyQ-DN-uFS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="TGa-FQ-NsQ">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="tEL-ru-tpp" customClass="SplashViewController" customModule="Modernland_Approval" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="En8-oX-m8x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogoTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ika-0D-qEh">
+                                <rect key="frame" x="101" y="423.5" width="212" height="49.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ika-0D-qEh" firstAttribute="centerX" secondItem="En8-oX-m8x" secondAttribute="centerX" id="1oW-uD-CW6"/>
+                            <constraint firstItem="Ika-0D-qEh" firstAttribute="centerY" secondItem="En8-oX-m8x" secondAttribute="centerY" id="WPV-2Z-vaB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="avT-xh-7Vp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wl5-pP-4pE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWz-oy-twk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="100.44642857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xxk-V5-dSj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dyQ-DN-uFS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yGN-yP-rWG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tEL-ru-tpp" kind="relationship" relationship="rootViewController" id="POZ-Aq-3bY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0vc-LT-B3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="100.44642857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="imgLogoTitle" width="212" height="49.5"/>
+    </resources>
+</document>

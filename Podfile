@@ -7,5 +7,8 @@ target 'Modernland Approval' do
 
   # Pods for Modernland Approval
   pod 'Alamofire', '~> 5.2'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'netfox'
+  pod 'JGProgressHUD'
 
 end

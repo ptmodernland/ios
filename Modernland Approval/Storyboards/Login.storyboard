@@ -69,7 +69,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjI-FR-qTE">
                                 <rect key="frame" x="20" y="364" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -101,6 +101,10 @@
                         <viewLayoutGuide key="safeArea" id="jDk-7s-6N4"/>
                     </view>
                     <navigationItem key="navigationItem" id="nV7-bw-fEl"/>
+                    <connections>
+                        <outlet property="tfPassword" destination="xjI-FR-qTE" id="KyX-S3-beI"/>
+                        <outlet property="tfUsername" destination="WQh-F7-4ed" id="ZtT-rX-HQF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZl-Dt-O8H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,8 +12,9 @@ class ListMenu2TableViewCell: UITableViewCell {
 
     @IBOutlet weak var vStatus: UIView!
     @IBOutlet weak var lblStatus: UILabel!
-    @IBOutlet weak var lblNomor: UILabel!
+    @IBOutlet weak var lblSubTitle: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblNomor: UILabel!
     
     
     override func awakeFromNib() {

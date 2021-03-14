@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class BaseViewController: UIViewController {
     var delegate = UIGestureRecognizerDelegate?.self
     var isInitialized: Bool = false
     var swipeBackEnabled: Bool = true
     let refreshControl = UIRefreshControl()
+    let username = UserDefaults().string(forKey: "username")
+    let hud = JGProgressHUD()
 
     open var rootViewController: UIViewController? {
         get {
@@ -31,7 +34,7 @@ class BaseViewController: UIViewController {
     }
     func onViewLoaded() {}
     override func viewDidAppear(_ animated: Bool) {
-       
+        
         onViewAppeared()
     }
     
@@ -66,6 +69,36 @@ class BaseViewController: UIViewController {
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    func goToLogin() {
+        let vc = StoryboardScene.Login.loginViewController.instantiate()
+        self.navigationController?.setViewControllers([vc], animated: true)
+    }
+    
+    func goToHome() {
+        let vc = StoryboardScene.Dashboard.dashboardViewController.instantiate()
+        self.navigationController?.setViewControllers([vc], animated: true)
+    }
+    
+    func isAppAlreadyLaunchedOnce() -> Bool {
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "userFirstInstall") {
+            return true
+        } else {
+            defaults.set(true, forKey: "userFirstInstall")
+            return false
+        }
+    }
+    
+    func showLoading() {
+        hud.textLabel.text = "Loading"
+        hud.style = .dark
+        hud.show(in: self.view)
+    }
+    
+    func hideLoading() {
+        hud.dismiss()
     }
     
     func showToast(message : String, font: UIFont) {

@@ -67,8 +67,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="lblNomor" destination="ja7-n5-r5k" id="uMI-Ju-3cK"/>
+                <outlet property="lblNomor" destination="s0b-Zt-Eg8" id="s5T-rF-zzk"/>
                 <outlet property="lblStatus" destination="gib-In-YLA" id="nY1-Md-vFf"/>
+                <outlet property="lblSubTitle" destination="ja7-n5-r5k" id="zhc-Nn-J8C"/>
                 <outlet property="lblTitle" destination="iw8-lR-jgt" id="MAZ-f4-eUa"/>
                 <outlet property="vStatus" destination="rdS-1f-vgJ" id="F04-XA-GK5"/>
             </connections>
