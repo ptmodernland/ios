@@ -453,6 +453,7 @@
                         <outlet property="lblRecipient" destination="lph-AC-WZM" id="Alk-PK-RAy"/>
                         <outlet property="lblTitle" destination="y2r-bt-mmy" id="rm8-ud-VdE"/>
                         <outlet property="stackButton" destination="gbf-8e-Ndx" id="rkt-bk-9dN"/>
+                        <outlet property="stackPdf" destination="U9m-qQ-n3g" id="FNb-SL-zQl"/>
                         <outlet property="textViewNotes" destination="lTZ-FH-2Eq" id="YIv-YK-I12"/>
                     </connections>
                 </viewController>

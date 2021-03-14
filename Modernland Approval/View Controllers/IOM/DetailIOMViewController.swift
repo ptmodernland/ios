@@ -27,6 +27,7 @@ class DetailIOMViewController: BaseViewController {
     @IBOutlet weak var btnFile: UIButton!
     @IBOutlet weak var textViewNotes: UITextView!
     @IBOutlet weak var stackButton: UIStackView!
+    @IBOutlet weak var stackPdf: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,9 @@ class DetailIOMViewController: BaseViewController {
                 self.lblAbout.text = response.perihal ?? ""
                 self.btnFile.setTitle(response.attachments ?? "", for: .normal)
                 self.assetPdf = response.attachments ?? ""
+                if self.assetPdf == "" {
+                    self.stackPdf.isHidden = true
+                }
         },
             onError: { error in
                 self.hideLoading()

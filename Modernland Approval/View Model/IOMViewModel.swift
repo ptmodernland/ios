@@ -56,7 +56,7 @@ class IOMViewModel {
                      onSuccess: @escaping (Status) -> Void,
                      onError: @escaping (String) -> Void,
                      onFailed: @escaping (String) -> Void) {
-        apiHelper.postRequestList(
+        apiHelper.postRequest(
             url: Constants.BASE_URL+Constants.PROSES_APPROVE,
             body: param,
             onSuccess: { response in onSuccess(response) },
@@ -69,7 +69,7 @@ class IOMViewModel {
                      onSuccess: @escaping (Status) -> Void,
                      onError: @escaping (String) -> Void,
                      onFailed: @escaping (String) -> Void) {
-        apiHelper.postRequestList(
+        apiHelper.postRequest(
             url: Constants.BASE_URL+Constants.CANCEL_MEMO,
             body: param,
             onSuccess: { response in onSuccess(response) },
