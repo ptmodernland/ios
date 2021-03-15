@@ -77,4 +77,28 @@ class IOMViewModel {
             onFailed: { failed in onFailed("\(failed)") }
         )
     }
+    
+    func getListHead(onSuccess: @escaping ([Head]) -> Void,
+                     onError: @escaping (String) -> Void,
+                     onFailed: @escaping (String) -> Void) {
+        apiHelper.getRequest(
+            url: Constants.BASE_URL+Constants.LIST_HEAD,
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
+    
+    func listKoordinasi(body: [String:Any],
+                     onSuccess: @escaping ([ListKoordinasi]) -> Void,
+                     onError: @escaping (String) -> Void,
+                     onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequestList(
+            url: Constants.BASE_URL+Constants.LIST_KOORDINASI+"?username=\(username)",
+            body: ["":""],
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
 }

@@ -387,6 +387,9 @@
                                         <state key="normal" title="RECOMMEND">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonRecommendationTap:" destination="asz-lo-Bci" eventType="touchUpInside" id="zt2-6t-yVS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -444,6 +447,7 @@
                     </view>
                     <connections>
                         <outlet property="btnFile" destination="r4c-wi-3wZ" id="vNC-FF-aAZ"/>
+                        <outlet property="btnRecommend" destination="Apf-pP-IXl" id="UDK-IX-H9b"/>
                         <outlet property="lblAbout" destination="Snu-cS-Pv9" id="Mwx-rf-Nub"/>
                         <outlet property="lblCategory" destination="Mub-RU-Lu5" id="wIg-xN-aw8"/>
                         <outlet property="lblCc" destination="nCp-hZ-BaH" id="yDW-LX-Gv6"/>
@@ -579,8 +583,7 @@
                         <viewLayoutGuide key="safeArea" id="Q1j-dc-C4p"/>
                     </view>
                     <connections>
-                        <outlet property="lblTitle" destination="DyA-a1-uPX" id="kxG-Ts-6cc"/>
-                        <outlet property="tvList" destination="Gct-9h-gxy" id="ILw-ne-6sa"/>
+                        <outlet property="tvList" destination="Gct-9h-gxy" id="weF-iS-cz1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trt-Qu-db2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -633,8 +636,7 @@
                         <viewLayoutGuide key="safeArea" id="5NS-SW-fow"/>
                     </view>
                     <connections>
-                        <outlet property="lblTitle" destination="2CM-9A-bZV" id="KNj-H8-A19"/>
-                        <outlet property="tvList" destination="2vq-aV-Zzq" id="dMq-Jw-Ygr"/>
+                        <outlet property="tvList" destination="2vq-aV-Zzq" id="rBZ-GO-HcD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2LH-Nz-fGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

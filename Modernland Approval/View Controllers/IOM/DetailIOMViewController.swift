@@ -15,7 +15,7 @@ class DetailIOMViewController: BaseViewController {
     let vm = IOMViewModel()
     var idIom = 0
     var assetPdf = ""
-    var type = "recommendation"
+    var type = "approval"
     
     @IBOutlet weak var lblRecipient: UILabel!
     @IBOutlet weak var lblCc: UILabel!
@@ -28,6 +28,7 @@ class DetailIOMViewController: BaseViewController {
     @IBOutlet weak var textViewNotes: UITextView!
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var stackPdf: UIStackView!
+    @IBOutlet weak var btnRecommend: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,9 @@ class DetailIOMViewController: BaseViewController {
         if type == "history" {
             lblTitle.text = "Menu History"
             stackButton.isHidden = true
+        } else if type == "rekomendasi"  {
+            lblTitle.text = "Menu Rekomendasi"
+            btnRecommend.isHidden = true
         } else {
             lblTitle.text = "Menu Approval"
             stackButton.isHidden = false
@@ -156,8 +160,12 @@ class DetailIOMViewController: BaseViewController {
     @IBAction func buttonDetailWebviewTap(_ sender: Any) {
         let vc = StoryboardScene.WebView.webViewViewController.instantiate()
         vc.url = "https://approval.modernland.co.id/memo/view_mobile/\(idIom)"
-//        vc.url = "https://approval.modernland.co.id/assets/file/\(assetPdf)"
+        //        vc.url = "https://approval.modernland.co.id/assets/file/\(assetPdf)"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func buttonRecommendationTap(_ sender: Any) {
+        let vc = StoryboardScene.IOM.listHeadKoordinasiViewController.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

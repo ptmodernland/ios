@@ -57,17 +57,10 @@ class ApiHelper: NSObject {
             case .failure(let error):
                 onFailed(error.localizedDescription)
             case .success(let value):
-                let json = JSON(value!)
                 do {
                     let decoder = JSONDecoder()
-                    let status = json["status"]
-                    let message = json["pesan"]
-                    if status == true {
-                        let result = try decoder.decode(T.self, from: value!)
-                        onSuccess(result)
-                    } else {
-                        onFailed(message.stringValue)
-                    }
+                    let result = try decoder.decode(T.self, from: value!)
+                    onSuccess(result)
                 } catch let error {
                     debugPrint(error)
                     onError("unexpected error: \(error)")
@@ -128,3 +121,4 @@ class ApiHelper: NSObject {
         }
     }
 }
+ 

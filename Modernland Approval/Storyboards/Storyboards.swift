@@ -43,6 +43,11 @@ internal enum StoryboardScene {
         
         internal static let detailIOMViewController = SceneType<DetailIOMViewController>(storyboard: IOM.self, identifier: "DetailIOMViewController")
         
+        internal static let listHeadKoordinasiViewController = SceneType<ListHeadKoordinasiViewController>(storyboard: IOM.self, identifier: "ListHeadKoordinasiViewController")
+        
+        internal static let listRekomendasiIOMViewController = SceneType<ListRekomendasiIOMViewController>(storyboard: IOM.self, identifier: "ListRekomendasiIOMViewController")
+
+
     }
     
     internal enum WebView: StoryboardType {

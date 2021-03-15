@@ -69,7 +69,8 @@ extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if buttonTitleList[indexPath.row].contains("Recommendation") {
-            print("rekomendasi")
+            let vc = StoryboardScene.IOM.listRekomendasiIOMViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

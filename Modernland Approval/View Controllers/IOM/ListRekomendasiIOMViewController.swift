@@ -8,23 +8,78 @@
 
 import UIKit
 
-class ListRekomendasiIOMViewController: UIViewController {
-
+class ListRekomendasiIOMViewController: BaseViewController {
+    
+    @IBOutlet weak var tvList: UITableView!
+    
+    let vm = IOMViewModel()
+    var listKoordinasi = [ListKoordinasi]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        setupTableView()
+        getListIom()
     }
-    */
-
+    
+    func setupTableView() {
+        tvList.delegate = self
+        tvList.dataSource = self
+        
+        let nearestNib = UINib.init(nibName: "ListMenu2TableViewCell", bundle: nil)
+        tvList.register(nearestNib, forCellReuseIdentifier: "ListMenu")
+    }
+    
+    func getListIom() {
+        showLoading()
+        vm.listKoordinasi(
+            body: ["username": self.username ?? ""],
+            onSuccess: { response in
+                self.hideLoading()
+                self.listKoordinasi.removeAll()
+                for koordinasi in response {
+                    self.listKoordinasi.append(koordinasi)
+                }
+                self.tvList.reloadData()
+        }, onError: { error in
+            self.hideLoading()
+            print(error)
+            Toast.show(message: error, controller: self)
+        }, onFailed: { failed in
+            self.hideLoading()
+            print(failed)
+            Toast.show(message: failed, controller: self)
+        })
+    }
+}
+extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listKoordinasi.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListMenu", for: indexPath) as! ListMenu2TableViewCell
+        
+        cell.lblNomor.text = listKoordinasi[indexPath.row].nomor
+        cell.lblTitle.text = listKoordinasi[indexPath.row].perihal
+        cell.lblSubTitle.text = listKoordinasi[indexPath.row].approve
+        
+        if listKoordinasi[indexPath.row].statusKor == "T" {
+            cell.lblStatus.text = "Waiting Approval"
+        } else {
+            cell.lblStatus.text = "Waiting Approval"
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = StoryboardScene.IOM.detailIOMViewController.instantiate()
+        vc.idIom = Int("\(listKoordinasi[indexPath.row].idIom ?? "")") ?? 0
+        vc.type = "rekomendasi"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
