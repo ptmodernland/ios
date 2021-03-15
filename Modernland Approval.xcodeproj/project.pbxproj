@@ -27,6 +27,7 @@
 		EECEB4E325FFB0250001416D /* ListNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEB4E125FFB0250001416D /* ListNameTableViewCell.swift */; };
 		EECEB4E425FFB0250001416D /* ListNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECEB4E225FFB0250001416D /* ListNameTableViewCell.xib */; };
 		EECEB4E625FFB7BD0001416D /* ListKoordinasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEB4E525FFB7BD0001416D /* ListKoordinasi.swift */; };
+		EECEB4E825FFC1230001416D /* CounterIOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEB4E725FFC1230001416D /* CounterIOM.swift */; };
 		EECF43E725F52B9F007447F1 /* PBJ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECF43E625F52B9F007447F1 /* PBJ.storyboard */; };
 		EECF43E925F52BD1007447F1 /* PBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF43E825F52BD1007447F1 /* PBJViewController.swift */; };
 		EECF43ED25F5322F007447F1 /* ListBoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF43EB25F5322F007447F1 /* ListBoxCollectionViewCell.swift */; };
@@ -88,6 +89,7 @@
 		EECEB4E125FFB0250001416D /* ListNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNameTableViewCell.swift; sourceTree = "<group>"; };
 		EECEB4E225FFB0250001416D /* ListNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListNameTableViewCell.xib; sourceTree = "<group>"; };
 		EECEB4E525FFB7BD0001416D /* ListKoordinasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKoordinasi.swift; sourceTree = "<group>"; };
+		EECEB4E725FFC1230001416D /* CounterIOM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterIOM.swift; sourceTree = "<group>"; };
 		EECF43E625F52B9F007447F1 /* PBJ.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PBJ.storyboard; sourceTree = "<group>"; };
 		EECF43E825F52BD1007447F1 /* PBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBJViewController.swift; sourceTree = "<group>"; };
 		EECF43EB25F5322F007447F1 /* ListBoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoxCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				EE2E70C025FDFBD00000F2A5 /* Status.swift */,
 				EECEB4DD25FFAAD70001416D /* Head.swift */,
 				EECEB4E525FFB7BD0001416D /* ListKoordinasi.swift */,
+				EECEB4E725FFC1230001416D /* CounterIOM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */,
 				EECF43ED25F5322F007447F1 /* ListBoxCollectionViewCell.swift in Sources */,
 				EEF758C725F8820A005568D9 /* BaseResponse.swift in Sources */,
+				EECEB4E825FFC1230001416D /* CounterIOM.swift in Sources */,
 				EEAD3EC825FDBBCC007D08A5 /* IOMViewModel.swift in Sources */,
 				EEF192BD25F72AFE003E62A6 /* DetailMenuPBJViewController.swift in Sources */,
 				EEFDD0B925EBCD9300B926BA /* AppDelegate.swift in Sources */,

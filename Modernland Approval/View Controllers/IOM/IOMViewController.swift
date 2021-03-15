@@ -16,6 +16,7 @@ class IOMViewController: BaseViewController {
     let buttonTitleList = ["Waiting Approval for IOM",
                            "History Approval for IOM",
                            "List Recommendation"]
+    var notif = ["0","0","0"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class IOMViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupCollectionView()
+        getCounter()
     }
     
     func setupCollectionView() {
@@ -33,9 +35,21 @@ class IOMViewController: BaseViewController {
         let nearestNib = UINib.init(nibName: "ListBoxCollectionViewCell", bundle: nil)
         cvList.register(nearestNib, forCellWithReuseIdentifier: "ListBox")
         cvList.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
-        
     }
     
+    func getCounter() {
+        vm.getCounter(onSuccess: { response in
+            self.notif.removeAll()
+            self.notif = ["0","0","0"]
+            self.notif[0] = response.total ?? ""
+            self.notif[1] = response.totalKoordinasi ?? ""
+            self.cvList.reloadData()
+        }, onError: { error in
+            print(error)
+        }, onFailed: { failed in
+            print(failed)
+        })
+    }
 }
 
 extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -47,8 +61,17 @@ extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListBox", for: indexPath) as! ListBoxCollectionViewCell
         
         cell.lblTitle.text = buttonTitleList[indexPath.row]
+        
+        if notif[indexPath.row] == "0" {
+            cell.vCounter.isHidden = true
+        } else {
+            cell.vCounter.isHidden = false
+            cell.lblCounter.text = notif[indexPath.row]
+        }
+        
         if cell.lblTitle.text!.contains("Waiting") {
             cell.ivTitle.image = UIImage(named: "imgWaiting")
+            
         }
         if cell.lblTitle.text!.contains("History") {
             cell.ivTitle.image = UIImage(named: "imgFolder")

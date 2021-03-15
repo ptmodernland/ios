@@ -13,6 +13,19 @@ class IOMViewModel {
     let apiHelper = ApiHelper()
     let username = UserDefaults().string(forKey: "username") ?? ""
     
+    func getCounter(onSuccess: @escaping (CounterIOM) -> Void,
+                    onError: @escaping (String) -> Void,
+                    onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequestList(
+            url: Constants.BASE_URL+Constants.COUNTER_MEMO+"?username=\(username)",
+            body: ["":""],
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
+    
+    
     func postListIom(body: [String:Any],
                      onSuccess: @escaping ([ListIOM]) -> Void,
                      onError: @escaping (String) -> Void,
@@ -27,9 +40,9 @@ class IOMViewModel {
     }
     
     func postListHistoryIom(body: [String:Any],
-                     onSuccess: @escaping ([ListIOM]) -> Void,
-                     onError: @escaping (String) -> Void,
-                     onFailed: @escaping (String) -> Void) {
+                            onSuccess: @escaping ([ListIOM]) -> Void,
+                            onError: @escaping (String) -> Void,
+                            onFailed: @escaping (String) -> Void) {
         apiHelper.postRequestList(
             url: Constants.BASE_URL+Constants.LIST_MEMO+"?username=\(username)",
             body: ["":""],
@@ -40,9 +53,9 @@ class IOMViewModel {
     }
     
     func getDetailMemo(idIom: Int,
-                     onSuccess: @escaping (DetailIOM) -> Void,
-                     onError: @escaping (String) -> Void,
-                     onFailed: @escaping (String) -> Void) {
+                       onSuccess: @escaping (DetailIOM) -> Void,
+                       onError: @escaping (String) -> Void,
+                       onFailed: @escaping (String) -> Void) {
         apiHelper.postRequestList(
             url: Constants.BASE_URL+Constants.GET_MEMO+"?idiom=\(idIom)",
             body: ["":""],
@@ -53,9 +66,9 @@ class IOMViewModel {
     }
     
     func approveIom(param: [String:Any],
-                     onSuccess: @escaping (Status) -> Void,
-                     onError: @escaping (String) -> Void,
-                     onFailed: @escaping (String) -> Void) {
+                    onSuccess: @escaping (Status) -> Void,
+                    onError: @escaping (String) -> Void,
+                    onFailed: @escaping (String) -> Void) {
         apiHelper.postRequest(
             url: Constants.BASE_URL+Constants.PROSES_APPROVE,
             body: param,
@@ -66,9 +79,9 @@ class IOMViewModel {
     }
     
     func rejectIom(param: [String:Any],
-                     onSuccess: @escaping (Status) -> Void,
-                     onError: @escaping (String) -> Void,
-                     onFailed: @escaping (String) -> Void) {
+                   onSuccess: @escaping (Status) -> Void,
+                   onError: @escaping (String) -> Void,
+                   onFailed: @escaping (String) -> Void) {
         apiHelper.postRequest(
             url: Constants.BASE_URL+Constants.CANCEL_MEMO,
             body: param,
@@ -90,9 +103,9 @@ class IOMViewModel {
     }
     
     func listKoordinasi(body: [String:Any],
-                     onSuccess: @escaping ([ListKoordinasi]) -> Void,
-                     onError: @escaping (String) -> Void,
-                     onFailed: @escaping (String) -> Void) {
+                        onSuccess: @escaping ([ListKoordinasi]) -> Void,
+                        onError: @escaping (String) -> Void,
+                        onFailed: @escaping (String) -> Void) {
         apiHelper.postRequestList(
             url: Constants.BASE_URL+Constants.LIST_KOORDINASI+"?username=\(username)",
             body: ["":""],

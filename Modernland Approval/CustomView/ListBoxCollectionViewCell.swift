@@ -12,19 +12,24 @@ class ListBoxCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var ivTitle: UIImageView!
+    @IBOutlet weak var vCounter: UIView!
+    @IBOutlet weak var vContent: UIView!
+    @IBOutlet weak var lblCounter: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.layer.cornerRadius = 10
-        self.contentView.layer.borderWidth = 1.0
-        self.contentView.layer.borderColor = UIColor.clear.cgColor
-        self.contentView.layer.masksToBounds = true
+        vCounter.isHidden = true
+        vCounter.layer.cornerRadius = vCounter.frame.size.height / 2
+        self.vContent.layer.cornerRadius = 10
+        self.vContent.layer.borderWidth = 1.0
+        self.vContent.layer.borderColor = UIColor.clear.cgColor
+        self.vContent.layer.masksToBounds = true
 
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.layer.shadowRadius = 4
-        self.layer.shadowOpacity = 0.2
-        self.layer.masksToBounds = false
+        vContent.layer.shadowColor = UIColor.black.cgColor
+        vContent.layer.shadowOffset = CGSize(width: 0, height: 2)
+        vContent.layer.shadowRadius = 4
+        vContent.layer.shadowOpacity = 0.2
+        vContent.layer.masksToBounds = false
         // Initialization code
     }
 
