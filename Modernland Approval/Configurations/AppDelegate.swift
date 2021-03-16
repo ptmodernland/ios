@@ -9,15 +9,20 @@
 import UIKit
 import netfox
 import UserNotifications
+import Firebase
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
+    var deviceTokenString=""
     weak var viewController: LoginViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
         // Override point for customization after application launch.
+        //Messaging.messaging().delegate = self
         NFX.sharedInstance().start()
         self.settingPushNotification()
         return true
@@ -32,10 +37,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print(deviceToken)
-        let deviceTokenString: String = ( deviceToken.description as String )
+        //print(deviceToken)
+        //let deviceTokenString: String = ( deviceToken.description as String )
+        //print(deviceTokenString)
+        //viewController?.loadRequest(for: deviceTokenString)
+        deviceTokenString = deviceToken.map{String(format: "%02,2hhx", $0)}.joined()
         print(deviceTokenString)
-        viewController?.loadRequest(for: deviceTokenString)
+    }
+
+    internal func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error)
+    }
+  
+    private func application(_ application: UIApplication, didReceiveRemoteNotifications userinfo:[AnyHashable : Any]) {
+        
     }
     
     func settingPushNotification() {
