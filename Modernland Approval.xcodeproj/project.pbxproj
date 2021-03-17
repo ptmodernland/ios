@@ -17,6 +17,7 @@
 		EE2E70CB25FE06CB0000F2A5 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70CA25FE06CB0000F2A5 /* WebViewViewController.swift */; };
 		EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */; };
 		EE2FF1EB25FDCC4300CE1459 /* DetailIOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */; };
+		EE7B473926025522007D745E /* DetailKoordinasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B473826025522007D745E /* DetailKoordinasi.swift */; };
 		EEAD3EC025FDABC8007D08A5 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */; };
 		EEAD3EC225FDAF09007D08A5 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */; };
 		EEAD3EC425FDB2FA007D08A5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */; };
@@ -80,6 +81,7 @@
 		EE2E70CA25FE06CB0000F2A5 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIOMViewController.swift; sourceTree = "<group>"; };
 		EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIOM.swift; sourceTree = "<group>"; };
+		EE7B473826025522007D745E /* DetailKoordinasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailKoordinasi.swift; sourceTree = "<group>"; };
 		EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				EECEB4DD25FFAAD70001416D /* Head.swift */,
 				EECEB4E525FFB7BD0001416D /* ListKoordinasi.swift */,
 				EECEB4E725FFC1230001416D /* CounterIOM.swift */,
+				EE7B473826025522007D745E /* DetailKoordinasi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				EE2FF1EB25FDCC4300CE1459 /* DetailIOM.swift in Sources */,
 				EEFDD0E725EBDA8C00B926BA /* DashboardViewController.swift in Sources */,
 				EEAD3ECA25FDBBFE007D08A5 /* ListIOM.swift in Sources */,
+				EE7B473926025522007D745E /* DetailKoordinasi.swift in Sources */,
 				EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */,
 				EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */,
 				EECEB4E325FFB0250001416D /* ListNameTableViewCell.swift in Sources */,

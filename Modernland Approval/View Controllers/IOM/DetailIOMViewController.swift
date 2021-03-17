@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import QuickLook
 
 class DetailIOMViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     
+    //Class Variable
     let vm = IOMViewModel()
     var idIom = 0
     var assetPdf = ""
     var type = "approval"
+    var nomorMemo = ""
+    var idKoordinasi = ""
+    var pdfDownloaded = false
+    lazy var previewItem = NSURL()
     
     @IBOutlet weak var lblRecipient: UILabel!
     @IBOutlet weak var lblCc: UILabel!
@@ -32,7 +38,6 @@ class DetailIOMViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getApiDetail()
         if type == "history" {
             lblTitle.text = "Menu History"
             stackButton.isHidden = true
@@ -46,7 +51,13 @@ class DetailIOMViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getApiDetail()
+        if type == "history" {
+            getApiDetail()
+        } else if type == "rekomendasi"  {
+            getApiDetailRekomendasi()
+        } else {
+            getApiDetail()
+        }
     }
     
     func getApiDetail() {
@@ -62,6 +73,39 @@ class DetailIOMViewController: BaseViewController {
                 self.lblDate.text = response.tanggal ?? ""
                 self.lblNomor.text = response.nomor ?? ""
                 self.lblCategory.text = response.kategoriIom ?? ""
+                self.lblAbout.text = response.perihal ?? ""
+                self.btnFile.setTitle(response.attachments ?? "", for: .normal)
+                self.assetPdf = response.attachments ?? ""
+                if self.assetPdf == "" {
+                    self.stackPdf.isHidden = true
+                }
+        },
+            onError: { error in
+                self.hideLoading()
+                print(error)
+                Toast.show(message: error, controller: self)
+        },
+            onFailed: { failed in
+                self.hideLoading()
+                print(failed)
+                Toast.show(message: failed, controller: self)
+        })
+    }
+    
+    func getApiDetailRekomendasi() {
+        showLoading()
+        vm.getDetailRekomendasi(
+            nomorMemo: nomorMemo,
+            idIom: String(idIom),
+            idKoordinasi: idKoordinasi,
+            onSuccess: { response in
+                self.hideLoading()
+                print(response)
+                self.lblRecipient.text = response.kepada ?? ""
+                self.lblCc.text = response.cc ?? ""
+                self.lblFrom.text = response.dari ?? ""
+                self.lblDate.text = response.tanggal ?? ""
+                self.lblNomor.text = response.nomor ?? ""
                 self.lblAbout.text = response.perihal ?? ""
                 self.btnFile.setTitle(response.attachments ?? "", for: .normal)
                 self.assetPdf = response.attachments ?? ""
@@ -149,6 +193,30 @@ class DetailIOMViewController: BaseViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func downloadPdf(completion: @escaping (_ success: Bool,_ fileLocation: URL?) -> Void){
+        
+        let itemUrl = URL(string: "https://approval.modernland.co.id/assets/file/\(assetPdf)")
+        let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let destinationUrl = documentsDirectoryURL.appendingPathComponent("\(assetPdf)")
+        
+        if FileManager.default.fileExists(atPath: destinationUrl.path) {
+            debugPrint("The file already exists at path")
+            completion(true, destinationUrl)
+        } else {
+            URLSession.shared.downloadTask(with: itemUrl!, completionHandler: { (location, response, error) -> Void in
+                guard let tempLocation = location, error == nil else { return }
+                do {
+                    try FileManager.default.moveItem(at: tempLocation, to: destinationUrl)
+                    print("File moved to documents folder")
+                    completion(true, destinationUrl)
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                    completion(false, nil)
+                }
+            }).resume()
+        }
+    }
+    
     @IBAction func buttonApproveTap(_ sender: Any) {
         callAlertTextBox(type: "Approve")
     }
@@ -160,12 +228,41 @@ class DetailIOMViewController: BaseViewController {
     @IBAction func buttonDetailWebviewTap(_ sender: Any) {
         let vc = StoryboardScene.WebView.webViewViewController.instantiate()
         vc.url = "https://approval.modernland.co.id/memo/view_mobile/\(idIom)"
-        //        vc.url = "https://approval.modernland.co.id/assets/file/\(assetPdf)"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func buttonRecommendationTap(_ sender: Any) {
         let vc = StoryboardScene.IOM.listHeadKoordinasiViewController.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func pdfDownloadButtonTap(_ sender: Any) {
+        if pdfDownloaded == false {
+            self.downloadPdf(completion: {(success, fileLocationURL) in
+                DispatchQueue.main.async {
+                    if success {
+                        self.previewItem = fileLocationURL! as NSURL
+                        self.pdfDownloaded = true
+                    } else {
+                        Toast.show(message: "Gagal Unduh PDF", controller: self)
+                    }
+                }
+            })
+        } else {
+            let previewController = QLPreviewController()
+            previewController.dataSource = self
+            self.present(previewController, animated: true, completion: nil)
+        }
+    }
+}
+
+
+extension DetailIOMViewController : QLPreviewControllerDataSource {
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        return self.previewItem as QLPreviewItem
     }
 }

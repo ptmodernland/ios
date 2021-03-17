@@ -65,6 +65,19 @@ class IOMViewModel {
         )
     }
     
+    func getDetailRekomendasi(nomorMemo: String, idIom: String, idKoordinasi: String,
+                       onSuccess: @escaping (DetailKoordinasi) -> Void,
+                       onError: @escaping (String) -> Void,
+                       onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequestList(
+            url: Constants.BASE_URL+Constants.GET_KOORDINASI+"?nomormemo=\(nomorMemo)&id=\(idIom)&username=\(username)&id_kordinasi=\(idKoordinasi)",
+            body: ["":""],
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
+    
     func approveIom(param: [String:Any],
                     onSuccess: @escaping (Status) -> Void,
                     onError: @escaping (String) -> Void,

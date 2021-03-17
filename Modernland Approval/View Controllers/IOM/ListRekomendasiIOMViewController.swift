@@ -64,7 +64,7 @@ extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewData
         
         cell.lblNomor.text = listKoordinasi[indexPath.row].nomor
         cell.lblTitle.text = listKoordinasi[indexPath.row].perihal
-        cell.lblSubTitle.text = listKoordinasi[indexPath.row].approve
+        cell.lblSubTitle.text = "Dari : \(listKoordinasi[indexPath.row].approve ?? "") | Kepada : \(listKoordinasi[indexPath.row].koordinasi ?? "")"
         
         if listKoordinasi[indexPath.row].statusKor == "T" {
             cell.lblStatus.text = "Waiting Approval"
@@ -79,6 +79,8 @@ extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewData
         let vc = StoryboardScene.IOM.detailIOMViewController.instantiate()
         vc.idIom = Int("\(listKoordinasi[indexPath.row].idIom ?? "")") ?? 0
         vc.type = "rekomendasi"
+        vc.nomorMemo = listKoordinasi[indexPath.row].nomor ?? ""
+        vc.idKoordinasi = listKoordinasi[indexPath.row].idKordinasi ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
