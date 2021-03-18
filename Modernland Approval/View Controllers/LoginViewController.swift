@@ -13,6 +13,9 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
 
+    @IBOutlet weak var btnVisible: UIButton!
+    
+    
     let vm = LoginViewModel()
     var deviceToken = ""
     
@@ -21,6 +24,18 @@ class LoginViewController: BaseViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.viewController = self
     }
+    
+    @IBAction func btnPasswordVisiblityClicked(_ sender: Any) {
+            (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+            if (sender as! UIButton).isSelected {
+                self.tfPassword.isSecureTextEntry = false
+                self.btnVisible.setImage(UIImage(named: "eye_open.png"), for: .normal)
+            } else {
+                self.tfPassword.isSecureTextEntry = true
+                self.btnVisible.setImage(UIImage(named: "eye_close.png"), for: .normal)
+            }
+        }
+
     
     func loadRequest(for deviceTokenString: String) {
         deviceToken = deviceTokenString

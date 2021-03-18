@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fxn-QA-NxQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fxn-QA-NxQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,7 +43,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogoTitle" translatesAutoresizingMaskIntoConstraints="NO" id="LDH-tR-rBQ">
                                 <rect key="frame" x="20" y="64" width="374" height="49.5"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-n7-Kgt" customClass="ButtonTemplate" customModule="Modernland_Approval" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-n7-Kgt" customClass="ButtonTemplate" customModule="Modernland_Approval" customModuleProvider="target">
                                 <rect key="frame" x="20" y="428" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.66717099471830987" green="0.099888885969014088" blue="0.10489106514084508" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -71,8 +73,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzg-td-uC1">
+                                <rect key="frame" x="363" y="368" width="24" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="eye_close"/>
+                                <connections>
+                                    <action selector="btnPasswordVisiblityClicked:" destination="jTg-tK-FLI" eventType="touchUpInside" id="Zum-s1-vcE"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jDk-7s-6N4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jDk-7s-6N4" firstAttribute="trailing" secondItem="fLF-JA-496" secondAttribute="trailing" constant="20" id="0Vp-fD-s4a"/>
                             <constraint firstItem="jDk-7s-6N4" firstAttribute="trailing" secondItem="645-n7-Kgt" secondAttribute="trailing" constant="20" id="2no-BG-pKc"/>
@@ -98,10 +109,10 @@
                             <constraint firstItem="jDk-7s-6N4" firstAttribute="trailing" secondItem="LDH-tR-rBQ" secondAttribute="trailing" constant="20" id="t8l-oI-uHX"/>
                             <constraint firstItem="jDk-7s-6N4" firstAttribute="trailing" secondItem="WQh-F7-4ed" secondAttribute="trailing" constant="20" id="yO1-3s-2GW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="jDk-7s-6N4"/>
                     </view>
                     <navigationItem key="navigationItem" id="nV7-bw-fEl"/>
                     <connections>
+                        <outlet property="btnVisible" destination="uzg-td-uC1" id="Xy4-C0-4yE"/>
                         <outlet property="tfPassword" destination="xjI-FR-qTE" id="KyX-S3-beI"/>
                         <outlet property="tfUsername" destination="WQh-F7-4ed" id="ZtT-rX-HQF"/>
                     </connections>
@@ -129,7 +140,16 @@
             <point key="canvasLocation" x="202.89855072463769" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="645-n7-Kgt">
+            <size key="intrinsicContentSize" width="57" height="33"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="eye_close" width="320" height="320"/>
         <image name="imgLogoTitle" width="212" height="49.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
