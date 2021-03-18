@@ -141,6 +141,7 @@ class DetailIOMViewController: BaseViewController {
                 self.navigationController?.popViewController(animated: true)
         }, onError: { error in
             print(error)
+            Toast.show(message: error, controller: self)
         }, onFailed: { failed in
             print(failed)
             Toast.show(message: failed, controller: self)
@@ -163,6 +164,53 @@ class DetailIOMViewController: BaseViewController {
                 self.navigationController?.popViewController(animated: true)
         }, onError: { error in
             print(error)
+            Toast.show(message: error, controller: self)
+        }, onFailed: { failed in
+            print(failed)
+            Toast.show(message: failed, controller: self)
+        })
+    }
+    
+    func apiApproveRekomendasi() {
+        let idUser = UserDefaults().string(forKey: "idUser")
+        
+        let param = [
+            "nomor" : self.lblNomor.text ?? "",
+            "id" : idIom,
+            "id_kordinasi" : idKoordinasi,
+            "id_user" : idUser ?? "",
+            "komen" : self.textViewNotes.text ?? ""
+            ] as [String : Any]
+        vm.approveRekomendasi(
+            param: param,
+            onSuccess: { response in
+                self.navigationController?.popViewController(animated: true)
+        }, onError: { error in
+            print(error)
+            Toast.show(message: error, controller: self)
+        }, onFailed: { failed in
+            print(failed)
+            Toast.show(message: failed, controller: self)
+        })
+    }
+    
+    func apiRejectRekomendasi() {
+        let idUser = UserDefaults().string(forKey: "idUser")
+        
+        let param = [
+            "nomor" : self.lblNomor.text ?? "",
+            "id" : idIom,
+            "id_kordinasi" : idKoordinasi,
+            "id_user" : idUser ?? "",
+            "komen" : self.textViewNotes.text ?? ""
+            ] as [String : Any]
+        vm.rejectRekomendasi(
+            param: param,
+            onSuccess: { response in
+                self.navigationController?.popViewController(animated: true)
+        }, onError: { error in
+            print(error)
+            Toast.show(message: error, controller: self)
         }, onFailed: { failed in
             print(failed)
             Toast.show(message: failed, controller: self)
@@ -218,11 +266,19 @@ class DetailIOMViewController: BaseViewController {
     }
     
     @IBAction func buttonApproveTap(_ sender: Any) {
-        callAlertTextBox(type: "Approve")
+        if type == "rekomendasi" {
+            apiApproveRekomendasi()
+        } else {
+            callAlertTextBox(type: "Approve")
+        }
     }
     
     @IBAction func buttonRejectTap(_ sender: Any) {
-        callAlertTextBox(type: "Reject")
+        if type == "rekomendasi" {
+            apiRejectRekomendasi()
+        } else {
+            callAlertTextBox(type: "Reject")
+        }
     }
     
     @IBAction func buttonDetailWebviewTap(_ sender: Any) {
@@ -233,6 +289,8 @@ class DetailIOMViewController: BaseViewController {
     
     @IBAction func buttonRecommendationTap(_ sender: Any) {
         let vc = StoryboardScene.IOM.listHeadKoordinasiViewController.instantiate()
+        vc.idIom = String(idIom)
+        vc.nomor = nomorMemo
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

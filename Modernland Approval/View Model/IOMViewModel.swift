@@ -127,4 +127,43 @@ class IOMViewModel {
             onFailed: { failed in onFailed("\(failed)") }
         )
     }
+    
+    func approveRekomendasi(param: [String:Any],
+                    onSuccess: @escaping (Status) -> Void,
+                    onError: @escaping (String) -> Void,
+                    onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequest(
+            url: Constants.BASE_URL+Constants.PROSES_APPROVE_KOORDINASI,
+            body: param,
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
+    
+    func rejectRekomendasi(param: [String:Any],
+                   onSuccess: @escaping (Status) -> Void,
+                   onError: @escaping (String) -> Void,
+                   onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequest(
+            url: Constants.BASE_URL+Constants.PROSES_CANCEL_KOORDINASI,
+            body: param,
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
+    
+    func prosesRekomendasi(param: [String:Any],
+                   onSuccess: @escaping (Status) -> Void,
+                   onError: @escaping (String) -> Void,
+                   onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequest(
+            url: Constants.BASE_URL+Constants.PROSES_KOORDINASI,
+            body: param,
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
 }

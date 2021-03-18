@@ -12,6 +12,8 @@ class ListHeadKoordinasiViewController: BaseViewController {
     
     let vm = IOMViewModel()
     var listHead = [Head]()
+    var nomor = ""
+    var idIom = ""
 
     @IBOutlet weak var tvList: UITableView!
     
@@ -52,6 +54,29 @@ class ListHeadKoordinasiViewController: BaseViewController {
             Toast.show(message: failed, controller: self)
         })
     }
+    
+    func apiProsesRekomendasi(head: String) {
+        let idUser = UserDefaults().string(forKey: "idUser")
+        
+        let param = [
+            "nomor" : nomor,
+            "id" : idIom,
+            "head" : head,
+            "id_user" : idUser ?? ""
+            ] as [String : Any]
+        vm.prosesRekomendasi(
+            param: param,
+            onSuccess: { response in
+                 let controller = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 3]
+                 self.navigationController?.popToViewController(controller!, animated: true)
+        }, onError: { error in
+            print(error)
+            Toast.show(message: error, controller: self)
+        }, onFailed: { failed in
+            print(failed)
+            Toast.show(message: failed, controller: self)
+        })
+    }
 }
 
 extension ListHeadKoordinasiViewController: UITableViewDataSource, UITableViewDelegate {
@@ -69,8 +94,7 @@ extension ListHeadKoordinasiViewController: UITableViewDataSource, UITableViewDe
         let alert = UIAlertController(title: "Anda yakin ingin rekomendasikan ke \(listHead[indexPath.row].namaUser ?? "")?", message: "", preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: "YA", style: UIAlertAction.Style.default, handler: { (action) in
-            let controller = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 3]
-                self.navigationController?.popToViewController(controller!, animated: true)
+            self.apiProsesRekomendasi(head: self.listHead[indexPath.row].namaUser ?? "")
         }))
         alert.addAction(UIAlertAction(title: "TIDAK", style: UIAlertAction.Style.cancel, handler: nil))
         
