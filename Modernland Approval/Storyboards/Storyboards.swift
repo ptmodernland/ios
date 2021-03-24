@@ -30,6 +30,7 @@ internal enum StoryboardScene {
         
         internal static let detailMenuPBJViewController = SceneType<DetailMenuPBJViewController>(storyboard: PBJ.self, identifier: "DetailMenuPBJViewController")
         
+        internal static let listHistoryPBJViewController = SceneType<ListHistoryPBJViewController>(storyboard: PBJ.self, identifier: "ListHistoryPBJViewController")
     }
     
     internal enum IOM: StoryboardType {

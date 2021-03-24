@@ -30,14 +30,15 @@ class LoginViewController: BaseViewController {
         showLoading()
         let device = UIDevice.modelName
         let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
-        let ipAddress = UIDevice.current.ipAddress()
+        //let ipAddress = UIDevice.current.ipAddress()
         
         let paramLogin = [
             "username" : username,
             "password" : password,
             "token" : "f7KLo4kLxGI:APA91bFrYRlaR61n3gjtTv9bBd-W5zE3P1Ma_Rs9Ql3ROZY3m7BUWy6S7dm-KSNjIEBu4GYJU3vPt-E6v4dP2_hwq_MLr_HQRYijou3utRJqDgFzNFSjcxoar23SFD0AWNJGl1xYGAzR",
             "address" : macAddress,
-            "ip" : ipAddress ?? "",
+            //"ip" : ipAddress ?? "",
+            "ip" : self.getIPAddress(),
             "brand" : "iPhone",
             "model" : device,
             "phonetype" : "gsm"

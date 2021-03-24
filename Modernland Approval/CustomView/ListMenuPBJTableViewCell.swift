@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListMenu2TableViewCell: UITableViewCell {
+class ListMenuPBJTableViewCell: UITableViewCell {
 
     @IBOutlet weak var vStatus: UIView!
     @IBOutlet weak var lblStatus: UILabel!

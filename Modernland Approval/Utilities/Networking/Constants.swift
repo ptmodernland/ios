@@ -25,9 +25,19 @@ class Constants {
     static let CANCEL_MEMO = "/androidiom/proses_cancel_memo.jsp"
     static let PROSES_APPROVE = "/androidiom/proses_approve.jsp"
 
+    
+    //PBJ
+    static let LIST_PERMOHONAN = "/androidiom/list_approve_pbj.jsp" //waiting approval
+    static let GET_PBJ = "/androidiom/get_permohonan.jsp" //detail
+    static let LIST_PBJ = "/androidiom/list_pbj.jsp" //history
+    static let CANCEL_PBJ = "/androidiom/proses_cancel_pbj.jsp"
+    static let PROSES_PBJ = "/androidiom/proses_approve_pbj.jsp"
+    
+    
     //COUNTER
     static let COUNTER_ALL = "/androidiom/counter_all.jsp"
     static let COUNTER_MEMO = "/androidiom/counter_memo.jsp"
+    static let COUNTER_PBJ = "/androidiom/counter_permohonan.jsp"
 
     //REKOMENDASI
     static let LIST_HEAD = "/androidiom/get_head.jsp"

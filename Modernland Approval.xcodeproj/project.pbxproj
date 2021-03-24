@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5CFC67C4B0184FB1ABA295A5 /* Pods_Modernland_Approval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1478060058AD113C29D95A6D /* Pods_Modernland_Approval.framework */; };
+		AE2AD04D2604909900B5BA01 /* PBJViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD04C2604909900B5BA01 /* PBJViewModel.swift */; };
+		AE2AD0502604953300B5BA01 /* CounterPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD04F2604953300B5BA01 /* CounterPBJ.swift */; };
+		AE2AD053260499B600B5BA01 /* ListPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD052260499B600B5BA01 /* ListPBJ.swift */; };
+		AE2AD0632604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD0622604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift */; };
+		AEE65E802604ACD700384E55 /* ListMenuPBJTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEE65E7F2604ACD700384E55 /* ListMenuPBJTableViewCell.xib */; };
+		AEE65E832604B26000384E55 /* DetailPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE65E822604B26000384E55 /* DetailPBJ.swift */; };
+		AEF189F52609DCEE00F6959E /* ListHistoryPBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF189F42609DCEE00F6959E /* ListHistoryPBJViewController.swift */; };
 		AEF71C222600940F004A69A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEF71C212600940F004A69A1 /* GoogleService-Info.plist */; };
 		EE2E70C125FDFBD00000F2A5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C025FDFBD00000F2A5 /* Status.swift */; };
 		EE2E70C325FE03830000F2A5 /* ListHistoryIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */; };
@@ -72,6 +79,13 @@
 		1478060058AD113C29D95A6D /* Pods_Modernland_Approval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modernland_Approval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C8F56AE0028920644C0F95 /* Pods-Modernland Approval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.release.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.release.xcconfig"; sourceTree = "<group>"; };
 		816FE9691F979CB1F0B5F1FE /* Pods-Modernland Approval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.debug.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.debug.xcconfig"; sourceTree = "<group>"; };
+		AE2AD04C2604909900B5BA01 /* PBJViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBJViewModel.swift; sourceTree = "<group>"; };
+		AE2AD04F2604953300B5BA01 /* CounterPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPBJ.swift; sourceTree = "<group>"; };
+		AE2AD052260499B600B5BA01 /* ListPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPBJ.swift; sourceTree = "<group>"; };
+		AE2AD0622604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuPBJTableViewCell.swift; sourceTree = "<group>"; };
+		AEE65E7F2604ACD700384E55 /* ListMenuPBJTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMenuPBJTableViewCell.xib; sourceTree = "<group>"; };
+		AEE65E822604B26000384E55 /* DetailPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPBJ.swift; sourceTree = "<group>"; };
+		AEF189F42609DCEE00F6959E /* ListHistoryPBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryPBJViewController.swift; sourceTree = "<group>"; };
 		AEF71C212600940F004A69A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE2E70C025FDFBD00000F2A5 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryIOMViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +177,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE2AD04726048F2E00B5BA01 /* PBJ */ = {
+			isa = PBXGroup;
+			children = (
+				EECF43E825F52BD1007447F1 /* PBJViewController.swift */,
+				EECF43EF25F550BC007447F1 /* ListPBJViewController.swift */,
+				EEF192BC25F72AFE003E62A6 /* DetailMenuPBJViewController.swift */,
+				AEF189F42609DCEE00F6959E /* ListHistoryPBJViewController.swift */,
+			);
+			path = PBJ;
+			sourceTree = "<group>";
+		};
 		EEAD3ECB25FDBE5F007D08A5 /* IOM */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +212,8 @@
 				EEF192B925F726A8003E62A6 /* ListMenu2TableViewCell.xib */,
 				EECEB4E125FFB0250001416D /* ListNameTableViewCell.swift */,
 				EECEB4E225FFB0250001416D /* ListNameTableViewCell.xib */,
+				AE2AD0622604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift */,
+				AEE65E7F2604ACD700384E55 /* ListMenuPBJTableViewCell.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -215,6 +242,7 @@
 				EEF758CE25F887F6005568D9 /* LoginViewModel.swift */,
 				EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */,
 				EEAD3EC725FDBBCC007D08A5 /* IOMViewModel.swift */,
+				AE2AD04C2604909900B5BA01 /* PBJViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -231,6 +259,9 @@
 				EECEB4E525FFB7BD0001416D /* ListKoordinasi.swift */,
 				EECEB4E725FFC1230001416D /* CounterIOM.swift */,
 				EE7B473826025522007D745E /* DetailKoordinasi.swift */,
+				AE2AD04F2604953300B5BA01 /* CounterPBJ.swift */,
+				AE2AD052260499B600B5BA01 /* ListPBJ.swift */,
+				AEE65E822604B26000384E55 /* DetailPBJ.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,6 +323,7 @@
 		EEFDD0D125EBCEB900B926BA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AE2AD04726048F2E00B5BA01 /* PBJ */,
 				EEAD3ECB25FDBE5F007D08A5 /* IOM */,
 				EEFDD0D225EBCED700B926BA /* LoginViewController.swift */,
 				EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */,
@@ -300,9 +332,6 @@
 				EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */,
 				EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */,
 				EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */,
-				EECF43E825F52BD1007447F1 /* PBJViewController.swift */,
-				EECF43EF25F550BC007447F1 /* ListPBJViewController.swift */,
-				EEF192BC25F72AFE003E62A6 /* DetailMenuPBJViewController.swift */,
 				EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */,
 				EE2E70CA25FE06CB0000F2A5 /* WebViewViewController.swift */,
 			);
@@ -394,6 +423,7 @@
 				EEFDD0E125EBD7E800B926BA /* IOM.storyboard in Resources */,
 				EEFDD0D925EBD52C00B926BA /* Default-568h@2x.png in Resources */,
 				EEF192BB25F726A8003E62A6 /* ListMenu2TableViewCell.xib in Resources */,
+				AEE65E802604ACD700384E55 /* ListMenuPBJTableViewCell.xib in Resources */,
 				EEFDD0DD25EBD7AE00B926BA /* Home.storyboard in Resources */,
 				EECF43E725F52B9F007447F1 /* PBJ.storyboard in Resources */,
 				EEFDD0E325EBD7F000B926BA /* Setting.storyboard in Resources */,
@@ -460,9 +490,12 @@
 				EEF758D725F89CE6005568D9 /* Toast.swift in Sources */,
 				EECF43F025F550BC007447F1 /* ListPBJViewController.swift in Sources */,
 				EEAD3EC225FDAF09007D08A5 /* SettingViewModel.swift in Sources */,
+				AEF189F52609DCEE00F6959E /* ListHistoryPBJViewController.swift in Sources */,
 				EEFDD0D025EBCE7000B926BA /* Storyboards.swift in Sources */,
 				EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */,
 				EECF43ED25F5322F007447F1 /* ListBoxCollectionViewCell.swift in Sources */,
+				AEE65E832604B26000384E55 /* DetailPBJ.swift in Sources */,
+				AE2AD0632604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift in Sources */,
 				EEF758C725F8820A005568D9 /* BaseResponse.swift in Sources */,
 				EECEB4E825FFC1230001416D /* CounterIOM.swift in Sources */,
 				EEAD3EC825FDBBCC007D08A5 /* IOMViewModel.swift in Sources */,
@@ -477,12 +510,14 @@
 				EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */,
 				EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */,
 				EECEB4E325FFB0250001416D /* ListNameTableViewCell.swift in Sources */,
+				AE2AD0502604953300B5BA01 /* CounterPBJ.swift in Sources */,
 				EE2E70C325FE03830000F2A5 /* ListHistoryIOMViewController.swift in Sources */,
 				EE2E70C525FE03940000F2A5 /* ListRekomendasiIOMViewController.swift in Sources */,
 				EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */,
 				EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */,
 				EEFDD0ED25EBDE3800B926BA /* ComparasionViewController.swift in Sources */,
 				EEF758C525F87B72005568D9 /* ApiHelper.swift in Sources */,
+				AE2AD04D2604909900B5BA01 /* PBJViewModel.swift in Sources */,
 				EE2E70C725FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift in Sources */,
 				EECF43E925F52BD1007447F1 /* PBJViewController.swift in Sources */,
 				EEF758CB25F88270005568D9 /* Constants.swift in Sources */,
@@ -494,6 +529,7 @@
 				EECEB4DE25FFAAD70001416D /* Head.swift in Sources */,
 				EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */,
 				EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */,
+				AE2AD053260499B600B5BA01 /* ListPBJ.swift in Sources */,
 				EE2E70CB25FE06CB0000F2A5 /* WebViewViewController.swift in Sources */,
 				EECEB4E625FFB7BD0001416D /* ListKoordinasi.swift in Sources */,
 				EEF758CF25F887F6005568D9 /* LoginViewModel.swift in Sources */,

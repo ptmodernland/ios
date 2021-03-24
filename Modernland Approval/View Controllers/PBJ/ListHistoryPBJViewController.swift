@@ -1,20 +1,21 @@
 //
-//  ListHistoryIOMViewController.swift
+//  ListPBJViewController.swift
 //  Modernland Approval
 //
-//  Created by Kevin Correzian on 14/03/21.
+//  Created by Kevin Correzian on 08/03/21.
 //  Copyright © 2021 Modernland. All rights reserved.
 //
 
 import UIKit
 
-class ListHistoryIOMViewController: BaseViewController {
+class ListHistoryPBJViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
     
-    let vm = IOMViewModel()
-    var listIOM = [ListIOM]()
+    let vm = PBJViewModel()
+    var listPBJ = [ListPBJ]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class ListHistoryIOMViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
-        getListIom()
+        getListPbj()
     }
     
     func setupTableView() {
@@ -33,15 +34,15 @@ class ListHistoryIOMViewController: BaseViewController {
         tvList.register(nearestNib, forCellReuseIdentifier: "ListMenu")
     }
     
-    func getListIom() {
+    func getListPbj() {
         showLoading()
-        vm.postListHistoryIom(
+        vm.postListHistoryPbj(
             body: ["username": self.username ?? ""],
             onSuccess: { response in
                 self.hideLoading()
-                self.listIOM.removeAll()
-                for iom in response {
-                    self.listIOM.append(iom)
+                self.listPBJ.removeAll()
+                for pbj in response {
+                    self.listPBJ.append(pbj)
                 }
                 self.tvList.reloadData()
         }, onError: { error in
@@ -55,21 +56,21 @@ class ListHistoryIOMViewController: BaseViewController {
         })
     }
 }
-extension ListHistoryIOMViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListHistoryPBJViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listIOM.count
+        return listPBJ.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListMenu", for: indexPath) as! ListMenu2TableViewCell
         
-        cell.lblNomor.text = listIOM[indexPath.row].nomor
-        cell.lblTitle.text = listIOM[indexPath.row].perihal
-        cell.lblSubTitle.text = listIOM[indexPath.row].approve
+        cell.lblNomor.text = listPBJ[indexPath.row].nomor
+        cell.lblSubTitle.text = listPBJ[indexPath.row].tglPermintaan
+        cell.lblTitle.text = "Permohonan Barang / Jasa"
         
-        if listIOM[indexPath.row].status == "Y" {
+        if listPBJ[indexPath.row].status == "Y" {
             cell.lblStatus.text = "Waiting Approval"
-        } else {
+        }else {
             cell.lblStatus.text = "Approval"
         }
         
@@ -77,8 +78,8 @@ extension ListHistoryIOMViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = StoryboardScene.IOM.detailIOMViewController.instantiate()
-        vc.idIom = Int("\(listIOM[indexPath.row].idIom ?? "")") ?? 0
+        let vc = StoryboardScene.PBJ.detailMenuPBJViewController.instantiate()
+        vc.nomorPermintaan = listPBJ[indexPath.row].nomor!
         vc.type = "history"
         self.navigationController?.pushViewController(vc, animated: true)
     }

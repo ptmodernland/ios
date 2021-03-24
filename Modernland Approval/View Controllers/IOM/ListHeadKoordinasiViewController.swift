@@ -62,6 +62,7 @@ class ListHeadKoordinasiViewController: BaseViewController {
             "nomor" : nomor,
             "id" : idIom,
             "head" : head,
+            "ipaddres" : self.getIPAddress(),
             "id_user" : idUser ?? ""
             ] as [String : Any]
         vm.prosesRekomendasi(

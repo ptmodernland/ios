@@ -1,35 +1,28 @@
 //
-//  DetailIOMViewController.swift
+//  DetailMenuPBJViewController.swift
 //  Modernland Approval
 //
-//  Created by Kevin Correzian on 14/03/21.
+//  Created by Kevin Correzian on 09/03/21.
 //  Copyright © 2021 Modernland. All rights reserved.
 //
 
 import UIKit
-import QuickLook
 
-class DetailIOMViewController: BaseViewController {
+class DetailMenuPBJViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     
     //Class Variable
-    let vm = IOMViewModel()
-    var idIom = 0
+    let vm = PBJViewModel()
     var assetPdf = ""
     var type = "approval"
-    var nomorMemo = ""
+    var nomorPermintaan = ""
     var idKoordinasi = ""
     var pdfDownloaded = false
     lazy var previewItem = NSURL()
     
-    @IBOutlet weak var lblRecipient: UILabel!
-    @IBOutlet weak var lblCc: UILabel!
-    @IBOutlet weak var lblFrom: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblNomor: UILabel!
-    @IBOutlet weak var lblCategory: UILabel!
-    @IBOutlet weak var lblAbout: UILabel!
     @IBOutlet weak var btnFile: UIButton!
     @IBOutlet weak var textViewNotes: UITextView!
     @IBOutlet weak var stackButton: UIStackView!
@@ -53,8 +46,8 @@ class DetailIOMViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         if type == "history" {
             getApiDetail()
-        } else if type == "rekomendasi"  {
-            getApiDetailRekomendasi()
+        //} else if type == "rekomendasi"  {
+           // getApiDetailRekomendasi()
         } else {
             getApiDetail()
         }
@@ -62,19 +55,14 @@ class DetailIOMViewController: BaseViewController {
     
     func getApiDetail() {
         showLoading()
-        vm.getDetailMemo(
-            idIom: idIom,
+        vm.getDetailPbj(
+            noPermintaan: nomorPermintaan,
             onSuccess: { response in
                 self.hideLoading()
                 print(response)
-                self.lblRecipient.text = response.kepada ?? ""
-                self.lblCc.text = response.cc ?? ""
-                self.lblFrom.text = response.dari ?? ""
+                
                 self.lblDate.text = response.tanggal ?? ""
-                self.lblNomor.text = response.nomor ?? ""
-                self.lblCategory.text = response.kategoriIom ?? ""
-                self.lblAbout.text = response.perihal ?? ""
-                self.btnFile.setTitle(response.attachments ?? "", for: .normal)
+                self.lblNomor.text = response.nomor ?? "";                self.btnFile.setTitle(response.attachments ?? "", for: .normal)
                 self.assetPdf = response.attachments ?? ""
                 if self.assetPdf == "" {
                     self.stackPdf.isHidden = true
@@ -92,10 +80,10 @@ class DetailIOMViewController: BaseViewController {
         })
     }
     
-    func getApiDetailRekomendasi() {
+    /*func getApiDetailRekomendasi() {
         showLoading()
         vm.getDetailRekomendasi(
-            nomorMemo: nomorMemo,
+            noPermintaan: nomorPermintaan,
             idIom: String(idIom),
             idKoordinasi: idKoordinasi,
             onSuccess: { response in
@@ -123,19 +111,19 @@ class DetailIOMViewController: BaseViewController {
                 print(failed)
                 Toast.show(message: failed, controller: self)
         })
-    }
+    }*/
     
-    func apiApproveIom(pin: String) {
+    func apiApprovePbj(pin: String) {
         let idUser = UserDefaults().string(forKey: "idUser")
         
         let param = [
-            "nomor" : self.lblNomor.text ?? "",
+            "no_permintaan" : self.lblNomor.text ?? "",
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
-            "id_iom" : idIom,
+            "ipaddres" : self.getIPAddress(),
             "passwordUser" : pin
             ] as [String : Any]
-        vm.approveIom(
+        vm.approvePbj(
             param: param,
             onSuccess: { response in
                 self.navigationController?.popViewController(animated: true)
@@ -148,17 +136,17 @@ class DetailIOMViewController: BaseViewController {
         })
     }
     
-    func apiRejectIom(pin: String) {
+    func apiRejectPbj(pin: String) {
         let idUser = UserDefaults().string(forKey: "idUser")
         
         let param = [
-            "nomor" : self.lblNomor.text ?? "",
+            "no_permintaan" : self.lblNomor.text ?? "",
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
-            "id_iom" : idIom,
+            "ipaddres" : self.getIPAddress(),
             "passwordUser" : pin
             ] as [String : Any]
-        vm.rejectIom(
+        vm.rejectPbj(
             param: param,
             onSuccess: { response in
                 self.navigationController?.popViewController(animated: true)
@@ -171,7 +159,7 @@ class DetailIOMViewController: BaseViewController {
         })
     }
     
-    func apiApproveRekomendasi() {
+    /*func apiApproveRekomendasi() {
         let idUser = UserDefaults().string(forKey: "idUser")
         
         let param = [
@@ -179,7 +167,6 @@ class DetailIOMViewController: BaseViewController {
             "id" : idIom,
             "id_kordinasi" : idKoordinasi,
             "id_user" : idUser ?? "",
-            "ipaddres" : self.getIPAddress(),
             "komen" : self.textViewNotes.text ?? ""
             ] as [String : Any]
         vm.approveRekomendasi(
@@ -203,7 +190,6 @@ class DetailIOMViewController: BaseViewController {
             "id" : idIom,
             "id_kordinasi" : idKoordinasi,
             "id_user" : idUser ?? "",
-            "ipaddres" : self.getIPAddress(),
             "komen" : self.textViewNotes.text ?? ""
             ] as [String : Any]
         vm.rejectRekomendasi(
@@ -217,7 +203,7 @@ class DetailIOMViewController: BaseViewController {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
-    }
+    }*/
     
     func callAlertTextBox(type: String) {
         //1. Create the alert controller.
@@ -226,6 +212,7 @@ class DetailIOMViewController: BaseViewController {
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
             textField.keyboardType = .numberPad
+            textField.isSecureTextEntry = true
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -233,9 +220,9 @@ class DetailIOMViewController: BaseViewController {
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
             print("Text field: \(textField?.text ?? "")")
             if type == "Approve" {
-                self.apiApproveIom(pin: textField?.text ?? "")
+                self.apiApprovePbj(pin: textField?.text ?? "")
             } else {
-                self.apiRejectIom(pin: textField?.text ?? "")
+                self.apiRejectPbj(pin: textField?.text ?? "")
             }
         }))
         
@@ -268,33 +255,33 @@ class DetailIOMViewController: BaseViewController {
     }
     
     @IBAction func buttonApproveTap(_ sender: Any) {
-        if type == "rekomendasi" {
+        /*if type == "rekomendasi" {
             apiApproveRekomendasi()
-        } else {
+        } else {*/
             callAlertTextBox(type: "Approve")
-        }
+        //}
     }
     
     @IBAction func buttonRejectTap(_ sender: Any) {
-        if type == "rekomendasi" {
+        /*if type == "rekomendasi" {
             apiRejectRekomendasi()
-        } else {
+        } else {*/
             callAlertTextBox(type: "Reject")
-        }
+        //}
     }
     
     @IBAction func buttonDetailWebviewTap(_ sender: Any) {
         let vc = StoryboardScene.WebView.webViewViewController.instantiate()
-        vc.url = "https://approval.modernland.co.id/memo/view_mobile/\(idIom)"
+        vc.url = "https://approval.modernland.co.id/permohonan_barang_jasa/views_permohonan/\(nomorPermintaan)"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func buttonRecommendationTap(_ sender: Any) {
+    /*@IBAction func buttonRecommendationTap(_ sender: Any) {
         let vc = StoryboardScene.IOM.listHeadKoordinasiViewController.instantiate()
         vc.idIom = String(idIom)
         vc.nomor = nomorMemo
         self.navigationController?.pushViewController(vc, animated: true)
-    }
+    }*/
     
     @IBAction func pdfDownloadButtonTap(_ sender: Any) {
         if pdfDownloaded == false {
@@ -308,16 +295,16 @@ class DetailIOMViewController: BaseViewController {
                     }
                 }
             })
-        } else {
+        } /*else {
             let previewController = QLPreviewController()
             previewController.dataSource = self
             self.present(previewController, animated: true, completion: nil)
-        }
+        }*/
     }
 }
 
 
-extension DetailIOMViewController : QLPreviewControllerDataSource {
+/*extension DetailIOMViewController : QLPreviewControllerDataSource {
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
         return 1
     }
@@ -325,4 +312,5 @@ extension DetailIOMViewController : QLPreviewControllerDataSource {
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         return self.previewItem as QLPreviewItem
     }
-}
+
+}*/

@@ -55,6 +55,7 @@ class ListIOMViewController: BaseViewController {
         })
     }
 }
+
 extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listIOM.count
@@ -67,10 +68,10 @@ extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lblTitle.text = listIOM[indexPath.row].perihal
         cell.lblSubTitle.text = listIOM[indexPath.row].approve
         
-        if listIOM[indexPath.row].status == "T" {
+        if listIOM[indexPath.row].status == "Y" {
             cell.lblStatus.text = "Waiting Approval"
         } else {
-            cell.lblStatus.text = "Waiting Approval"
+            cell.lblStatus.text = "Approval"
         }
         
         return cell
