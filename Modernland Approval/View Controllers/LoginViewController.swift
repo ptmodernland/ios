@@ -12,9 +12,11 @@ class LoginViewController: BaseViewController {
 
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-
+    @IBOutlet weak var btnEyePassword: UIButton!
+    
     let vm = LoginViewModel()
     var deviceToken = ""
+    var state = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,24 @@ class LoginViewController: BaseViewController {
             Toast.show(message: failed, controller: self)
         })
     }
+    
+    @IBAction func btnEyeTap(_ sender: Any) {
+        if state == true {
+            tfPassword.isSecureTextEntry = false
+            tfPassword.togglePasswordVisibility()
+            if #available(iOS 13.0, *) {
+                btnEyePassword.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            }
+        } else {
+            tfPassword.isSecureTextEntry = true
+            tfPassword.togglePasswordVisibility()
+            if #available(iOS 13.0, *) {
+                btnEyePassword.setImage(UIImage(systemName: "eye"), for: .normal)
+            }
+        }
+        state = !state
+    }
+    
     
     @IBAction func loginButtonTap(_ sender: Any) {
         let stringUsername = tfUsername.text ?? ""

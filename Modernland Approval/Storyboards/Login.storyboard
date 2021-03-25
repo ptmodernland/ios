@@ -73,6 +73,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce7-se-bYe">
+                                <rect key="frame" x="358" y="364" width="26" height="34"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="eye.slash" catalog="system"/>
+                                <connections>
+                                    <action selector="btnEyeTap:" destination="jTg-tK-FLI" eventType="touchUpInside" id="5pc-Qs-gB3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jDk-7s-6N4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,6 +97,7 @@
                             <constraint firstItem="YkM-Ec-tuS" firstAttribute="centerX" secondItem="jDk-7s-6N4" secondAttribute="centerX" id="QcK-xi-i9H"/>
                             <constraint firstItem="xjI-FR-qTE" firstAttribute="top" secondItem="fLF-JA-496" secondAttribute="bottom" constant="10" id="VGE-Zf-sG7"/>
                             <constraint firstItem="jDk-7s-6N4" firstAttribute="trailing" secondItem="8cn-LB-IQE" secondAttribute="trailing" constant="20" id="WrA-Bb-WR2"/>
+                            <constraint firstItem="Ce7-se-bYe" firstAttribute="bottom" secondItem="xjI-FR-qTE" secondAttribute="bottom" id="XXV-DC-Y5y"/>
                             <constraint firstItem="8cn-LB-IQE" firstAttribute="top" secondItem="YkM-Ec-tuS" secondAttribute="bottom" constant="20" id="ZS3-ae-fSu"/>
                             <constraint firstItem="YkM-Ec-tuS" firstAttribute="leading" secondItem="jDk-7s-6N4" secondAttribute="leading" constant="20" id="bJG-f7-i2u"/>
                             <constraint firstItem="LDH-tR-rBQ" firstAttribute="centerX" secondItem="oyk-7c-han" secondAttribute="centerX" id="cWH-I2-EWU"/>
@@ -99,11 +108,14 @@
                             <constraint firstItem="YkM-Ec-tuS" firstAttribute="centerY" secondItem="jDk-7s-6N4" secondAttribute="centerY" multiplier="0.5" id="onj-lI-awi"/>
                             <constraint firstItem="WQh-F7-4ed" firstAttribute="top" secondItem="8cn-LB-IQE" secondAttribute="bottom" constant="10" id="q53-Vc-QnO"/>
                             <constraint firstItem="jDk-7s-6N4" firstAttribute="trailing" secondItem="LDH-tR-rBQ" secondAttribute="trailing" constant="20" id="t8l-oI-uHX"/>
+                            <constraint firstItem="Ce7-se-bYe" firstAttribute="trailing" secondItem="xjI-FR-qTE" secondAttribute="trailing" constant="-10" id="wPu-vY-fU1"/>
+                            <constraint firstItem="Ce7-se-bYe" firstAttribute="top" secondItem="xjI-FR-qTE" secondAttribute="top" id="wsn-fi-mZz"/>
                             <constraint firstItem="jDk-7s-6N4" firstAttribute="trailing" secondItem="WQh-F7-4ed" secondAttribute="trailing" constant="20" id="yO1-3s-2GW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nV7-bw-fEl"/>
                     <connections>
+                        <outlet property="btnEyePassword" destination="Ce7-se-bYe" id="Dd9-A0-vg3"/>
                         <outlet property="tfPassword" destination="xjI-FR-qTE" id="KyX-S3-beI"/>
                         <outlet property="tfUsername" destination="WQh-F7-4ed" id="ZtT-rX-HQF"/>
                     </connections>
@@ -137,6 +149,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="eye.slash" catalog="system" width="128" height="86"/>
         <image name="imgLogoTitle" width="212" height="49.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
