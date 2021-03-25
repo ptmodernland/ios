@@ -35,6 +35,7 @@ class DetailIOMViewController: BaseViewController {
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var stackPdf: UIStackView!
     @IBOutlet weak var btnRecommend: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class DetailIOMViewController: BaseViewController {
         } else {
             getApiDetail()
         }
+        makeRounded(view: btnBack)
     }
     
     func getApiDetail() {
@@ -314,6 +316,11 @@ class DetailIOMViewController: BaseViewController {
             self.present(previewController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        back()
+    }
+    
 }
 
 

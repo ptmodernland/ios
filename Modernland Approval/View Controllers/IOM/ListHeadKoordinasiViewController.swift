@@ -16,6 +16,8 @@ class ListHeadKoordinasiViewController: BaseViewController {
     var idIom = ""
 
     @IBOutlet weak var tvList: UITableView!
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var vEmpty: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class ListHeadKoordinasiViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
         getListHead()
+        makeRounded(view: btnBack)
     }
     
     func setupTableView() {
@@ -42,6 +45,9 @@ class ListHeadKoordinasiViewController: BaseViewController {
                 self.listHead.removeAll()
                 for head in response {
                     self.listHead.append(head)
+                }
+                if self.listHead.isEmpty {
+                    self.vEmpty.isHidden = false
                 }
                 self.tvList.reloadData()
         }, onError: { error in
@@ -77,6 +83,10 @@ class ListHeadKoordinasiViewController: BaseViewController {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+    }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        back()
     }
 }
 

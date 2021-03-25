@@ -12,6 +12,8 @@ class ListHistoryPBJViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
+    @IBOutlet weak var vEmpty: UIView!
+    @IBOutlet weak var btnBack: UIButton!
     
     let vm = PBJViewModel()
     var listPBJ = [ListPBJ]()
@@ -24,6 +26,7 @@ class ListHistoryPBJViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
         getListPbj()
+        makeRounded(view: btnBack)
     }
     
     func setupTableView() {
@@ -44,6 +47,9 @@ class ListHistoryPBJViewController: BaseViewController {
                 for pbj in response {
                     self.listPBJ.append(pbj)
                 }
+                if self.listPBJ.isEmpty {
+                    self.vEmpty.isHidden = false
+                }
                 self.tvList.reloadData()
         }, onError: { error in
             self.hideLoading()
@@ -55,6 +61,11 @@ class ListHistoryPBJViewController: BaseViewController {
             Toast.show(message: failed, controller: self)
         })
     }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        back()
+    }
+    
 }
 extension ListHistoryPBJViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

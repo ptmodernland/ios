@@ -47,15 +47,20 @@ internal enum StoryboardScene {
         internal static let listHeadKoordinasiViewController = SceneType<ListHeadKoordinasiViewController>(storyboard: IOM.self, identifier: "ListHeadKoordinasiViewController")
         
         internal static let listRekomendasiIOMViewController = SceneType<ListRekomendasiIOMViewController>(storyboard: IOM.self, identifier: "ListRekomendasiIOMViewController")
-
-
+    }
+    
+    internal enum Setting: StoryboardType {
+        internal static let storyboardName = "Setting"
+        
+        internal static let settingViewController = SceneType<SettingViewController>(storyboard: Setting.self, identifier: "SettingViewController")
+        
+        internal static let changePasswordViewController = SceneType<ChangePasswordViewController>(storyboard: Setting.self, identifier: "ChangePasswordViewController")
     }
     
     internal enum WebView: StoryboardType {
         internal static let storyboardName = "WebView"
         
         internal static let webViewViewController = SceneType<WebViewViewController>(storyboard: WebView.self, identifier: "WebViewViewController")
-        
     }
 }
 

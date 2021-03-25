@@ -25,6 +25,8 @@
 		EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */; };
 		EE2FF1EB25FDCC4300CE1459 /* DetailIOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */; };
 		EE7B473926025522007D745E /* DetailKoordinasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B473826025522007D745E /* DetailKoordinasi.swift */; };
+		EE9E62E6260C511A00EC5D00 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E62E5260C511A00EC5D00 /* ChangePasswordViewController.swift */; };
+		EE9E62EA260C56D900EC5D00 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E62E9260C56D900EC5D00 /* UITextField.swift */; };
 		EEAD3EC025FDABC8007D08A5 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */; };
 		EEAD3EC225FDAF09007D08A5 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */; };
 		EEAD3EC425FDB2FA007D08A5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */; };
@@ -96,6 +98,8 @@
 		EE2FF1E825FDC3FB00CE1459 /* DetailIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIOMViewController.swift; sourceTree = "<group>"; };
 		EE2FF1EA25FDCC4300CE1459 /* DetailIOM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailIOM.swift; sourceTree = "<group>"; };
 		EE7B473826025522007D745E /* DetailKoordinasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailKoordinasi.swift; sourceTree = "<group>"; };
+		EE9E62E5260C511A00EC5D00 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		EE9E62E9260C56D900EC5D00 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 			path = PBJ;
 			sourceTree = "<group>";
 		};
+		EE9E62E4260C50F100EC5D00 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */,
+				EE9E62E5260C511A00EC5D00 /* ChangePasswordViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		EEAD3ECB25FDBE5F007D08A5 /* IOM */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +245,7 @@
 			children = (
 				EEFDD0D625EBD3E300B926BA /* ButtonTemplate.swift */,
 				EEF758D625F89CE6005568D9 /* Toast.swift */,
+				EE9E62E9260C56D900EC5D00 /* UITextField.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -323,6 +337,7 @@
 		EEFDD0D125EBCEB900B926BA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE9E62E4260C50F100EC5D00 /* Setting */,
 				AE2AD04726048F2E00B5BA01 /* PBJ */,
 				EEAD3ECB25FDBE5F007D08A5 /* IOM */,
 				EEFDD0D225EBCED700B926BA /* LoginViewController.swift */,
@@ -330,7 +345,6 @@
 				EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */,
 				EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */,
 				EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */,
-				EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */,
 				EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */,
 				EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */,
 				EE2E70CA25FE06CB0000F2A5 /* WebViewViewController.swift */,
@@ -495,6 +509,7 @@
 				EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */,
 				EECF43ED25F5322F007447F1 /* ListBoxCollectionViewCell.swift in Sources */,
 				AEE65E832604B26000384E55 /* DetailPBJ.swift in Sources */,
+				EE9E62E6260C511A00EC5D00 /* ChangePasswordViewController.swift in Sources */,
 				AE2AD0632604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift in Sources */,
 				EEF758C725F8820A005568D9 /* BaseResponse.swift in Sources */,
 				EECEB4E825FFC1230001416D /* CounterIOM.swift in Sources */,
@@ -529,6 +544,7 @@
 				EECEB4DE25FFAAD70001416D /* Head.swift in Sources */,
 				EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */,
 				EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */,
+				EE9E62EA260C56D900EC5D00 /* UITextField.swift in Sources */,
 				AE2AD053260499B600B5BA01 /* ListPBJ.swift in Sources */,
 				EE2E70CB25FE06CB0000F2A5 /* WebViewViewController.swift in Sources */,
 				EECEB4E625FFB7BD0001416D /* ListKoordinasi.swift in Sources */,

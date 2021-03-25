@@ -16,6 +16,7 @@ class BaseViewController: UIViewController {
     var swipeBackEnabled: Bool = true
     let refreshControl = UIRefreshControl()
     let username = UserDefaults().string(forKey: "username")
+    let id_user = UserDefaults().string(forKey: "idUser")
     let hud = JGProgressHUD()
 
     open var rootViewController: UIViewController? {
@@ -55,6 +56,14 @@ class BaseViewController: UIViewController {
     
     func onViewDisappeared() {}
     
+    func setupEmptyDataList(tableView: UITableView) {
+        let emptyNib = UINib.init(nibName: "EmptyStateTableViewCell", bundle: nil)
+        tableView.register(emptyNib, forCellReuseIdentifier: "emptyCell")
+    }
+    
+    func makeRounded(view: UIView) {
+        view.layer.cornerRadius = view.frame.size.height / 2
+    }
     // MARK: - Navigation
     
     func back() {

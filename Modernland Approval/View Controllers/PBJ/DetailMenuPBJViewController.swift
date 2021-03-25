@@ -11,7 +11,8 @@ import UIKit
 class DetailMenuPBJViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
-    
+    @IBOutlet weak var btnBack: UIButton!
+
     //Class Variable
     let vm = PBJViewModel()
     var assetPdf = ""
@@ -51,6 +52,7 @@ class DetailMenuPBJViewController: BaseViewController {
         } else {
             getApiDetail()
         }
+        makeRounded(view: btnBack)
     }
     
     func getApiDetail() {
@@ -274,6 +276,10 @@ class DetailMenuPBJViewController: BaseViewController {
         let vc = StoryboardScene.WebView.webViewViewController.instantiate()
         vc.url = "https://approval.modernland.co.id/permohonan_barang_jasa/views_permohonan/\(nomorPermintaan)"
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        back()
     }
     
     /*@IBAction func buttonRecommendationTap(_ sender: Any) {

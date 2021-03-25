@@ -12,12 +12,15 @@ class ListIOMViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var vEmptyState: UIView!
     
     let vm = IOMViewModel()
     var listIOM = [ListIOM]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeRounded(view: btnBack)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +46,9 @@ class ListIOMViewController: BaseViewController {
                 for iom in response {
                     self.listIOM.append(iom)
                 }
+                if self.listIOM.isEmpty {
+                    self.vEmptyState.isHidden = false
+                }
                 self.tvList.reloadData()
         }, onError: { error in
             self.hideLoading()
@@ -54,6 +60,11 @@ class ListIOMViewController: BaseViewController {
             Toast.show(message: failed, controller: self)
         })
     }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        back()
+    }
+    
 }
 
 extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {

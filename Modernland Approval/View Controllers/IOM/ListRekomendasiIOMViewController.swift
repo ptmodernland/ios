@@ -11,6 +11,8 @@ import UIKit
 class ListRekomendasiIOMViewController: BaseViewController {
     
     @IBOutlet weak var tvList: UITableView!
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var vEmpty: UIView!
     
     let vm = IOMViewModel()
     var listKoordinasi = [ListKoordinasi]()
@@ -22,6 +24,7 @@ class ListRekomendasiIOMViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
         getListIom()
+        makeRounded(view: btnBack)
     }
     
     func setupTableView() {
@@ -42,6 +45,9 @@ class ListRekomendasiIOMViewController: BaseViewController {
                 for koordinasi in response {
                     self.listKoordinasi.append(koordinasi)
                 }
+                if self.listKoordinasi.isEmpty {
+                    self.vEmpty.isHidden = false
+                }
                 self.tvList.reloadData()
         }, onError: { error in
             self.hideLoading()
@@ -52,6 +58,10 @@ class ListRekomendasiIOMViewController: BaseViewController {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+    }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        back()
     }
 }
 extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewDataSource {

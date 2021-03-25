@@ -17,6 +17,7 @@ class Constants {
     //USER
     static let LOGIN = "/androidiom/proses_login.jsp"
     static let LOGOUT = "/androidiom/proses_logout.jsp"
+    static let CHANGE_PASSWORD = "/androidiom/proses_change_password.jsp"
 
     //IOM
     static let LIST_APPROVAL = "/androidiom/list_approve.jsp" //waiting approval
