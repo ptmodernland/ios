@@ -46,6 +46,7 @@
 		EECF43F025F550BC007447F1 /* ListPBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF43EF25F550BC007447F1 /* ListPBJViewController.swift */; };
 		EECF43F325F5BFD5007447F1 /* ListMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF43F125F5BFD5007447F1 /* ListMenuTableViewCell.swift */; };
 		EECF43F425F5BFD5007447F1 /* ListMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECF43F225F5BFD5007447F1 /* ListMenuTableViewCell.xib */; };
+		EEDE35E8260DC8D20071B793 /* ListCategoryIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDE35E7260DC8D20071B793 /* ListCategoryIOMViewController.swift */; };
 		EEF192BA25F726A8003E62A6 /* ListMenu2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF192B825F726A8003E62A6 /* ListMenu2TableViewCell.swift */; };
 		EEF192BB25F726A8003E62A6 /* ListMenu2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF192B925F726A8003E62A6 /* ListMenu2TableViewCell.xib */; };
 		EEF192BD25F72AFE003E62A6 /* DetailMenuPBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF192BC25F72AFE003E62A6 /* DetailMenuPBJViewController.swift */; };
@@ -119,6 +120,7 @@
 		EECF43EF25F550BC007447F1 /* ListPBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPBJViewController.swift; sourceTree = "<group>"; };
 		EECF43F125F5BFD5007447F1 /* ListMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuTableViewCell.swift; sourceTree = "<group>"; };
 		EECF43F225F5BFD5007447F1 /* ListMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMenuTableViewCell.xib; sourceTree = "<group>"; };
+		EEDE35E7260DC8D20071B793 /* ListCategoryIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoryIOMViewController.swift; sourceTree = "<group>"; };
 		EEF192B825F726A8003E62A6 /* ListMenu2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenu2TableViewCell.swift; sourceTree = "<group>"; };
 		EEF192B925F726A8003E62A6 /* ListMenu2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMenu2TableViewCell.xib; sourceTree = "<group>"; };
 		EEF192BC25F72AFE003E62A6 /* DetailMenuPBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuPBJViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */,
 				EE2E70C425FE03940000F2A5 /* ListRekomendasiIOMViewController.swift */,
 				EE2E70C625FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift */,
+				EEDE35E7260DC8D20071B793 /* ListCategoryIOMViewController.swift */,
 			);
 			path = IOM;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */,
 				EE9E62EA260C56D900EC5D00 /* UITextField.swift in Sources */,
 				AE2AD053260499B600B5BA01 /* ListPBJ.swift in Sources */,
+				EEDE35E8260DC8D20071B793 /* ListCategoryIOMViewController.swift in Sources */,
 				EE2E70CB25FE06CB0000F2A5 /* WebViewViewController.swift in Sources */,
 				EECEB4E625FFB7BD0001416D /* ListKoordinasi.swift in Sources */,
 				EEF758CF25F887F6005568D9 /* LoginViewModel.swift in Sources */,
