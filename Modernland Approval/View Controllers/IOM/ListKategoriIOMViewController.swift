@@ -1,23 +1,24 @@
 //
-//  ListPBJViewController.swift
+//  ListIOMViewController.swift
 //  Modernland Approval
 //
-//  Created by Kevin Correzian on 08/03/21.
+//  Created by Kevin Correzian on 14/03/21.
 //  Copyright © 2021 Modernland. All rights reserved.
 //
 
 import UIKit
 
-class ListPBJViewController: BaseViewController {
+class ListKategoriIOMViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
-    @IBOutlet weak var vEmpty: UIView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var vEmptyState: UIView!
     
-    let vm = PBJViewModel()
-    var listPBJ = [ListPBJ]()
-
+    let vm = IOMViewModel()
+    var divisi_id = ""
+    
+    var ListKateIOM = [ListKategoriIOM]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class ListPBJViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
-        getListPbj()
+        getListKategoriIom()
         makeRounded(view: btnBack)
     }
     
@@ -37,18 +38,18 @@ class ListPBJViewController: BaseViewController {
         tvList.register(nearestNib, forCellReuseIdentifier: "ListMenu")
     }
     
-    func getListPbj() {
+    func getListKategoriIom() {
         showLoading()
-        vm.postListPbj(
-            body: ["username": self.username ?? ""],
+        vm.postListKategoriIom(
+            divisiID: divisi_id,
             onSuccess: { response in
                 self.hideLoading()
-                self.listPBJ.removeAll()
-                for pbj in response {
-                    self.listPBJ.append(pbj)
+                self.ListKateIOM.removeAll()
+                for kategori in response {
+                    self.ListKateIOM.append(kategori)
                 }
-                if self.listPBJ.isEmpty {
-                    self.vEmpty.isHidden = false
+                if self.ListKateIOM.isEmpty {
+                    self.vEmptyState.isHidden = false
                 }
                 self.tvList.reloadData()
         }, onError: { error in
@@ -61,24 +62,27 @@ class ListPBJViewController: BaseViewController {
             Toast.show(message: failed, controller: self)
         })
     }
-    
+  
     @IBAction func backButtonTap(_ sender: Any) {
         back()
     }
+    
 }
-extension ListPBJViewController: UITableViewDelegate, UITableViewDataSource {
+
+extension ListKategoriIOMViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listPBJ.count
+        //print(listIOM.count)
+        return ListKateIOM.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListMenu", for: indexPath) as! ListMenu2TableViewCell
         
-        cell.lblNomor.text = listPBJ[indexPath.row].nomor
-        cell.lblSubTitle.text = listPBJ[indexPath.row].tglPermintaan
-        cell.lblTitle.text = "Permohonan Barang / Jasa"
+        cell.lblNomor.text = ListKateIOM[indexPath.row].nomor
+        cell.lblTitle.text = ListKateIOM[indexPath.row].perihal
+        cell.lblSubTitle.text = ListKateIOM[indexPath.row].approve
         
-        if listPBJ[indexPath.row].status == "Y" {
+        if ListKateIOM[indexPath.row].status == "Y" {
             cell.lblStatus.text = "Waiting Approval"
         } else {
             cell.lblStatus.text = "Approval"
@@ -88,8 +92,8 @@ extension ListPBJViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = StoryboardScene.PBJ.detailMenuPBJViewController.instantiate()
-        vc.noPermintaan = listPBJ[indexPath.row].nomor!
+        let vc = StoryboardScene.IOM.detailIOMViewController.instantiate()
+        vc.idIom = Int("\(ListKateIOM[indexPath.row].idIom ?? "")") ?? 0
         vc.type = "recommendation"
         self.navigationController?.pushViewController(vc, animated: true)
     }

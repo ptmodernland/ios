@@ -25,7 +25,14 @@ class Constants {
     static let LIST_MEMO = "/androidiom/list_memo.jsp" //history
     static let CANCEL_MEMO = "/androidiom/proses_cancel_memo.jsp"
     static let PROSES_APPROVE = "/androidiom/proses_approve.jsp"
+    static let LIST_KATEGORI_MEMO = "/androidiom/list_approve_kategori.jsp" //history
 
+    //Compare
+    static let LIST_COMPARE = "/androidiom/list_approve_compare.jsp" //waiting approval
+    static let GET_COMPARE = "/androidiom/get_compare.jsp" //detail
+    static let LIST_HISTORY_COMPARE = "/androidiom/list_compare.jsp" //history
+    static let CANCEL_COMPARE = "/androidiom/proses_cancel_compare.jsp"
+    static let PROSES_COMPARE = "/androidiom/proses_approve_compare.jsp"
     
     //PBJ
     static let LIST_PERMOHONAN = "/androidiom/list_approve_pbj.jsp" //waiting approval
@@ -39,6 +46,8 @@ class Constants {
     static let COUNTER_ALL = "/androidiom/counter_all.jsp"
     static let COUNTER_MEMO = "/androidiom/counter_memo.jsp"
     static let COUNTER_PBJ = "/androidiom/counter_permohonan.jsp"
+    static let COUNTER_COMPARE = "/androidiom/counter_compare.jsp"
+    static let COUNTER_KATEGORI = "/androidiom/counter_kategori.jsp"
 
     //REKOMENDASI
     static let LIST_HEAD = "/androidiom/get_head.jsp"

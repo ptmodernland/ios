@@ -16,16 +16,17 @@ class ListIOMViewController: BaseViewController {
     @IBOutlet weak var vEmptyState: UIView!
     
     let vm = IOMViewModel()
+    
     var listIOM = [ListIOM]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeRounded(view: btnBack)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
         getListIom()
+        makeRounded(view: btnBack)
     }
     
     func setupTableView() {
@@ -60,6 +61,8 @@ class ListIOMViewController: BaseViewController {
             Toast.show(message: failed, controller: self)
         })
     }
+  
+    
     
     @IBAction func backButtonTap(_ sender: Any) {
         back()
@@ -69,6 +72,7 @@ class ListIOMViewController: BaseViewController {
 
 extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //print(listIOM.count)
         return listIOM.count
     }
     
