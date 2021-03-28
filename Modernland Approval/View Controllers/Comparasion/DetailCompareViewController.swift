@@ -48,6 +48,7 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
             lblTitle.text = "Menu Approval"
             stackButton.isHidden = false
         }
+        btnBack.layer.cornerRadius = 6
     }
     
     override func viewWillAppear(_ animated: Bool) {

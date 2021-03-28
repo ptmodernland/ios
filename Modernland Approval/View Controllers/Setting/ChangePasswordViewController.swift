@@ -14,6 +14,7 @@ class ChangePasswordViewController: BaseViewController {
     @IBOutlet weak var tfConfirmPassword: UITextField!
     @IBOutlet weak var tfNewPin: UITextField!
     
+    
     @IBOutlet weak var btnEyeNewPassword: UIButton!
     @IBOutlet weak var btnEyeConfirmPassword: UIButton!
     @IBOutlet weak var btnEyeNewPin: UIButton!
@@ -29,6 +30,8 @@ class ChangePasswordViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfNewPin.keyboardType = .numberPad
+        btnBack.layer.cornerRadius = 6
     }
     
     override func viewWillAppear(_ animated: Bool) {

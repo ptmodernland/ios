@@ -213,7 +213,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-nG-qFm">
-                                <rect key="frame" x="20" y="167" width="374" height="174"/>
+                                <rect key="frame" x="20" y="167" width="374" height="162"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yM6-Xz-fLt">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="16.5"/>
@@ -295,11 +295,8 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="erj-u9-Tc4">
-                                        <rect key="frame" x="0.0" y="106" width="76" height="0.0"/>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="lastBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W7O-3o-e2F">
-                                        <rect key="frame" x="0.0" y="116" width="262" height="24"/>
+                                        <rect key="frame" x="0.0" y="106" width="262" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlO-ww-GZD">
                                                 <rect key="frame" x="0.0" y="7.5" width="130" height="16.5"/>
@@ -329,34 +326,24 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="lastBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ggx-Eg-roV">
-                                        <rect key="frame" x="0.0" y="150" width="327" height="24"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="lastBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="l9H-68-DX1">
+                                        <rect key="frame" x="0.0" y="140" width="305.5" height="22"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download File" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjd-XQ-y78">
-                                                <rect key="frame" x="0.0" y="7.5" width="130" height="16.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download File" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM0-iZ-TYn">
+                                                <rect key="frame" x="0.0" y="5.5" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="Auc-mG-n5V"/>
+                                                    <constraint firstAttribute="width" constant="130" id="I5r-vP-Utl"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8kX-EE-Lsc">
-                                                <rect key="frame" x="135" y="0.0" width="192" height="30"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="File-pengajuan.pdf">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66666666669999997" green="0.098039215690000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                <integer key="NSUnderline" value="1"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVo-bO-Gp6">
+                                                <rect key="frame" x="135" y="0.0" width="170.5" height="28"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                <state key="normal" title="File-pengajuan.pdf"/>
                                                 <connections>
-                                                    <action selector="pdfDownloadButtonTap:" destination="1El-ED-0cM" eventType="touchUpInside" id="FwC-Fd-J83"/>
+                                                    <action selector="pdfDownloadButtonTap:" destination="1El-ED-0cM" eventType="touchUpInside" id="uRU-RT-Kmh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -397,7 +384,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catatan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9x-r1-RwX">
-                                <rect key="frame" x="20" y="360" width="130" height="16.5"/>
+                                <rect key="frame" x="20" y="348" width="130" height="16.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="Qiy-1r-g2B"/>
                                 </constraints>
@@ -406,7 +393,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-Sk-fOl">
-                                <rect key="frame" x="150" y="351" width="244" height="128"/>
+                                <rect key="frame" x="150" y="339" width="244" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="7p4-uk-Z9u"/>
@@ -416,7 +403,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5e-q5-fLt">
-                                <rect key="frame" x="150" y="478" width="244" height="1"/>
+                                <rect key="frame" x="150" y="466" width="244" height="1"/>
                                 <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ciJ-Zh-IvC"/>
@@ -469,14 +456,14 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="CJQ-HJ-L68" id="D72-CC-CMq"/>
-                        <outlet property="btnFile" destination="8kX-EE-Lsc" id="5oZ-vM-aaB"/>
+                        <outlet property="btnFile" destination="aVo-bO-Gp6" id="w4I-F6-Jzt"/>
                         <outlet property="lblDate" destination="XVV-s8-aYG" id="LJr-bd-bRJ"/>
                         <outlet property="lblDepartemen" destination="8Gn-tC-h0h" id="deN-u3-leR"/>
                         <outlet property="lblNama" destination="SHh-yd-1Qx" id="soa-C7-HgM"/>
                         <outlet property="lblNomor" destination="9g2-TL-4yH" id="AAT-uh-Ut4"/>
                         <outlet property="lblTitle" destination="0JZ-aB-cl0" id="aIH-Us-qRc"/>
                         <outlet property="stackButton" destination="32f-ik-flG" id="aPQ-zU-zDb"/>
-                        <outlet property="stackPdf" destination="Ggx-Eg-roV" id="k95-8K-4yV"/>
+                        <outlet property="stackPdf" destination="l9H-68-DX1" id="fr8-hF-JKi"/>
                         <outlet property="textViewNotes" destination="qR0-Sk-fOl" id="o6w-jj-Rui"/>
                     </connections>
                 </viewController>

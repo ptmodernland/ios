@@ -33,6 +33,7 @@ class ListCategoryIOMViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnBack.layer.cornerRadius = 6
     }
     
     override func viewWillAppear(_ animated: Bool) {
