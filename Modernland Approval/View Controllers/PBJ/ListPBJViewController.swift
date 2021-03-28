@@ -89,7 +89,7 @@ extension ListPBJViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = StoryboardScene.PBJ.detailMenuPBJViewController.instantiate()
-        vc.noPermintaan = listPBJ[indexPath.row].nomor!
+        vc.nomorPermintaan = listPBJ[indexPath.row].nomor!
         vc.type = "recommendation"
         self.navigationController?.pushViewController(vc, animated: true)
     }

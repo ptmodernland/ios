@@ -16,16 +16,12 @@ struct DetailPBJ: Codable {
     let status: String?
     let koordinasi: String?
     let kategoriIom: String?
-    let namaUser: String?
-    let departemen: String?
     
     
     enum CodingKeys: String, CodingKey {
         case nomor = "no_permintaan"
         case tanggal = "tgl_permintaan"
-        case namaUser = "namaUser"
-        case departemen = "departemen"
-        case attachments = "attch_file"
+        case attachments = "attch_lampiran"
         case approve
         case status
         case koordinasi = "kordinasi"

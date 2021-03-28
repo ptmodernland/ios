@@ -84,14 +84,8 @@ extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if buttonTitleList[indexPath.row].contains("Waiting") {
-            let levelHead = UserDefaults().string(forKey: "level")
-            if levelHead == "shead" {
-                let vc = StoryboardScene.IOM.listCategoryIOMViewController.instantiate()
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else {
-                let vc = StoryboardScene.IOM.listIOMViewController.instantiate()
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+            let vc = StoryboardScene.IOM.listIOMViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         if buttonTitleList[indexPath.row].contains("History") {
             let vc = StoryboardScene.IOM.listHistoryIOMViewController.instantiate()

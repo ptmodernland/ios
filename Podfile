@@ -14,5 +14,4 @@ target 'Modernland Approval' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Messaging'
-  pod 'UITextView+Placeholder'
 end

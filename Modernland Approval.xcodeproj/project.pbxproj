@@ -7,23 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		634105FAF10ABF7C08CEB74F /* Pods_Modernland_Approval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285BA58006927C166BD1F137 /* Pods_Modernland_Approval.framework */; };
+		5CFC67C4B0184FB1ABA295A5 /* Pods_Modernland_Approval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1478060058AD113C29D95A6D /* Pods_Modernland_Approval.framework */; };
 		AE2AD04D2604909900B5BA01 /* PBJViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD04C2604909900B5BA01 /* PBJViewModel.swift */; };
 		AE2AD0502604953300B5BA01 /* CounterPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD04F2604953300B5BA01 /* CounterPBJ.swift */; };
 		AE2AD053260499B600B5BA01 /* ListPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD052260499B600B5BA01 /* ListPBJ.swift */; };
 		AE2AD0632604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD0622604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift */; };
-		AE7BCD57260F481300F990A1 /* ListCategoryIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7BCD56260F481300F990A1 /* ListCategoryIOMViewController.swift */; };
-		AE7BCD5A260F4A9300F990A1 /* CounterKategori.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7BCD59260F4A9300F990A1 /* CounterKategori.swift */; };
-		AE923F5A260D8376005F4FB8 /* ListCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F58260D8376005F4FB8 /* ListCompareViewController.swift */; };
-		AE923F5B260D8376005F4FB8 /* ComparasionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F59260D8376005F4FB8 /* ComparasionViewController.swift */; };
-		AE923F5E260D83AE005F4FB8 /* CompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F5D260D83AE005F4FB8 /* CompareViewModel.swift */; };
-		AE923F61260D83CB005F4FB8 /* CounterCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F60260D83CB005F4FB8 /* CounterCompare.swift */; };
-		AE923F64260D83DA005F4FB8 /* ListCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F63260D83DA005F4FB8 /* ListCompare.swift */; };
-		AE923F68260D8C74005F4FB8 /* DetailCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F67260D8C74005F4FB8 /* DetailCompareViewController.swift */; };
-		AE923F6F260DA95D005F4FB8 /* DetailCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F6E260DA95D005F4FB8 /* DetailCompare.swift */; };
-		AE923F72260DBE0E005F4FB8 /* ListHistoryCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F71260DBE0E005F4FB8 /* ListHistoryCompareViewController.swift */; };
-		AEBC0664261059BC008E0F72 /* ListKategoriIOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC0663261059BC008E0F72 /* ListKategoriIOM.swift */; };
-		AEBC0667261060E3008E0F72 /* ListKategoriIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC0666261060E3008E0F72 /* ListKategoriIOMViewController.swift */; };
 		AEE65E802604ACD700384E55 /* ListMenuPBJTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEE65E7F2604ACD700384E55 /* ListMenuPBJTableViewCell.xib */; };
 		AEE65E832604B26000384E55 /* DetailPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE65E822604B26000384E55 /* DetailPBJ.swift */; };
 		AEF189F52609DCEE00F6959E /* ListHistoryPBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF189F42609DCEE00F6959E /* ListHistoryPBJViewController.swift */; };
@@ -83,31 +71,20 @@
 		EEFDD0E725EBDA8C00B926BA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */; };
 		EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */; };
 		EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */; };
+		EEFDD0ED25EBDE3800B926BA /* ComparasionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */; };
 		EEFDD0EF25EBDE4000B926BA /* IOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */; };
 		EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */; };
 		EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2821F56438DAE6329C3045C2 /* Pods-Modernland Approval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.release.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.release.xcconfig"; sourceTree = "<group>"; };
-		285BA58006927C166BD1F137 /* Pods_Modernland_Approval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modernland_Approval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32D58A5D31E49A0DD38E88EC /* Pods-Modernland Approval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.debug.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.debug.xcconfig"; sourceTree = "<group>"; };
+		1478060058AD113C29D95A6D /* Pods_Modernland_Approval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modernland_Approval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C8F56AE0028920644C0F95 /* Pods-Modernland Approval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.release.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.release.xcconfig"; sourceTree = "<group>"; };
+		816FE9691F979CB1F0B5F1FE /* Pods-Modernland Approval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.debug.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2AD04C2604909900B5BA01 /* PBJViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBJViewModel.swift; sourceTree = "<group>"; };
 		AE2AD04F2604953300B5BA01 /* CounterPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPBJ.swift; sourceTree = "<group>"; };
 		AE2AD052260499B600B5BA01 /* ListPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPBJ.swift; sourceTree = "<group>"; };
 		AE2AD0622604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuPBJTableViewCell.swift; sourceTree = "<group>"; };
-		AE7BCD56260F481300F990A1 /* ListCategoryIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoryIOMViewController.swift; sourceTree = "<group>"; };
-		AE7BCD59260F4A9300F990A1 /* CounterKategori.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterKategori.swift; sourceTree = "<group>"; };
-		AE923F58260D8376005F4FB8 /* ListCompareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListCompareViewController.swift; path = ../../../../backup_ios/controller/Comparasion/ListCompareViewController.swift; sourceTree = "<group>"; };
-		AE923F59260D8376005F4FB8 /* ComparasionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComparasionViewController.swift; path = ../../../../backup_ios/controller/Comparasion/ComparasionViewController.swift; sourceTree = "<group>"; };
-		AE923F5D260D83AE005F4FB8 /* CompareViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompareViewModel.swift; path = "../../../backup_ios/View Model/CompareViewModel.swift"; sourceTree = "<group>"; };
-		AE923F60260D83CB005F4FB8 /* CounterCompare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CounterCompare.swift; path = ../../../backup_ios/Model/CounterCompare.swift; sourceTree = "<group>"; };
-		AE923F63260D83DA005F4FB8 /* ListCompare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListCompare.swift; path = ../../../backup_ios/Model/ListCompare.swift; sourceTree = "<group>"; };
-		AE923F67260D8C74005F4FB8 /* DetailCompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCompareViewController.swift; sourceTree = "<group>"; };
-		AE923F6E260DA95D005F4FB8 /* DetailCompare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCompare.swift; sourceTree = "<group>"; };
-		AE923F71260DBE0E005F4FB8 /* ListHistoryCompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryCompareViewController.swift; sourceTree = "<group>"; };
-		AEBC0663261059BC008E0F72 /* ListKategoriIOM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKategoriIOM.swift; sourceTree = "<group>"; };
-		AEBC0666261060E3008E0F72 /* ListKategoriIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKategoriIOMViewController.swift; sourceTree = "<group>"; };
 		AEE65E7F2604ACD700384E55 /* ListMenuPBJTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMenuPBJTableViewCell.xib; sourceTree = "<group>"; };
 		AEE65E822604B26000384E55 /* DetailPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPBJ.swift; sourceTree = "<group>"; };
 		AEF189F42609DCEE00F6959E /* ListHistoryPBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryPBJViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +146,7 @@
 		EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigationController.swift; sourceTree = "<group>"; };
 		EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparasionViewController.swift; sourceTree = "<group>"; };
 		EEFDD0EE25EBDE4000B926BA /* IOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMViewController.swift; sourceTree = "<group>"; };
 		EEFDD0F025EBDE4A00B926BA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				634105FAF10ABF7C08CEB74F /* Pods_Modernland_Approval.framework in Frameworks */,
+				5CFC67C4B0184FB1ABA295A5 /* Pods_Modernland_Approval.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,16 +167,16 @@
 		02940383D79C1E3D31C50C24 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				32D58A5D31E49A0DD38E88EC /* Pods-Modernland Approval.debug.xcconfig */,
-				2821F56438DAE6329C3045C2 /* Pods-Modernland Approval.release.xcconfig */,
+				816FE9691F979CB1F0B5F1FE /* Pods-Modernland Approval.debug.xcconfig */,
+				63C8F56AE0028920644C0F95 /* Pods-Modernland Approval.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		6D148ECB932F135096C4CBE4 /* Frameworks */ = {
+		7A8DDF3EF30B8AE92F2E3A28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				285BA58006927C166BD1F137 /* Pods_Modernland_Approval.framework */,
+				1478060058AD113C29D95A6D /* Pods_Modernland_Approval.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,17 +190,6 @@
 				AEF189F42609DCEE00F6959E /* ListHistoryPBJViewController.swift */,
 			);
 			path = PBJ;
-			sourceTree = "<group>";
-		};
-		AE923F55260D835E005F4FB8 /* Comparasion */ = {
-			isa = PBXGroup;
-			children = (
-				AE923F59260D8376005F4FB8 /* ComparasionViewController.swift */,
-				AE923F58260D8376005F4FB8 /* ListCompareViewController.swift */,
-				AE923F67260D8C74005F4FB8 /* DetailCompareViewController.swift */,
-				AE923F71260DBE0E005F4FB8 /* ListHistoryCompareViewController.swift */,
-			);
-			path = Comparasion;
 			sourceTree = "<group>";
 		};
 		EE9E62E4260C50F100EC5D00 /* Setting */ = {
@@ -243,8 +210,6 @@
 				EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */,
 				EE2E70C425FE03940000F2A5 /* ListRekomendasiIOMViewController.swift */,
 				EE2E70C625FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift */,
-				AE7BCD56260F481300F990A1 /* ListCategoryIOMViewController.swift */,
-				AEBC0666261060E3008E0F72 /* ListKategoriIOMViewController.swift */,
 			);
 			path = IOM;
 			sourceTree = "<group>";
@@ -288,7 +253,6 @@
 		EEF758CC25F887C8005568D9 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				AE923F5D260D83AE005F4FB8 /* CompareViewModel.swift */,
 				EEF758CE25F887F6005568D9 /* LoginViewModel.swift */,
 				EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */,
 				EEAD3EC725FDBBCC007D08A5 /* IOMViewModel.swift */,
@@ -300,8 +264,6 @@
 		EEF758CD25F887D3005568D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AE923F63260D83DA005F4FB8 /* ListCompare.swift */,
-				AE923F60260D83CB005F4FB8 /* CounterCompare.swift */,
 				EEF758C625F8820A005568D9 /* BaseResponse.swift */,
 				EEAD3EBF25FDABC8007D08A5 /* LoginSuccess.swift */,
 				EEAD3EC925FDBBFE007D08A5 /* ListIOM.swift */,
@@ -314,9 +276,6 @@
 				AE2AD04F2604953300B5BA01 /* CounterPBJ.swift */,
 				AE2AD052260499B600B5BA01 /* ListPBJ.swift */,
 				AEE65E822604B26000384E55 /* DetailPBJ.swift */,
-				AE923F6E260DA95D005F4FB8 /* DetailCompare.swift */,
-				AE7BCD59260F4A9300F990A1 /* CounterKategori.swift */,
-				AEBC0663261059BC008E0F72 /* ListKategoriIOM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,7 +287,7 @@
 				EEFDD0B725EBCD9300B926BA /* Modernland Approval */,
 				EEFDD0B625EBCD9300B926BA /* Products */,
 				02940383D79C1E3D31C50C24 /* Pods */,
-				6D148ECB932F135096C4CBE4 /* Frameworks */,
+				7A8DDF3EF30B8AE92F2E3A28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -378,7 +337,6 @@
 		EEFDD0D125EBCEB900B926BA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AE923F55260D835E005F4FB8 /* Comparasion */,
 				EE9E62E4260C50F100EC5D00 /* Setting */,
 				AE2AD04726048F2E00B5BA01 /* PBJ */,
 				EEAD3ECB25FDBE5F007D08A5 /* IOM */,
@@ -386,6 +344,7 @@
 				EEFDD0E625EBDA8C00B926BA /* DashboardViewController.swift */,
 				EEFDD0E825EBDABE00B926BA /* DashboardNavigationController.swift */,
 				EEFDD0EA25EBDD3700B926BA /* HomeViewController.swift */,
+				EEFDD0EC25EBDE3800B926BA /* ComparasionViewController.swift */,
 				EEFDD0F225EBE0E600B926BA /* BaseViewController.swift */,
 				EEAD3EC325FDB2FA007D08A5 /* SplashViewController.swift */,
 				EE2E70CA25FE06CB0000F2A5 /* WebViewViewController.swift */,
@@ -418,11 +377,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEFDD0C925EBCD9500B926BA /* Build configuration list for PBXNativeTarget "Modernland Approval" */;
 			buildPhases = (
-				651C50400B0413860E08AA7E /* [CP] Check Pods Manifest.lock */,
+				8ADA5319447563AB872357E9 /* [CP] Check Pods Manifest.lock */,
 				EEFDD0B125EBCD9300B926BA /* Sources */,
 				EEFDD0B225EBCD9300B926BA /* Frameworks */,
 				EEFDD0B325EBCD9300B926BA /* Resources */,
-				EF2A278DF65A81388757C2BA /* [CP] Embed Pods Frameworks */,
+				57B51C3D343B3C2C4F0DD06B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -495,7 +454,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		651C50400B0413860E08AA7E /* [CP] Check Pods Manifest.lock */ = {
+		57B51C3D343B3C2C4F0DD06B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8ADA5319447563AB872357E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -517,23 +493,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF2A278DF65A81388757C2BA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -545,22 +504,16 @@
 				EEF758D725F89CE6005568D9 /* Toast.swift in Sources */,
 				EECF43F025F550BC007447F1 /* ListPBJViewController.swift in Sources */,
 				EEAD3EC225FDAF09007D08A5 /* SettingViewModel.swift in Sources */,
-				AE7BCD5A260F4A9300F990A1 /* CounterKategori.swift in Sources */,
-				AE923F5E260D83AE005F4FB8 /* CompareViewModel.swift in Sources */,
 				AEF189F52609DCEE00F6959E /* ListHistoryPBJViewController.swift in Sources */,
 				EEFDD0D025EBCE7000B926BA /* Storyboards.swift in Sources */,
 				EEFDD0F325EBE0E600B926BA /* BaseViewController.swift in Sources */,
 				EECF43ED25F5322F007447F1 /* ListBoxCollectionViewCell.swift in Sources */,
 				AEE65E832604B26000384E55 /* DetailPBJ.swift in Sources */,
-				AE923F6F260DA95D005F4FB8 /* DetailCompare.swift in Sources */,
 				EE9E62E6260C511A00EC5D00 /* ChangePasswordViewController.swift in Sources */,
 				AE2AD0632604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift in Sources */,
 				EEF758C725F8820A005568D9 /* BaseResponse.swift in Sources */,
 				EECEB4E825FFC1230001416D /* CounterIOM.swift in Sources */,
-				AEBC0667261060E3008E0F72 /* ListKategoriIOMViewController.swift in Sources */,
-				AE7BCD57260F481300F990A1 /* ListCategoryIOMViewController.swift in Sources */,
 				EEAD3EC825FDBBCC007D08A5 /* IOMViewModel.swift in Sources */,
-				AE923F5A260D8376005F4FB8 /* ListCompareViewController.swift in Sources */,
 				EEF192BD25F72AFE003E62A6 /* DetailMenuPBJViewController.swift in Sources */,
 				EEFDD0B925EBCD9300B926BA /* AppDelegate.swift in Sources */,
 				EE2E70C125FDFBD00000F2A5 /* Status.swift in Sources */,
@@ -571,24 +524,19 @@
 				EE7B473926025522007D745E /* DetailKoordinasi.swift in Sources */,
 				EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */,
 				EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */,
-				AE923F61260D83CB005F4FB8 /* CounterCompare.swift in Sources */,
-				AE923F5B260D8376005F4FB8 /* ComparasionViewController.swift in Sources */,
-				AE923F72260DBE0E005F4FB8 /* ListHistoryCompareViewController.swift in Sources */,
 				EECEB4E325FFB0250001416D /* ListNameTableViewCell.swift in Sources */,
 				AE2AD0502604953300B5BA01 /* CounterPBJ.swift in Sources */,
 				EE2E70C325FE03830000F2A5 /* ListHistoryIOMViewController.swift in Sources */,
 				EE2E70C525FE03940000F2A5 /* ListRekomendasiIOMViewController.swift in Sources */,
 				EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */,
 				EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */,
+				EEFDD0ED25EBDE3800B926BA /* ComparasionViewController.swift in Sources */,
 				EEF758C525F87B72005568D9 /* ApiHelper.swift in Sources */,
-				AEBC0664261059BC008E0F72 /* ListKategoriIOM.swift in Sources */,
 				AE2AD04D2604909900B5BA01 /* PBJViewModel.swift in Sources */,
 				EE2E70C725FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift in Sources */,
-				AE923F68260D8C74005F4FB8 /* DetailCompareViewController.swift in Sources */,
 				EECF43E925F52BD1007447F1 /* PBJViewController.swift in Sources */,
 				EEF758CB25F88270005568D9 /* Constants.swift in Sources */,
 				EEAD3EC425FDB2FA007D08A5 /* SplashViewController.swift in Sources */,
-				AE923F64260D83DA005F4FB8 /* ListCompare.swift in Sources */,
 				EEAD3ECD25FDBE6F007D08A5 /* ListIOMViewController.swift in Sources */,
 				EECF43F325F5BFD5007447F1 /* ListMenuTableViewCell.swift in Sources */,
 				EEF192BA25F726A8003E62A6 /* ListMenu2TableViewCell.swift in Sources */,
@@ -734,7 +682,7 @@
 		};
 		EEFDD0CA25EBCD9500B926BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32D58A5D31E49A0DD38E88EC /* Pods-Modernland Approval.debug.xcconfig */;
+			baseConfigurationReference = 816FE9691F979CB1F0B5F1FE /* Pods-Modernland Approval.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -753,7 +701,7 @@
 		};
 		EEFDD0CB25EBCD9500B926BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2821F56438DAE6329C3045C2 /* Pods-Modernland Approval.release.xcconfig */;
+			baseConfigurationReference = 63C8F56AE0028920644C0F95 /* Pods-Modernland Approval.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -23,15 +23,6 @@ internal enum StoryboardScene {
         internal static let dashboardViewController = SceneType<DashboardViewController>(storyboard: Dashboard.self, identifier: "DashboardViewController")
     }
     
-    internal enum Comparasion: StoryboardType {
-        internal static let storyboardName = "Comparasion"
-
-        internal static let ListCompareViewController = SceneType<ListCompareViewController>(storyboard: Comparasion.self, identifier: "ListCompareViewController")
-        internal static let DetailCompareViewController = SceneType<DetailCompareViewController>(storyboard: Comparasion.self, identifier: "DetailCompareViewController")
-        internal static let ListHistoryCompareViewController = SceneType<ListHistoryCompareViewController>(storyboard: Comparasion.self, identifier: "ListHistoryCompareViewController")
-        
-    }
-    
     internal enum PBJ: StoryboardType {
         internal static let storyboardName = "PBJ"
         
@@ -56,11 +47,6 @@ internal enum StoryboardScene {
         internal static let listHeadKoordinasiViewController = SceneType<ListHeadKoordinasiViewController>(storyboard: IOM.self, identifier: "ListHeadKoordinasiViewController")
         
         internal static let listRekomendasiIOMViewController = SceneType<ListRekomendasiIOMViewController>(storyboard: IOM.self, identifier: "ListRekomendasiIOMViewController")
-        
-        internal static let listCategoryIOMViewController = SceneType<ListCategoryIOMViewController>(storyboard: IOM.self, identifier: "ListCategoryIOMViewController")
-        
-        internal static let listKategoriIOMViewController = SceneType<ListKategoriIOMViewController>(storyboard: IOM.self, identifier: "ListKategoriIOMViewController")
-        
     }
     
     internal enum Setting: StoryboardType {
