@@ -90,7 +90,7 @@ extension ListHistoryPBJViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = StoryboardScene.PBJ.detailMenuPBJViewController.instantiate()
-        vc.nomorPermintaan = listPBJ[indexPath.row].nomor!
+        vc.noPermintaan = listPBJ[indexPath.row].nomor!
         vc.type = "history"
         self.navigationController?.pushViewController(vc, animated: true)
     }

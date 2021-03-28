@@ -8,16 +8,15 @@
 
 import UIKit
 
-class ListPBJViewController: BaseViewController {
+class ListHistoryCompareViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
-    @IBOutlet weak var vEmpty: UIView!
+    @IBOutlet weak var vEmptyState: UIView!
     @IBOutlet weak var btnBack: UIButton!
     
-    let vm = PBJViewModel()
-    var listPBJ = [ListPBJ]()
-
+    let vm = CompareViewModel()
+    var ListCom = [ListCompare]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +38,16 @@ class ListPBJViewController: BaseViewController {
     
     func getListPbj() {
         showLoading()
-        vm.postListPbj(
+        vm.postListHistoryCompare(
             body: ["username": self.username ?? ""],
             onSuccess: { response in
                 self.hideLoading()
-                self.listPBJ.removeAll()
+                self.ListCom.removeAll()
                 for pbj in response {
-                    self.listPBJ.append(pbj)
+                    self.ListCom.append(pbj)
                 }
-                if self.listPBJ.isEmpty {
-                    self.vEmpty.isHidden = false
+                if self.ListCom.isEmpty {
+                    self.vEmptyState.isHidden = false
                 }
                 self.tvList.reloadData()
         }, onError: { error in
@@ -66,21 +65,29 @@ class ListPBJViewController: BaseViewController {
         back()
     }
 }
-extension ListPBJViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListHistoryCompareViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listPBJ.count
+        return ListCom.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListMenu", for: indexPath) as! ListMenu2TableViewCell
         
-        cell.lblNomor.text = listPBJ[indexPath.row].nomor
-        cell.lblSubTitle.text = listPBJ[indexPath.row].tglPermintaan
-        cell.lblTitle.text = "Permohonan Barang / Jasa"
+        let data = ListCom[indexPath.row].deskripsi!.data(using: .utf8)!
         
-        if listPBJ[indexPath.row].status == "Y" {
+        let attributedString = try? NSAttributedString(
+            data: data,
+            options: [.documentType: NSAttributedString.DocumentType.html],
+            documentAttributes: nil)
+        
+        cell.lblNomor.text = ListCom[indexPath.row].nomor
+        //cell.lblSubTitle.text = ListCom[indexPath.row].deskripsi
+        cell.lblSubTitle.attributedText = attributedString
+        cell.lblTitle.text = "COMPARASION"
+        
+        if ListCom[indexPath.row].status == "Y" {
             cell.lblStatus.text = "Waiting Approval"
-        } else {
+        }else {
             cell.lblStatus.text = "Approval"
         }
         
@@ -88,10 +95,11 @@ extension ListPBJViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = StoryboardScene.PBJ.detailMenuPBJViewController.instantiate()
-        vc.noPermintaan = listPBJ[indexPath.row].nomor!
-        vc.type = "recommendation"
+        let vc = StoryboardScene.Comparasion.DetailCompareViewController.instantiate()
+        vc.idCompare = Int("\(ListCom[indexPath.row].idCompare ?? "")") ?? 0
+        vc.type = "history"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
+

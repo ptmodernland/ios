@@ -5,7 +5,6 @@
 //  Created by Kevin Correzian on 26/03/21.
 //  Copyright © 2021 Modernland. All rights reserved.
 //
-
 import UIKit
 
 class ListCategoryIOMViewController: BaseViewController {
@@ -13,7 +12,9 @@ class ListCategoryIOMViewController: BaseViewController {
     @IBOutlet weak var cvList: UICollectionView!
     @IBOutlet weak var btnBack: UIButton!
     
-    var listKategori = [
+    let vm = IOMViewModel()
+    
+    let listKategori = [
         "Billionaire Club",
         "Finance Accounting",
         "Quantity Surveyor",
@@ -28,13 +29,40 @@ class ListCategoryIOMViewController: BaseViewController {
         "Permit Certification",
         "Promosi"
     ]
+    var notif = ["0","0","0","0","0","0","0","0","0","0","0","0","0"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
-        makeRounded(view: btnBack)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupCollectionView()
+        getCounter()
+    }
+    func getCounter() {
+        vm.getCounterKategori(onSuccess: { response in
+            self.notif.removeAll()
+            self.notif = ["0","0","0","0","0","0","0","0","0","0","0","0","0"]
+            self.notif[0] = response.totalmarketingclub ?? ""
+            self.notif[1] = response.totalfinance ?? ""
+            self.notif[2] = response.totalqs ?? ""
+            self.notif[3] = response.totaltown ?? ""
+            self.notif[4] = response.totalproject ?? ""
+            self.notif[5] = response.totalhrd ?? ""
+            self.notif[6] = response.totallegal ?? ""
+            self.notif[7] = response.totalpurchasing ?? ""
+            self.notif[8] = response.totalbdd ?? ""
+            self.notif[9] = response.totallanded ?? ""
+            self.notif[10] = response.totalmarketing ?? ""
+            self.notif[11] = response.totalpermit ?? ""
+            self.notif[12] = response.totalpromosi ?? ""
+            self.cvList.reloadData()
+        }, onError: { error in
+            print(error)
+        }, onFailed: { failed in
+            print(failed)
+        })
+    }
     
     func setupCollectionView() {
         cvList.delegate = self
@@ -61,12 +89,134 @@ extension ListCategoryIOMViewController: UICollectionViewDelegate, UICollectionV
         
         cell.lblTitle.text = listKategori[indexPath.row]
         
+        if notif[indexPath.row] == "0" {
+            cell.vCounter.isHidden = true
+        } else {
+            cell.vCounter.isHidden = false
+            cell.lblCounter.text = notif[indexPath.row]
+        }
+        
+        if cell.lblTitle.text!.contains("Billionaire") {
+            cell.ivTitle.image = UIImage(named: "marketing_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Finance") {
+            cell.ivTitle.image = UIImage(named: "finance_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Quantity") {
+            cell.ivTitle.image = UIImage(named: "qs_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Town") {
+            cell.ivTitle.image = UIImage(named: "town_management_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Technical") {
+            cell.ivTitle.image = UIImage(named: "project_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Human") {
+            cell.ivTitle.image = UIImage(named: "hrd_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Legal") {
+            cell.ivTitle.image = UIImage(named: "legal_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Purchasing") {
+            cell.ivTitle.image = UIImage(named: "purchasing_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Business") {
+            cell.ivTitle.image = UIImage(named: "bdd_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Landed") {
+            cell.ivTitle.image = UIImage(named: "landed_project_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Marketing") {
+            cell.ivTitle.image = UIImage(named: "marketing_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Permit") {
+            cell.ivTitle.image = UIImage(named: "permit_sertification_andro")
+            cell.vContent.backgroundColor = .white
+        }
+        if cell.lblTitle.text!.contains("Promosi") {
+            cell.ivTitle.image = UIImage(named: "promosi_andro")
+            cell.vContent.backgroundColor = .white
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = StoryboardScene.IOM.listIOMViewController.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+        if listKategori[indexPath.row].contains("Billionaire") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "1"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Finance") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "2"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Quantity") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "3"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Town") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "4"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Technical") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "5"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Human") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "6"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Legal") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "7"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Purchasing") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "8"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Business") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "9"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Landed") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "10"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Marketing") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "11"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Permit") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "12"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if listKategori[indexPath.row].contains("Promosi") {
+            let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
+            vc.divisi_id = "13"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     

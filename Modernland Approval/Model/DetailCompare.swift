@@ -8,28 +8,32 @@
 
 import Foundation
 
-struct DetailPBJ: Codable {
+struct DetailCompare: Codable {
     let nomor: String?
     let tanggal: String?
-    let attachments: String?
+    let attach: String?
     let approve: String?
     let status: String?
-    let koordinasi: String?
-    let kategoriIom: String?
-    let namaUser: String?
-    let departemen: String?
+    let noRef: String?
+    let deptUser: String?
+    let descCompare: String?
+    let advancePayment: String?
+    let progresPayment: String?
+    let pajakReklame: String?
     
     
     enum CodingKeys: String, CodingKey {
-        case nomor = "no_permintaan"
-        case tanggal = "tgl_permintaan"
-        case namaUser = "namaUser"
-        case departemen = "departemen"
-        case attachments = "attch_file"
+        case nomor = "no_compare"
+        case tanggal = "compare_date"
+        case attach = "attch_lampiran"
         case approve
         case status
-        case koordinasi = "kordinasi"
-        case kategoriIom = "kategori_iom"
+        case noRef = "no_ref"
+        case deptUser = "dept_user"
+        case descCompare = "desc_compare"
+        case advancePayment = "advance_payment"
+        case progresPayment = "progres_payment"
+        case pajakReklame = "pajak_reklame"
     }
 }
 

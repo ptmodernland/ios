@@ -166,4 +166,30 @@ class IOMViewModel {
             onFailed: { failed in onFailed("\(failed)") }
         )
     }
+
+    func getCounterKategori(onSuccess: @escaping (CounterKateori) -> Void,
+                    onError: @escaping (String) -> Void,
+                    onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequestList(
+            url: Constants.BASE_URL+Constants.COUNTER_KATEGORI+"?username=\(username)",
+            body: ["":""],
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
+
+    
+    func postListKategoriIom(divisiID: String,
+                     onSuccess: @escaping ([ListKategoriIOM]) -> Void,
+                     onError: @escaping (String) -> Void,
+                     onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequestList(
+            url: Constants.BASE_URL+Constants.LIST_KATEGORI_MEMO+"?username=\(username)&divisi_id=\(divisiID)",
+            body: ["":""],
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
 }
