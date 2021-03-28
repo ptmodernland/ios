@@ -47,6 +47,8 @@ internal enum StoryboardScene {
         internal static let listHeadKoordinasiViewController = SceneType<ListHeadKoordinasiViewController>(storyboard: IOM.self, identifier: "ListHeadKoordinasiViewController")
         
         internal static let listRekomendasiIOMViewController = SceneType<ListRekomendasiIOMViewController>(storyboard: IOM.self, identifier: "ListRekomendasiIOMViewController")
+        
+        internal static let listCategoryIOMViewController = SceneType<ListCategoryIOMViewController>(storyboard: IOM.self, identifier: "ListCategoryIOMViewController")
     }
     
     internal enum Setting: StoryboardType {
