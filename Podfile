@@ -10,5 +10,8 @@ target 'Modernland Approval' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'netfox'
   pod 'JGProgressHUD'
-
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Messaging'
 end

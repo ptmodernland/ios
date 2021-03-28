@@ -8,6 +8,7 @@
 
 import UIKit
 import JGProgressHUD
+import SystemConfiguration.CaptiveNetwork
 
 class BaseViewController: UIViewController {
     var delegate = UIGestureRecognizerDelegate?.self
@@ -15,6 +16,7 @@ class BaseViewController: UIViewController {
     var swipeBackEnabled: Bool = true
     let refreshControl = UIRefreshControl()
     let username = UserDefaults().string(forKey: "username")
+    let id_user = UserDefaults().string(forKey: "idUser")
     let hud = JGProgressHUD()
 
     open var rootViewController: UIViewController? {
@@ -32,6 +34,7 @@ class BaseViewController: UIViewController {
         
         onViewLoaded()
     }
+    
     func onViewLoaded() {}
     override func viewDidAppear(_ animated: Bool) {
         
@@ -53,6 +56,14 @@ class BaseViewController: UIViewController {
     
     func onViewDisappeared() {}
     
+    func setupEmptyDataList(tableView: UITableView) {
+        let emptyNib = UINib.init(nibName: "EmptyStateTableViewCell", bundle: nil)
+        tableView.register(emptyNib, forCellReuseIdentifier: "emptyCell")
+    }
+    
+    func makeRounded(view: UIView) {
+        view.layer.cornerRadius = view.frame.size.height / 2
+    }
     // MARK: - Navigation
     
     func back() {
@@ -119,6 +130,34 @@ class BaseViewController: UIViewController {
             toastLabel.removeFromSuperview()
         })
     }
+    
+    func getIPAddress() -> String {
+                var address: String = ""
+            var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
+                if getifaddrs(&ifaddr) == 0 {
+                    var ptr = ifaddr
+                    while ptr != nil {
+                        defer { ptr = ptr?.pointee.ifa_next }
+                        
+                        let interface = ptr?.pointee
+                        let addrFamily = interface?.ifa_addr.pointee.sa_family
+                        if addrFamily == UInt8(AF_INET) || addrFamily == UInt8(AF_INET6) {
+                            
+                            let name: String = String(cString: (interface?.ifa_name)!)
+                            if  name == "en0" || name == "pdp_ip0" {
+                                print(name)
+                                var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+                                getnameinfo(interface?.ifa_addr, socklen_t((interface?.ifa_addr.pointee.sa_len)!), &hostname, socklen_t(hostname.count), nil, socklen_t(0), NI_NUMERICHOST)
+                                address = String(cString: hostname)
+                                print(address)
+                            }
+                        }
+                    }
+                    freeifaddrs(ifaddr)
+                }
+                 return address
+            }
+    
 }
 
 extension BaseViewController: UIGestureRecognizerDelegate {

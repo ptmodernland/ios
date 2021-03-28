@@ -12,6 +12,8 @@ class ListHistoryIOMViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
+    @IBOutlet weak var vEmpty: UIView!
+    @IBOutlet weak var btnBack: UIButton!
     
     let vm = IOMViewModel()
     var listIOM = [ListIOM]()
@@ -23,6 +25,7 @@ class ListHistoryIOMViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
         getListIom()
+        makeRounded(view: btnBack)
     }
     
     func setupTableView() {
@@ -43,6 +46,9 @@ class ListHistoryIOMViewController: BaseViewController {
                 for iom in response {
                     self.listIOM.append(iom)
                 }
+                if self.listIOM.isEmpty {
+                    self.vEmpty.isHidden = false
+                }
                 self.tvList.reloadData()
         }, onError: { error in
             self.hideLoading()
@@ -53,6 +59,10 @@ class ListHistoryIOMViewController: BaseViewController {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+    }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        back()
     }
 }
 extension ListHistoryIOMViewController: UITableViewDelegate, UITableViewDataSource {
@@ -67,10 +77,10 @@ extension ListHistoryIOMViewController: UITableViewDelegate, UITableViewDataSour
         cell.lblTitle.text = listIOM[indexPath.row].perihal
         cell.lblSubTitle.text = listIOM[indexPath.row].approve
         
-        if listIOM[indexPath.row].status == "T" {
+        if listIOM[indexPath.row].status == "Y" {
             cell.lblStatus.text = "Waiting Approval"
         } else {
-            cell.lblStatus.text = "Waiting Approval"
+            cell.lblStatus.text = "Approval"
         }
         
         return cell

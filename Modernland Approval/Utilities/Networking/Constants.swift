@@ -17,6 +17,7 @@ class Constants {
     //USER
     static let LOGIN = "/androidiom/proses_login.jsp"
     static let LOGOUT = "/androidiom/proses_logout.jsp"
+    static let CHANGE_PASSWORD = "/androidiom/proses_change_password.jsp"
 
     //IOM
     static let LIST_APPROVAL = "/androidiom/list_approve.jsp" //waiting approval
@@ -25,14 +26,25 @@ class Constants {
     static let CANCEL_MEMO = "/androidiom/proses_cancel_memo.jsp"
     static let PROSES_APPROVE = "/androidiom/proses_approve.jsp"
 
+    
+    //PBJ
+    static let LIST_PERMOHONAN = "/androidiom/list_approve_pbj.jsp" //waiting approval
+    static let GET_PBJ = "/androidiom/get_permohonan.jsp" //detail
+    static let LIST_PBJ = "/androidiom/list_pbj.jsp" //history
+    static let CANCEL_PBJ = "/androidiom/proses_cancel_pbj.jsp"
+    static let PROSES_PBJ = "/androidiom/proses_approve_pbj.jsp"
+    
+    
     //COUNTER
     static let COUNTER_ALL = "/androidiom/counter_all.jsp"
     static let COUNTER_MEMO = "/androidiom/counter_memo.jsp"
+    static let COUNTER_PBJ = "/androidiom/counter_permohonan.jsp"
 
     //REKOMENDASI
     static let LIST_HEAD = "/androidiom/get_head.jsp"
     static let PROSES_KOORDINASI = "/androidiom/proses_kordinasi.jsp"
     static let LIST_KOORDINASI = "/androidiom/list_kordinasi.jsp"
+    static let GET_KOORDINASI = "/androidiom/get_kordinasi.jsp"
     static let PROSES_APPROVE_KOORDINASI = "/androidiom/proses_approve_kordinasi.jsp"
     static let PROSES_CANCEL_KOORDINASI = "/androidiom/proses_cancel_kordinasi.jsp"
 }

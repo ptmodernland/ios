@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,8 +27,8 @@
                                     <constraint firstAttribute="height" constant="65" id="nTz-QP-w0k"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evb-80-GlG">
-                                <rect key="frame" x="10" y="122.5" width="156" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="evb-80-GlG">
+                                <rect key="frame" x="2" y="134.5" width="172" height="33.5"/>
                                 <string key="text">History Approval 
 for IOM</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -57,23 +58,23 @@ for IOM</string>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mqi-L5-wvy" firstAttribute="centerX" secondItem="jQT-NR-e7c" secondAttribute="centerX" id="3ph-v4-DT2"/>
-                            <constraint firstAttribute="trailing" secondItem="evb-80-GlG" secondAttribute="trailing" constant="10" id="BKr-WZ-9Wu"/>
-                            <constraint firstItem="evb-80-GlG" firstAttribute="leading" secondItem="jQT-NR-e7c" secondAttribute="leading" constant="10" id="TAn-Wt-SzF"/>
+                            <constraint firstAttribute="trailing" secondItem="evb-80-GlG" secondAttribute="trailing" constant="2" id="BKr-WZ-9Wu"/>
+                            <constraint firstItem="evb-80-GlG" firstAttribute="leading" secondItem="jQT-NR-e7c" secondAttribute="leading" constant="2" id="TAn-Wt-SzF"/>
                             <constraint firstItem="Mqi-L5-wvy" firstAttribute="centerY" secondItem="jQT-NR-e7c" secondAttribute="centerY" multiplier="0.7" id="V35-bV-2Ln"/>
-                            <constraint firstAttribute="bottom" secondItem="evb-80-GlG" secondAttribute="bottom" constant="20" id="VoQ-Jj-Eab"/>
+                            <constraint firstAttribute="bottom" secondItem="evb-80-GlG" secondAttribute="bottom" constant="8" id="VoQ-Jj-Eab"/>
                             <constraint firstItem="kbA-HD-8id" firstAttribute="top" secondItem="jQT-NR-e7c" secondAttribute="top" constant="-12" id="iTI-zj-TC0"/>
                             <constraint firstAttribute="trailing" secondItem="kbA-HD-8id" secondAttribute="trailing" constant="-12" id="v6x-DU-Cit"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="jQT-NR-e7c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="VfB-IW-m2b"/>
                 <constraint firstAttribute="bottom" secondItem="jQT-NR-e7c" secondAttribute="bottom" constant="12" id="iwo-eU-2z9"/>
                 <constraint firstItem="jQT-NR-e7c" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="jTd-rB-O37"/>
                 <constraint firstAttribute="trailing" secondItem="jQT-NR-e7c" secondAttribute="trailing" constant="12" id="s26-lB-XmJ"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="168" height="162"/>
             <connections>
                 <outlet property="ivTitle" destination="Mqi-L5-wvy" id="fxQ-Pz-gZB"/>

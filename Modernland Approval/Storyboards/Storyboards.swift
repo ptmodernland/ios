@@ -30,6 +30,7 @@ internal enum StoryboardScene {
         
         internal static let detailMenuPBJViewController = SceneType<DetailMenuPBJViewController>(storyboard: PBJ.self, identifier: "DetailMenuPBJViewController")
         
+        internal static let listHistoryPBJViewController = SceneType<ListHistoryPBJViewController>(storyboard: PBJ.self, identifier: "ListHistoryPBJViewController")
     }
     
     internal enum IOM: StoryboardType {
@@ -46,15 +47,22 @@ internal enum StoryboardScene {
         internal static let listHeadKoordinasiViewController = SceneType<ListHeadKoordinasiViewController>(storyboard: IOM.self, identifier: "ListHeadKoordinasiViewController")
         
         internal static let listRekomendasiIOMViewController = SceneType<ListRekomendasiIOMViewController>(storyboard: IOM.self, identifier: "ListRekomendasiIOMViewController")
-
-
+        
+        internal static let listCategoryIOMViewController = SceneType<ListCategoryIOMViewController>(storyboard: IOM.self, identifier: "ListCategoryIOMViewController")
+    }
+    
+    internal enum Setting: StoryboardType {
+        internal static let storyboardName = "Setting"
+        
+        internal static let settingViewController = SceneType<SettingViewController>(storyboard: Setting.self, identifier: "SettingViewController")
+        
+        internal static let changePasswordViewController = SceneType<ChangePasswordViewController>(storyboard: Setting.self, identifier: "ChangePasswordViewController")
     }
     
     internal enum WebView: StoryboardType {
         internal static let storyboardName = "WebView"
         
         internal static let webViewViewController = SceneType<WebViewViewController>(storyboard: WebView.self, identifier: "WebViewViewController")
-        
     }
 }
 

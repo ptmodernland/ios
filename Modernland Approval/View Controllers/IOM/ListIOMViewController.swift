@@ -12,12 +12,15 @@ class ListIOMViewController: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var vEmptyState: UIView!
     
     let vm = IOMViewModel()
     var listIOM = [ListIOM]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeRounded(view: btnBack)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +46,9 @@ class ListIOMViewController: BaseViewController {
                 for iom in response {
                     self.listIOM.append(iom)
                 }
+                if self.listIOM.isEmpty {
+                    self.vEmptyState.isHidden = false
+                }
                 self.tvList.reloadData()
         }, onError: { error in
             self.hideLoading()
@@ -54,7 +60,13 @@ class ListIOMViewController: BaseViewController {
             Toast.show(message: failed, controller: self)
         })
     }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        back()
+    }
+    
 }
+
 extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listIOM.count
@@ -67,10 +79,10 @@ extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lblTitle.text = listIOM[indexPath.row].perihal
         cell.lblSubTitle.text = listIOM[indexPath.row].approve
         
-        if listIOM[indexPath.row].status == "T" {
+        if listIOM[indexPath.row].status == "Y" {
             cell.lblStatus.text = "Waiting Approval"
         } else {
-            cell.lblStatus.text = "Waiting Approval"
+            cell.lblStatus.text = "Approval"
         }
         
         return cell

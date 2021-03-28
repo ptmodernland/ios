@@ -1,21 +1,23 @@
 //
-//  ListRekomendasiIOMViewController.swift
+//  ListPBJViewController.swift
 //  Modernland Approval
 //
-//  Created by Kevin Correzian on 14/03/21.
+//  Created by Kevin Correzian on 08/03/21.
 //  Copyright © 2021 Modernland. All rights reserved.
 //
 
 import UIKit
 
-class ListRekomendasiIOMViewController: BaseViewController {
+class ListHistoryPBJViewController: BaseViewController {
     
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tvList: UITableView!
-    @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var vEmpty: UIView!
+    @IBOutlet weak var btnBack: UIButton!
     
-    let vm = IOMViewModel()
-    var listKoordinasi = [ListKoordinasi]()
+    let vm = PBJViewModel()
+    var listPBJ = [ListPBJ]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,7 @@ class ListRekomendasiIOMViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
-        getListIom()
+        getListPbj()
         makeRounded(view: btnBack)
     }
     
@@ -35,17 +37,17 @@ class ListRekomendasiIOMViewController: BaseViewController {
         tvList.register(nearestNib, forCellReuseIdentifier: "ListMenu")
     }
     
-    func getListIom() {
+    func getListPbj() {
         showLoading()
-        vm.listKoordinasi(
+        vm.postListHistoryPbj(
             body: ["username": self.username ?? ""],
             onSuccess: { response in
                 self.hideLoading()
-                self.listKoordinasi.removeAll()
-                for koordinasi in response {
-                    self.listKoordinasi.append(koordinasi)
+                self.listPBJ.removeAll()
+                for pbj in response {
+                    self.listPBJ.append(pbj)
                 }
-                if self.listKoordinasi.isEmpty {
+                if self.listPBJ.isEmpty {
                     self.vEmpty.isHidden = false
                 }
                 self.tvList.reloadData()
@@ -63,34 +65,33 @@ class ListRekomendasiIOMViewController: BaseViewController {
     @IBAction func backButtonTap(_ sender: Any) {
         back()
     }
+    
 }
-extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListHistoryPBJViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listKoordinasi.count
+        return listPBJ.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListMenu", for: indexPath) as! ListMenu2TableViewCell
         
-        cell.lblNomor.text = listKoordinasi[indexPath.row].nomor
-        cell.lblTitle.text = listKoordinasi[indexPath.row].perihal
-        cell.lblSubTitle.text = "Dari : \(listKoordinasi[indexPath.row].approve ?? "") | Kepada : \(listKoordinasi[indexPath.row].koordinasi ?? "")"
+        cell.lblNomor.text = listPBJ[indexPath.row].nomor
+        cell.lblSubTitle.text = listPBJ[indexPath.row].tglPermintaan
+        cell.lblTitle.text = "Permohonan Barang / Jasa"
         
-        if listKoordinasi[indexPath.row].statusKor == "T" {
+        if listPBJ[indexPath.row].status == "Y" {
             cell.lblStatus.text = "Waiting Approval"
-        } else {
-            cell.lblStatus.text = "Waiting Approval"
+        }else {
+            cell.lblStatus.text = "Approval"
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = StoryboardScene.IOM.detailIOMViewController.instantiate()
-        vc.idIom = Int("\(listKoordinasi[indexPath.row].idIom ?? "")") ?? 0
-        vc.type = "rekomendasi"
-        vc.nomorMemo = listKoordinasi[indexPath.row].nomor ?? ""
-        vc.idKoordinasi = listKoordinasi[indexPath.row].idKordinasi ?? ""
+        let vc = StoryboardScene.PBJ.detailMenuPBJViewController.instantiate()
+        vc.nomorPermintaan = listPBJ[indexPath.row].nomor!
+        vc.type = "history"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

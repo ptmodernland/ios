@@ -12,9 +12,12 @@ class PBJViewController: BaseViewController {
     
     @IBOutlet weak var cvList: UICollectionView!
     
+    let vm = PBJViewModel()
     let buttonTitleList = ["Waiting Approval for PBJ",
                            "History Approval for PBJ",
-                           "List Recommendation"]
+                           //"List Recommendation"
+                            ]
+    var notif = ["0","0"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,7 @@ class PBJViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupCollectionView()
+        getCounter()
     }
     
     func setupCollectionView() {
@@ -32,6 +36,20 @@ class PBJViewController: BaseViewController {
         let nearestNib = UINib.init(nibName: "ListBoxCollectionViewCell", bundle: nil)
         cvList.register(nearestNib, forCellWithReuseIdentifier: "ListBox")
         cvList.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+    }
+    
+    func getCounter() {
+        vm.getCounter(onSuccess: { response in
+            self.notif.removeAll()
+            self.notif = ["0","0","0"]
+            self.notif[0] = response.total ?? ""
+            self.notif[1] = response.totalKoordinasi ?? ""
+            self.cvList.reloadData()
+        }, onError: { error in
+            print(error)
+        }, onFailed: { failed in
+            print(failed)
+        })
     }
     
 }
@@ -45,15 +63,23 @@ extension PBJViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListBox", for: indexPath) as! ListBoxCollectionViewCell
         
         cell.lblTitle.text = buttonTitleList[indexPath.row]
+        
+        if notif[indexPath.row] == "0" {
+            cell.vCounter.isHidden = true
+        } else {
+            cell.vCounter.isHidden = false
+            cell.lblCounter.text = notif[indexPath.row]
+        }
+        
         if cell.lblTitle.text!.contains("Waiting") {
             cell.ivTitle.image = UIImage(named: "imgWaiting")
         }
         if cell.lblTitle.text!.contains("History") {
             cell.ivTitle.image = UIImage(named: "imgFolder")
         }
-        if cell.lblTitle.text!.contains("Recommendation") {
+        /*if cell.lblTitle.text!.contains("Recommendation") {
             cell.ivTitle.image = UIImage(named: "imgCandidates")
-        }
+        }*/
         return cell
     }
     
@@ -63,11 +89,12 @@ extension PBJViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if buttonTitleList[indexPath.row].contains("History") {
-            print("histori")
+            let vc = StoryboardScene.PBJ.listHistoryPBJViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        if buttonTitleList[indexPath.row].contains("Recommendation") {
+        /*if buttonTitleList[indexPath.row].contains("Recommendation") {
             print("rekomendasi")
-        }
+        }*/
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

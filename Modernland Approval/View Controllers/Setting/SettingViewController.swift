@@ -50,6 +50,11 @@ class SettingViewController: BaseViewController {
         })
     }
     
+    @IBAction func changePasswordButtonTap(_ sender: Any) {
+        let vc = StoryboardScene.Setting.changePasswordViewController.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func logoutButtonTap(_ sender: Any) {
         let alert = UIAlertController(title: "Confirmation", message: "Are you sure to logout?", preferredStyle: UIAlertController.Style.alert)
 
