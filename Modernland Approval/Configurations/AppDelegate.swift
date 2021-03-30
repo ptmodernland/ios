@@ -95,40 +95,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
+        
         if let targetValue = userInfo["target"] as? String
         {
-            coordinateToSomeVC(targetValue: targetValue)
+            coordinateToSomeVC(targetValue: targetValue, idIom: userInfo["idnya"] as? String ?? "")
         }
         completionHandler()
     }
     
-    private func coordinateToSomeVC(targetValue : String) {
+    private func coordinateToSomeVC(targetValue: String, idIom : String) {
         guard let window = UIApplication.shared.keyWindow else { return }
         
-        var storyboard = UIStoryboard(name: "Comparasion", bundle: nil)
-        var yourVC = storyboard.instantiateViewController(identifier: "ListCompareViewController")
+        //var storyboard = UIStoryboard(name: "Comparasion", bundle: nil)
+        //var yourVC = storyboard.instantiateViewController(identifier: "ListCompareViewController")
         if(targetValue == "iom"){
             let levelHead = UserDefaults().string(forKey: "level")
             if levelHead == "shead" {
-                storyboard = UIStoryboard(name: "IOM", bundle: nil)
-                yourVC = storyboard.instantiateViewController(identifier: "ListCategoryIOMViewController")
-                yourVC.value(forKey: <#T##String#>)
+                //storyboard = UIStoryboard(name: "IOM", bundle: nil)
+                let VC = StoryboardScene.IOM.detailIOMViewController.instantiate()
+                VC.idIom = Int(idIom) ?? 0
+                VC.fromPushNotif = true
+                let navController = UINavigationController(rootViewController: VC)
+                navController.setNavigationBarHidden(true, animated: true)
+//                navController.modalPresentationStyle = .fullScreen
+                window.rootViewController = navController
+//                window.makeKeyAndVisible()
             } else {
-                storyboard = UIStoryboard(name: "IOM", bundle: nil)
-                yourVC = storyboard.instantiateViewController(identifier: "ListIOMViewController")
+                let VC = StoryboardScene.IOM.listIOMViewController.instantiate()
+                let navController = UINavigationController(rootViewController: VC)
+                navController.setNavigationBarHidden(true, animated: true)
+//                navController.modalPresentationStyle = .fullScreen
+                window.rootViewController = navController
+//                window.makeKeyAndVisible()
             }
              //storyboard = UIStoryboard(name: "IOM", bundle: nil)
              //yourVC = storyboard.instantiateViewController(identifier: "IOMViewController")
         } else if(targetValue == "pbj"){
-             storyboard = UIStoryboard(name: "PBJ", bundle: nil)
-             yourVC = storyboard.instantiateViewController(identifier: "ListPBJViewController")
+            let VC = StoryboardScene.PBJ.listPBJViewController.instantiate()
+            let navController = UINavigationController(rootViewController: VC)
+            navController.setNavigationBarHidden(true, animated: true)
+//                navController.modalPresentationStyle = .fullScreen
+            window.rootViewController = navController
+//            window.makeKeyAndVisible()
         }
-        let navController = UINavigationController(rootViewController: yourVC)
-        navController.modalPresentationStyle = .fullScreen
         
-        // you can assign your vc directly or push it in navigation stack as follows:
-        window.rootViewController = navController
-        window.makeKeyAndVisible()
     }
     
     func application(_ xapplication: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

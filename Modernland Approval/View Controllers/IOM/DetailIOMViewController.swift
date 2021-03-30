@@ -22,6 +22,9 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
     var nomorMemo = ""
     var idKoordinasi = ""
     var pdfDownloaded = false
+    
+    var fromPushNotif = false
+    
     lazy var previewItem = NSURL()
     
     @IBOutlet weak var lblRecipient: UILabel!
@@ -336,7 +339,13 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
-        back()
+        if fromPushNotif == true {
+            goToHome()
+        }
+        else{
+            back()
+        }
+        
     }
     
 }
