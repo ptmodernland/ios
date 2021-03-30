@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     var window: UIWindow?
     var deviceTokenString=""
+    let gcmMessageIDKey = "gcm.message_id"
     weak var viewController: LoginViewController?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
@@ -49,42 +50,88 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
-     func application(_ application: UIApplication,
+    func application(_ application: UIApplication,
                      didReceiveRegistrationToken deviceToken: Data) {
         Messaging.messaging().token { token, error in
-          if let error = error {
-            print("Error fetching FCM registration token: \(error)")
-          } else if let token = token {
-            print("FCM registration token: \(token)")
-          }
+            if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+                print("FCM registration token: \(token)")
+            }
         }
     }
-
-
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-      print("Firebase registration token: \(String(describing: fcmToken))")
-
-      let dataDict:[String: String] = ["token": fcmToken ?? ""]
-      NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-      //viewController?.loadRequest(for: fcmToken ?? "")
-        deviceTokenString = deviceToken.map{String(format: "%02,2hhx", $0)}.joined()
-        UserDefaults.standard.set(fcmToken ?? "", forKey: "fcmToken")
-      // TODO: If necessary send token to application server.
-      // Note: This callback is fired at each app startup and whenever a new token is generated.
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print(userInfo)
+        
+        completionHandler(UIBackgroundFetchResult.newData)
     }
     
-  
+    
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("Firebase registration token: \(String(describing: fcmToken))")
+        
+        let dataDict:[String: String] = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        //viewController?.loadRequest(for: fcmToken ?? "")
+        UserDefaults.standard.set(fcmToken ?? "", forKey: "fcmToken")
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+    
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         _ = notification.request.content.userInfo
         completionHandler([[.alert, .sound]])
     }
     
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        _ = response.notification.request.content.userInfo
+        let userInfo = response.notification.request.content.userInfo
+        if let targetValue = userInfo["target"] as? String
+        {
+            coordinateToSomeVC(targetValue: targetValue)
+        }
         completionHandler()
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    private func coordinateToSomeVC(targetValue : String) {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        
+        var storyboard = UIStoryboard(name: "Comparasion", bundle: nil)
+        var yourVC = storyboard.instantiateViewController(identifier: "ListCompareViewController")
+        if(targetValue == "iom"){
+            let levelHead = UserDefaults().string(forKey: "level")
+            if levelHead == "shead" {
+                storyboard = UIStoryboard(name: "IOM", bundle: nil)
+                yourVC = storyboard.instantiateViewController(identifier: "ListCategoryIOMViewController")
+                yourVC.value(forKey: <#T##String#>)
+            } else {
+                storyboard = UIStoryboard(name: "IOM", bundle: nil)
+                yourVC = storyboard.instantiateViewController(identifier: "ListIOMViewController")
+            }
+             //storyboard = UIStoryboard(name: "IOM", bundle: nil)
+             //yourVC = storyboard.instantiateViewController(identifier: "IOMViewController")
+        } else if(targetValue == "pbj"){
+             storyboard = UIStoryboard(name: "PBJ", bundle: nil)
+             yourVC = storyboard.instantiateViewController(identifier: "ListPBJViewController")
+        }
+        let navController = UINavigationController(rootViewController: yourVC)
+        navController.modalPresentationStyle = .fullScreen
+        
+        // you can assign your vc directly or push it in navigation stack as follows:
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+    }
+    
+    func application(_ xapplication: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
     
