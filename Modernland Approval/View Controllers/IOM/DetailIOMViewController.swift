@@ -152,6 +152,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
     func apiRejectIom(pin: String) {
@@ -175,6 +176,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
     func apiApproveRekomendasi() {
@@ -199,6 +201,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
     func apiRejectRekomendasi() {
@@ -223,6 +226,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
     func callAlertTextBox(type: String) {

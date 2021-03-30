@@ -88,6 +88,7 @@ class ChangePasswordViewController: BaseViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         })
+        self.view.endEditing(true)
     }
     
     @IBAction func btnEyeNewPasswordAction(_ sender: Any) {

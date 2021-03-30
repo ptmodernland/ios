@@ -13,7 +13,7 @@ import Firebase
 import FirebaseMessaging
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     var window: UIWindow?
     var deviceTokenString=""
@@ -22,9 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         // Override point for customization after application launch.
-        //Messaging.messaging().delegate = self
+        Messaging.messaging().delegate = self
+        Messaging.messaging().isAutoInitEnabled = true
         NFX.sharedInstance().start()
         self.settingPushNotification()
+        
         return true
     }
     
@@ -32,42 +34,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let vc = StoryboardScene.Login.loginViewController.instantiate()
         window?.rootViewController = vc
-        
         return true
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        //print(deviceToken)
-        //let deviceTokenString: String = ( deviceToken.description as String )
-        //print(deviceTokenString)
-        //viewController?.loadRequest(for: deviceTokenString)
-        deviceTokenString = deviceToken.map{String(format: "%02,2hhx", $0)}.joined()
-        print(deviceTokenString)
-        if #available(iOS 10.0, *) {
-          // For iOS 10 display notification (sent via APNS)
-          UNUserNotificationCenter.current().delegate = self
-
-          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-          UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {_, _ in })
-        } else {
-          let settings: UIUserNotificationSettings =
-          UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-          application.registerUserNotificationSettings(settings)
+     func application(_ application: UIApplication,
+                     didReceiveRegistrationToken deviceToken: Data) {
+        Messaging.messaging().token { token, error in
+          if let error = error {
+            print("Error fetching FCM registration token: \(error)")
+          } else if let token = token {
+            print("FCM registration token: \(token)")
+          }
         }
+    }
 
-        application.registerForRemoteNotifications()
+
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+      print("Firebase registration token: \(String(describing: fcmToken))")
+
+      let dataDict:[String: String] = ["token": fcmToken ?? ""]
+      NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+      // TODO: If necessary send token to application server.
+      // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
     
-
-    internal func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print(error)
-    }
   
-    private func application(_ application: UIApplication, didReceiveRemoteNotifications userinfo:[AnyHashable : Any]) {
-        
-    }
+
     
     func settingPushNotification() {
         let app = UIApplication.shared
