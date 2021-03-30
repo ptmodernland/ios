@@ -35,6 +35,7 @@ class SettingViewController: BaseViewController {
         vm.postLogout(body: paramLogout, onSuccess: { response in
             self.hideLoading()
             UserDefaults.standard.set("", forKey: "username")
+            //UserDefaults.standard.set("", forKey: "fcmToken")
             UserDefaults.standard.set("", forKey: "idUser")
             UserDefaults.standard.set("", forKey: "level")
             UserDefaults.standard.set("", forKey: "name")

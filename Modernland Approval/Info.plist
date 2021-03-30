@@ -19,7 +19,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>
-	<true/>
+	<false/>
 	<key>FirebaseMessagingAutoInitEnabled</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>

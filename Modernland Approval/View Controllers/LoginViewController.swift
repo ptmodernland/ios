@@ -26,12 +26,13 @@ class LoginViewController: BaseViewController {
         appDelegate.viewController = self
     }
     
-    func loadRequest(for deviceTokenString: String) {
+    /*func loadRequest(for deviceTokenString: String) {
         deviceToken = deviceTokenString
-    }
+    }*/
     
     func callApiLogin(username: String, password: String, token: String) {
         showLoading()
+        let deviceToken = UserDefaults().string(forKey : "fcmToken")
         let device = UIDevice.modelName
         let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
         //let ipAddress = UIDevice.current.ipAddress()
@@ -39,7 +40,7 @@ class LoginViewController: BaseViewController {
         let paramLogin = [
             "username" : username,
             "password" : password,
-            "token" : deviceToken,
+            "token" : deviceToken ?? "",
             "address" : macAddress,
             //"ip" : ipAddress ?? "",
             "ip" : self.getIPAddress(),
