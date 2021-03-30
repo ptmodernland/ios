@@ -125,6 +125,7 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
     func apiRejectCompare(pin: String) {
@@ -147,6 +148,7 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
    

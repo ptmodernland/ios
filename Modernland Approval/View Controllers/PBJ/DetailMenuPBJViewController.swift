@@ -107,6 +107,7 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
     func apiRejectPbj(pin: String) {
@@ -130,6 +131,7 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
             print(failed)
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
     

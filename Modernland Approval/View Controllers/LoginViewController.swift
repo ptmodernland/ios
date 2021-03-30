@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseMessaging
 
 class LoginViewController: BaseViewController {
 
@@ -37,7 +39,7 @@ class LoginViewController: BaseViewController {
         let paramLogin = [
             "username" : username,
             "password" : password,
-            "token" : "f7KLo4kLxGI:APA91bFrYRlaR61n3gjtTv9bBd-W5zE3P1Ma_Rs9Ql3ROZY3m7BUWy6S7dm-KSNjIEBu4GYJU3vPt-E6v4dP2_hwq_MLr_HQRYijou3utRJqDgFzNFSjcxoar23SFD0AWNJGl1xYGAzR",
+            "token" : deviceToken,
             "address" : macAddress,
             //"ip" : ipAddress ?? "",
             "ip" : self.getIPAddress(),
@@ -64,6 +66,7 @@ class LoginViewController: BaseViewController {
             self.hideLoading()
             Toast.show(message: failed, controller: self)
         })
+        self.view.endEditing(true)
     }
     
     @IBAction func btnEyeTap(_ sender: Any) {
