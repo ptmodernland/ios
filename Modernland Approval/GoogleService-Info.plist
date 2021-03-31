@@ -34,5 +34,6 @@
     <string>1:21653421615:ios:77ca61a39418bb0f3ed0da</string>
     <key>DATABASE_URL</key>
     <string>https://modernlandiom.firebaseio.com</string>
+    <key>ITSAppUsesNonExemptEncryption</key><false/> 
 </dict>
 </plist>

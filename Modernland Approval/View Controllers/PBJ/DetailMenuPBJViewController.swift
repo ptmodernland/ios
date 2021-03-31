@@ -21,6 +21,7 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
     var type = "approval"
     var noPermintaan = ""
     var pdfDownloaded = false
+    var fromPushNotif = false
     lazy var previewItem = NSURL()
     
     @IBOutlet weak var lblDate: UILabel!
@@ -208,7 +209,12 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
-        back()
+        if fromPushNotif == true {
+            goToHome()
+        }
+        else{
+            back()
+        }
     }
     
     

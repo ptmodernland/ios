@@ -235,6 +235,11 @@ PODS:
   - Firebase/Messaging (7.9.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 7.9.0)
+  - Firebase/RemoteConfig (7.9.0):
+    - Firebase/CoreOnly
+    - FirebaseRemoteConfig (~> 7.9.0)
+  - FirebaseABTesting (7.9.0):
+    - FirebaseCore (~> 7.0)
   - FirebaseAnalytics (7.9.0):
     - FirebaseCore (~> 7.0)
     - FirebaseInstallations (~> 7.0)
@@ -287,6 +292,12 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/Reachability (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
+  - FirebaseRemoteConfig (7.9.0):
+    - FirebaseABTesting (~> 7.0)
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - "GoogleUtilities/NSData+zlib (~> 7.0)"
   - GoogleAppMeasurement (7.9.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
@@ -359,6 +370,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Messaging
+  - Firebase/RemoteConfig
   - JGProgressHUD
   - netfox
   - SwiftyJSON (~> 4.0)
@@ -370,6 +382,7 @@ SPEC REPOS:
     - Alamofire
     - BoringSSL-GRPC
     - Firebase
+    - FirebaseABTesting
     - FirebaseAnalytics
     - FirebaseAuth
     - FirebaseCore
@@ -378,6 +391,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
+    - FirebaseRemoteConfig
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -397,6 +411,7 @@ SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: d8bd6bd34b4c7ed57bfdd056c66ff5adcdde53ab
+  FirebaseABTesting: f6853447dc61fa785df777748747c845f40fa7cd
   FirebaseAnalytics: 31b1269830dfe16687db3c60b76082c12bd6d527
   FirebaseAuth: 20625f04fdd213995249a82375b3dab39b1c136c
   FirebaseCore: 0798738ad1ae0fda67e17c7b9081241c431c6859
@@ -405,6 +420,7 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 5e777e6640fa060405cc7632447b6c5ca5af4742
   FirebaseInstanceID: 53140c03b9f6136f890d7901399f85a4c90ab2d0
   FirebaseMessaging: 5f83f200a251c44f647f36cb43e557be09889e8d
+  FirebaseRemoteConfig: ad9b7af6a1308d8dd26787b1702ce9e7d609d22e
   GoogleAppMeasurement: 120eec8803fe65a4a7475fb3d3d59a61d0e1a866
   GoogleDataTransport: b006084b73915a42c28a3466961a4edda3065da6
   GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
@@ -419,6 +435,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: fb33b118ef777b729136e4eefb97703c45d79a02
+PODFILE CHECKSUM: cc5f2a8b1f7304565f6c9ce7b42358de8db58f3f
 
 COCOAPODS: 1.10.1

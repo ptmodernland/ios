@@ -740,9 +740,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 32D58A5D31E49A0DD38E88EC /* Pods-Modernland Approval.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "modernland-approval";
 				CODE_SIGN_ENTITLEMENTS = "Modernland Approval/Modernland Approval.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 85ZVUCDAWG;
 				INFOPLIST_FILE = "Modernland Approval/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -760,9 +761,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2821F56438DAE6329C3045C2 /* Pods-Modernland Approval.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "modernland-approval";
 				CODE_SIGN_ENTITLEMENTS = "Modernland Approval/Modernland Approval.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 85ZVUCDAWG;
 				INFOPLIST_FILE = "Modernland Approval/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

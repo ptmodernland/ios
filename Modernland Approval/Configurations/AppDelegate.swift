@@ -11,12 +11,13 @@ import netfox
 import UserNotifications
 import Firebase
 import FirebaseMessaging
+import FirebaseInstanceID
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     var window: UIWindow?
-    var deviceTokenString=""
+    let fcmToken = ""
     let gcmMessageIDKey = "gcm.message_id"
     weak var viewController: LoginViewController?
     
@@ -50,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
+
     func application(_ application: UIApplication,
                      didReceiveRegistrationToken deviceToken: Data) {
         Messaging.messaging().token { token, error in
@@ -73,6 +75,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        let fcmToken = Messaging.messaging().token
+        print("Look! I have an FCM token! \(String(describing: fcmToken))")
+    }
     
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
@@ -81,6 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let dataDict:[String: String] = ["token": fcmToken ?? ""]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         //viewController?.loadRequest(for: fcmToken ?? "")
+                if let appDomain = Bundle.main.bundleIdentifier {
+                    UserDefaults.standard.removePersistentDomain(forName: appDomain)
+              }
         UserDefaults.standard.set(fcmToken ?? "", forKey: "fcmToken")
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
@@ -98,54 +107,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         if let targetValue = userInfo["target"] as? String
         {
-            coordinateToSomeVC(targetValue: targetValue, idIom: userInfo["idnya"] as? String ?? "")
+            coordinateToSomeVC(targetValue: targetValue, idNya: userInfo["idnya"] as? String ?? "", nomorNya: userInfo["nomornya"] as? String ?? "", idKordinasi: userInfo["idKordinasi"] as? String ?? "")
         }
         completionHandler()
     }
     
-    private func coordinateToSomeVC(targetValue: String, idIom : String) {
+    private func coordinateToSomeVC(targetValue: String, idNya : String, nomorNya : String, idKordinasi : String) {
         guard let window = UIApplication.shared.keyWindow else { return }
         
         //var storyboard = UIStoryboard(name: "Comparasion", bundle: nil)
         //var yourVC = storyboard.instantiateViewController(identifier: "ListCompareViewController")
         if(targetValue == "iom"){
-            let levelHead = UserDefaults().string(forKey: "level")
-            if levelHead == "shead" {
                 //storyboard = UIStoryboard(name: "IOM", bundle: nil)
                 let VC = StoryboardScene.IOM.detailIOMViewController.instantiate()
-                VC.idIom = Int(idIom) ?? 0
+                VC.idIom = Int(idNya) ?? 0
                 VC.fromPushNotif = true
                 let navController = UINavigationController(rootViewController: VC)
                 navController.setNavigationBarHidden(true, animated: true)
 //                navController.modalPresentationStyle = .fullScreen
                 window.rootViewController = navController
 //                window.makeKeyAndVisible()
-            } else {
-                let VC = StoryboardScene.IOM.listIOMViewController.instantiate()
-                let navController = UINavigationController(rootViewController: VC)
-                navController.setNavigationBarHidden(true, animated: true)
-//                navController.modalPresentationStyle = .fullScreen
-                window.rootViewController = navController
-//                window.makeKeyAndVisible()
-            }
              //storyboard = UIStoryboard(name: "IOM", bundle: nil)
              //yourVC = storyboard.instantiateViewController(identifier: "IOMViewController")
         } else if(targetValue == "pbj"){
-            let VC = StoryboardScene.PBJ.listPBJViewController.instantiate()
+            let VC = StoryboardScene.PBJ.detailMenuPBJViewController.instantiate()
+            VC.noPermintaan = idNya
+            VC.fromPushNotif = true
             let navController = UINavigationController(rootViewController: VC)
             navController.setNavigationBarHidden(true, animated: true)
 //                navController.modalPresentationStyle = .fullScreen
             window.rootViewController = navController
 //            window.makeKeyAndVisible()
-        }
+        } else if(targetValue == "kordinasi"){
+            let VC = StoryboardScene.IOM.detailIOMViewController.instantiate()
+            VC.idIom = Int(idNya) ?? 0
+            VC.nomorMemo = nomorNya
+            VC.type="rekomendasi"
+            VC.fromPushNotif = true
+            VC.idKoordinasi = idKordinasi
+            let navController = UINavigationController(rootViewController: VC)
+            navController.setNavigationBarHidden(true, animated: true)
+//                navController.modalPresentationStyle = .fullScreen
+            window.rootViewController = navController
+//            window.makeKeyAndVisible()
+        } else {
+            let VC = StoryboardScene.Comparasion.DetailCompareViewController.instantiate()
+            VC.idCompare = Int(idNya) ?? 0
+           VC.fromPushNotif = true
+           let navController = UINavigationController(rootViewController: VC)
+           navController.setNavigationBarHidden(true, animated: true)
+//                navController.modalPresentationStyle = .fullScreen
+           window.rootViewController = navController
+//            window.makeKeyAndVisible()
+       }
         
     }
     
-    func application(_ xapplication: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        Messaging.messaging().apnsToken = deviceToken
-    }
-    
-    func settingPushNotification() {
+
+    /*func settingPushNotification() {
         let app = UIApplication.shared
         
         if #available(iOS 10.0, *) {
@@ -163,6 +182,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         app.registerForRemoteNotifications()
-    }
+    }*/
 }
 

@@ -22,6 +22,8 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
     var idCompare = 0
     var nomorRef=""
     var pdfDownloaded = false
+    var fromPushNotif = false
+    
     lazy var previewItem = NSURL()
     
     @IBOutlet weak var lblAdvance: UILabel!
@@ -232,7 +234,12 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
-        back()
+        if fromPushNotif == true {
+            goToHome()
+        }
+        else{
+            back()
+        }
     }
     
     @IBAction func pdfDownloadButtonTap(_ sender: Any) {
