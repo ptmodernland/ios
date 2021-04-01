@@ -32,6 +32,7 @@ class ChangePasswordViewController: BaseViewController {
         super.viewDidLoad()
         tfNewPin.keyboardType = .numberPad
         btnBack.layer.cornerRadius = 6
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {

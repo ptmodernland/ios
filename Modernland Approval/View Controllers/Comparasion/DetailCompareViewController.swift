@@ -51,6 +51,7 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
             stackButton.isHidden = false
         }
         btnBack.layer.cornerRadius = 6
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {

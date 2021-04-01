@@ -24,6 +24,7 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.viewController = self
+        self.hideKeyboardWhenTappedAround()
     }
     
     /*func loadRequest(for deviceTokenString: String) {
