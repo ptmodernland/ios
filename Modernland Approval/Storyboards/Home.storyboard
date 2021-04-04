@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePB-fw-l6f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePB-fw-l6f">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,15 +27,17 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IVI-6Y-ILf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Exj-yc-Dwe" firstAttribute="leading" secondItem="IVI-6Y-ILf" secondAttribute="leading" constant="20" id="36W-xk-8xY"/>
                             <constraint firstItem="IVI-6Y-ILf" firstAttribute="trailing" secondItem="Exj-yc-Dwe" secondAttribute="trailing" constant="20" id="Lrx-9S-dO1"/>
                             <constraint firstItem="MQA-tI-T5F" firstAttribute="top" secondItem="IVI-6Y-ILf" secondAttribute="top" constant="20" id="MiG-ex-Q5l"/>
+                            <constraint firstItem="Exj-yc-Dwe" firstAttribute="width" secondItem="Hg5-dN-Sav" secondAttribute="width" multiplier="0.903382" id="QSE-4J-uaF"/>
                             <constraint firstItem="MQA-tI-T5F" firstAttribute="leading" secondItem="IVI-6Y-ILf" secondAttribute="leading" constant="20" id="S1v-BR-mya"/>
+                            <constraint firstItem="Exj-yc-Dwe" firstAttribute="centerX" secondItem="IVI-6Y-ILf" secondAttribute="centerX" id="hpi-OW-uRe"/>
                             <constraint firstItem="Exj-yc-Dwe" firstAttribute="top" secondItem="MQA-tI-T5F" secondAttribute="bottom" constant="20" id="mGz-eu-7tB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="IVI-6Y-ILf"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="LHp-qE-6mq">
                         <color key="badgeColor" red="0.66666666669999997" green="0.098039215690000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,5 +53,8 @@
         <image name="Slider1" width="202.5" height="93.5"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="imgLogoTitle" width="212" height="49.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

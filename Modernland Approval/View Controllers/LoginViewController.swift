@@ -16,6 +16,13 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnEyePassword: UIButton!
     
+    @IBOutlet weak var btnLogin: UIButton!
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblPassword: UILabel!
+    @IBOutlet weak var lblUsername: UILabel!
+
+    
     let vm = LoginViewModel()
     var deviceToken = ""
     var state = true
@@ -25,6 +32,42 @@ class LoginViewController: BaseViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.viewController = self
         self.hideKeyboardWhenTappedAround()
+        if (self.view.frame.width == 320) {
+            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 16)
+            lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 14)
+            lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 14)
+            btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            tfUsername.font =  UIFont.init(name: "Helvetica", size: 12.0)
+            tfPassword.font =  UIFont.init(name: "Helvetica", size: 12.0)
+        } else if (self.view.frame.width == 375) {
+            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 21)
+            lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 19)
+            lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 19)
+            btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 17)
+            tfUsername.font =  UIFont.init(name: "Helvetica", size: 17)
+            tfPassword.font =  UIFont.init(name: "Helvetica", size: 17)
+        } else if (self.view.frame.width == 414) {
+            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 24)
+            lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 22)
+            lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 22)
+            btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 20)
+            tfUsername.font =  UIFont.init(name: "Helvetica", size: 20)
+            tfPassword.font =  UIFont.init(name: "Helvetica", size: 20)
+        } else if (self.view.frame.width == 768) {
+            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 34)
+            lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 32)
+            lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 32)
+            btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
+            tfUsername.font =  UIFont.init(name: "Helvetica", size: 32)
+            tfPassword.font =  UIFont.init(name: "Helvetica", size: 32)
+        } else{
+            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 50)
+            lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 30)
+            lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 30)
+            btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 30)
+            tfUsername.font =  UIFont.init(name: "Helvetica", size: 28.0)
+            tfPassword.font =  UIFont.init(name: "Helvetica", size: 28.0)
+        }
     }
     
     /*func loadRequest(for deviceTokenString: String) {
