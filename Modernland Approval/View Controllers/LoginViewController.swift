@@ -54,20 +54,13 @@ class LoginViewController: BaseViewController {
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 20)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 20)
         } else if (self.view.frame.width == 768) {
-            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 34)
+            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 50)
             lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 32)
             lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 32)
             btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
-            tfUsername.font =  UIFont.init(name: "Helvetica", size: 32)
-            tfPassword.font =  UIFont.init(name: "Helvetica", size: 32)
-        } else{
-            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 50)
-            lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 30)
-            lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 30)
-            btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 30)
-            tfUsername.font =  UIFont.init(name: "Helvetica", size: 28.0)
-            tfPassword.font =  UIFont.init(name: "Helvetica", size: 28.0)
-        }
+            tfUsername.font =  UIFont.init(name: "Helvetica", size: 28)
+            tfPassword.font =  UIFont.init(name: "Helvetica", size: 28)
+        } 
     }
     
     /*func loadRequest(for deviceTokenString: String) {

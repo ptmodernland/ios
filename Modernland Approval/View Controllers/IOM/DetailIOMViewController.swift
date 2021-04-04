@@ -40,8 +40,21 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var stackPdf: UIStackView!
     @IBOutlet weak var btnRecommend: UIButton!
     @IBOutlet weak var btnBack: UIButton!
-
+    @IBOutlet weak var lblTxtRecipient: UILabel!
+    @IBOutlet weak var lblTxtDownloadFile: UILabel!
+    @IBOutlet weak var lblTxtViewDetail: UILabel!
+    @IBOutlet weak var btnKlikDisini: UIButton!
+    @IBOutlet weak var lblTxtFrom: UILabel!
+    @IBOutlet weak var lblTxtCc: UILabel!
+    @IBOutlet weak var lblTxtDate: UILabel!
+    @IBOutlet weak var lblTxtNomor: UILabel!
+    @IBOutlet weak var lblTxtCategory: UILabel!
+    @IBOutlet weak var lblTxtAbout: UILabel!
+    @IBOutlet weak var lblTxtDownloadPdf: UILabel!
+    @IBOutlet weak var lblTxtCatatan: UILabel!
     
+    @IBOutlet weak var btnReject: UIButton!
+    @IBOutlet weak var btnApprove: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         if type == "history" {
@@ -56,6 +69,100 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
         }
         btnBack.layer.cornerRadius = 6
         self.hideKeyboardWhenTappedAround()
+        
+        if (self.view.frame.width == 320) {
+            self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 12)
+            self.lblCc.font = UIFont(name: self.lblTitle.font.fontName, size: 12)
+            self.lblFrom.font = UIFont(name: self.lblFrom.font.fontName, size: 12)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 12)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 12)
+            self.lblCategory.font = UIFont(name: self.lblCategory.font.fontName, size: 12)
+            self.lblAbout.font = UIFont(name: self.lblAbout.font.fontName, size: 12)
+            self.lblTxtRecipient.font = UIFont(name: self.lblTxtRecipient.font.fontName, size: 12)
+            self.lblTxtCc.font = UIFont(name: self.lblTxtCc.font.fontName, size: 12)
+            self.lblTxtFrom.font = UIFont(name: self.lblTxtFrom.font.fontName, size: 12)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 12)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 12)
+            self.lblTxtCategory.font = UIFont(name: self.lblTxtCategory.font.fontName, size: 12)
+            self.lblTxtAbout.font = UIFont(name: self.lblTxtAbout.font.fontName, size: 12)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 12)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnRecommend.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 12)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 12)
+        } else if (self.view.frame.width == 375) {
+            self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 14)
+            self.lblCc.font = UIFont(name: self.lblTitle.font.fontName, size: 14)
+            self.lblFrom.font = UIFont(name: self.lblFrom.font.fontName, size: 14)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 14)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 14)
+            self.lblCategory.font = UIFont(name: self.lblCategory.font.fontName, size: 14)
+            self.lblAbout.font = UIFont(name: self.lblAbout.font.fontName, size: 14)
+            self.lblTxtRecipient.font = UIFont(name: self.lblTxtRecipient.font.fontName, size: 14)
+            self.lblTxtCc.font = UIFont(name: self.lblTxtCc.font.fontName, size: 14)
+            self.lblTxtFrom.font = UIFont(name: self.lblTxtFrom.font.fontName, size: 14)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 14)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 14)
+            self.lblTxtCategory.font = UIFont(name: self.lblTxtCategory.font.fontName, size: 14)
+            self.lblTxtAbout.font = UIFont(name: self.lblTxtAbout.font.fontName, size: 14)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 14)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnRecommend.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 14)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 14)
+        } else if (self.view.frame.width == 414) {
+            self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 18)
+            self.lblCc.font = UIFont(name: self.lblTitle.font.fontName, size: 18)
+            self.lblFrom.font = UIFont(name: self.lblFrom.font.fontName, size: 18)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 18)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 18)
+            self.lblCategory.font = UIFont(name: self.lblCategory.font.fontName, size: 18)
+            self.lblAbout.font = UIFont(name: self.lblAbout.font.fontName, size: 18)
+            self.lblTxtRecipient.font = UIFont(name: self.lblTxtRecipient.font.fontName, size: 18)
+            self.lblTxtCc.font = UIFont(name: self.lblTxtCc.font.fontName, size: 18)
+            self.lblTxtFrom.font = UIFont(name: self.lblTxtFrom.font.fontName, size: 18)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 18)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 18)
+            self.lblTxtCategory.font = UIFont(name: self.lblTxtCategory.font.fontName, size: 18)
+            self.lblTxtAbout.font = UIFont(name: self.lblTxtAbout.font.fontName, size: 18)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 18)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnRecommend.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 18)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 18)
+        } else if (self.view.frame.width == 768) {
+            self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 20)
+            self.lblCc.font = UIFont(name: self.lblTitle.font.fontName, size: 20)
+            self.lblFrom.font = UIFont(name: self.lblFrom.font.fontName, size: 20)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 20)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 20)
+            self.lblCategory.font = UIFont(name: self.lblCategory.font.fontName, size: 20)
+            self.lblAbout.font = UIFont(name: self.lblAbout.font.fontName, size: 20)
+            self.lblTxtRecipient.font = UIFont(name: self.lblTxtRecipient.font.fontName, size: 20)
+            self.lblTxtCc.font = UIFont(name: self.lblTxtCc.font.fontName, size: 20)
+            self.lblTxtFrom.font = UIFont(name: self.lblTxtFrom.font.fontName, size: 20)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 20)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 20)
+            self.lblTxtCategory.font = UIFont(name: self.lblTxtCategory.font.fontName, size: 20)
+            self.lblTxtAbout.font = UIFont(name: self.lblTxtAbout.font.fontName, size: 20)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 20)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 20)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 20)
+            self.btnRecommend.titleLabel?.font =  UIFont(name: "Helvetica", size: 20)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 20)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 20)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 20)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 18)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -6,6 +6,8 @@
 	<array>
 		<string>com.modernland.modernland-approval</string>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>Modernland Approval</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -82,6 +82,27 @@ extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewData
         } else {
             cell.lblStatus.text = "Waiting Approval"
         }
+        if (self.view.frame.width == 320) {
+            cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 12)
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
+            cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 12)
+            cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 12)
+        } else if (self.view.frame.width == 375) {
+            cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 14)
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 21)
+            cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 14)
+            cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 14)
+        } else if (self.view.frame.width == 414) {
+            cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 20)
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 24)
+            cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 20)
+            cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 12)
+        } else if (self.view.frame.width == 768) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 26)
+            cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 24)
+            cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 24)
+            cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 24)
+        }
         
         return cell
     }

@@ -30,6 +30,7 @@ class ListBoxCollectionViewCell: UICollectionViewCell {
         vContent.layer.shadowRadius = 4
         vContent.layer.shadowOpacity = 0.2
         vContent.layer.masksToBounds = false
+        
         // Initialization code
     }
 

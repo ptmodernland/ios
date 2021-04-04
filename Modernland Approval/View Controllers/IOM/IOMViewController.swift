@@ -62,6 +62,22 @@ extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         
         cell.lblTitle.text = buttonTitleList[indexPath.row]
         
+        
+        if (self.view.frame.width == 320) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 16)
+            
+        } else if (self.view.frame.width == 375) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 21)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 21)
+        } else if (self.view.frame.width == 414) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 24)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 24)
+        } else if (self.view.frame.width == 768) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 32)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 32)
+        } 
+        
         if notif[indexPath.row] == "0" {
             cell.vCounter.isHidden = true
         } else {
