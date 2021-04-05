@@ -60,7 +60,21 @@ class LoginViewController: BaseViewController {
             btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 28)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 28)
-        } 
+        } else if (self.view.frame.width == 1024) {
+            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 50)
+            lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 32)
+            lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 32)
+            btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
+            tfUsername.font =  UIFont.init(name: "Helvetica", size: 28)
+            tfPassword.font =  UIFont.init(name: "Helvetica", size: 28)
+        }else {
+            lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 50)
+            lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 32)
+            lblPassword.font = UIFont(name: lblPassword.font.fontName, size: 32)
+            btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
+            tfUsername.font =  UIFont.init(name: "Helvetica", size: 28)
+            tfPassword.font =  UIFont.init(name: "Helvetica", size: 28)
+        }
     }
     
     /*func loadRequest(for deviceTokenString: String) {
@@ -83,7 +97,7 @@ class LoginViewController: BaseViewController {
             "ip" : self.getIPAddress(),
             "brand" : "iPhone",
             "model" : device,
-            "phonetype" : "gsm"
+            "phonetype" : "GSM"
         ] as [String : Any]
         
         vm.postLogin(body: paramLogin, onSuccess: { response in

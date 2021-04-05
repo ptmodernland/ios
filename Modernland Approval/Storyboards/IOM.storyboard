@@ -73,6 +73,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cvList" destination="5ec-eZ-3YV" id="Mjg-XA-lae"/>
+                        <outlet property="lblDashboard" destination="B4O-EZ-WFK" id="Mbi-tA-o4c"/>
+                        <outlet property="lblTxtTitle" destination="wBB-NB-nEc" id="aTY-2u-UgV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suk-1B-BKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -195,7 +197,9 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="8Ze-vq-b95" id="jxQ-Cq-dpp"/>
+                        <outlet property="lblDashboard" destination="31l-cX-yJV" id="TgL-ZM-FCV"/>
                         <outlet property="lblTitle" destination="31l-cX-yJV" id="e3W-mR-LQ0"/>
+                        <outlet property="lblTxtTitle" destination="Eo0-4O-w27" id="FUQ-QG-ZIU"/>
                         <outlet property="tvList" destination="by6-Qc-NSA" id="T6E-gW-THu"/>
                         <outlet property="vEmptyState" destination="Ncg-HR-PgN" id="idO-hE-b6T"/>
                     </connections>
@@ -233,7 +237,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kepada Yth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7Q-y4-qlu">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="EkQ-IB-thi"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM1" id="EkQ-IB-thi"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -253,7 +257,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2db-ij-Aaa">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="w7I-WD-FYv"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM2" id="w7I-WD-FYv"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -273,7 +277,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgP-h6-Wbn">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="DAm-iR-aBu"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM3" id="DAm-iR-aBu"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -293,7 +297,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanggal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOQ-Hs-pea">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="hod-Df-4em"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM4" id="hod-Df-4em"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -313,7 +317,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nomor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib9-1q-5mu">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="BSb-hz-Qbt"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM5" id="BSb-hz-Qbt"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -333,7 +337,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategori" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaK-Tu-0xs">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="kSH-OH-hrx"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM6" id="kSH-OH-hrx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -353,7 +357,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perihal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Ov-pYd">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="uvI-Dy-o6V"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM7" id="uvI-Dy-o6V"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -373,7 +377,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnM-mP-0kn">
                                                 <rect key="frame" x="0.0" y="5.5" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="DXE-5j-jt4"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM8" id="DXE-5j-jt4"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -395,7 +399,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download File" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDY-8F-iml">
                                                 <rect key="frame" x="0.0" y="5.5" width="130" height="16.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="1V3-2d-Ek3"/>
+                                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM" id="1V3-2d-Ek3"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -463,7 +467,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catatan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oku-mN-OeD">
                                 <rect key="frame" x="20" y="425.5" width="130" height="16.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="or7-hg-f01"/>
+                                    <constraint firstAttribute="width" constant="130" identifier="cnDetailIOM" id="or7-hg-f01"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -549,6 +553,7 @@
                         <outlet property="btnKlikDisini" destination="seh-hg-hB8" id="UP5-B1-q12"/>
                         <outlet property="btnRecommend" destination="Apf-pP-IXl" id="UDK-IX-H9b"/>
                         <outlet property="btnReject" destination="ReL-ab-X1p" id="sKs-dM-nc1"/>
+                        <outlet property="detailViewIOM" destination="n31-u2-vEs" id="vfc-Mc-ibG"/>
                         <outlet property="lblAbout" destination="Snu-cS-Pv9" id="Mwx-rf-Nub"/>
                         <outlet property="lblCategory" destination="Mub-RU-Lu5" id="wIg-xN-aw8"/>
                         <outlet property="lblCc" destination="nCp-hZ-BaH" id="yDW-LX-Gv6"/>
@@ -567,7 +572,18 @@
                         <outlet property="lblTxtFrom" destination="YgP-h6-Wbn" id="MeP-8u-Y9W"/>
                         <outlet property="lblTxtNomor" destination="Ib9-1q-5mu" id="XSw-da-bEB"/>
                         <outlet property="lblTxtRecipient" destination="G7Q-y4-qlu" id="3ki-Rr-WGp"/>
+                        <outlet property="lblTxtTitle" destination="Vbt-wZ-Grj" id="zAh-kR-9mB"/>
                         <outlet property="lblTxtViewDetail" destination="qnM-mP-0kn" id="9ji-4K-qUh"/>
+                        <outlet property="myConstraint1" destination="EkQ-IB-thi" id="4eu-he-w6i"/>
+                        <outlet property="myConstraint10" destination="or7-hg-f01" id="JWs-ew-zHE"/>
+                        <outlet property="myConstraint2" destination="w7I-WD-FYv" id="q2N-dn-mJi"/>
+                        <outlet property="myConstraint3" destination="DAm-iR-aBu" id="ptC-Fe-NR7"/>
+                        <outlet property="myConstraint4" destination="hod-Df-4em" id="nR4-hc-QqJ"/>
+                        <outlet property="myConstraint5" destination="BSb-hz-Qbt" id="HYs-qy-s2A"/>
+                        <outlet property="myConstraint6" destination="kSH-OH-hrx" id="QqA-Jd-KZN"/>
+                        <outlet property="myConstraint7" destination="uvI-Dy-o6V" id="ocU-Km-Lif"/>
+                        <outlet property="myConstraint8" destination="DXE-5j-jt4" id="rfQ-9d-g4J"/>
+                        <outlet property="myConstraint9" destination="1V3-2d-Ek3" id="5Nc-FN-AW9"/>
                         <outlet property="stackButton" destination="gbf-8e-Ndx" id="rkt-bk-9dN"/>
                         <outlet property="stackPdf" destination="U9m-qQ-n3g" id="FNb-SL-zQl"/>
                         <outlet property="textViewNotes" destination="lTZ-FH-2Eq" id="YIv-YK-I12"/>
@@ -695,7 +711,9 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="vyZ-bC-f7p" id="hSj-QL-qew"/>
+                        <outlet property="lblDashboard" destination="5bV-Bz-OOv" id="vMw-jW-IgR"/>
                         <outlet property="lblTitle" destination="5bV-Bz-OOv" id="ECP-xk-KXD"/>
+                        <outlet property="lblTxtTitle" destination="p7t-9x-nlA" id="ItU-yY-7s3"/>
                         <outlet property="tvList" destination="5TA-jo-RzX" id="9zp-Ck-MCs"/>
                         <outlet property="vEmpty" destination="FtQ-7e-4hN" id="06C-DZ-M2g"/>
                     </connections>
@@ -823,6 +841,8 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="zTH-fs-lca" id="1QS-wA-sZ7"/>
+                        <outlet property="lblDashboard" destination="DyA-a1-uPX" id="Mwy-5L-oAI"/>
+                        <outlet property="lblTxtTitle" destination="DQN-8j-tlM" id="J0u-To-pmv"/>
                         <outlet property="tvList" destination="Gct-9h-gxy" id="weF-iS-cz1"/>
                         <outlet property="vEmpty" destination="shl-4m-Agn" id="Z5K-vU-m1h"/>
                     </connections>
@@ -928,6 +948,7 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="NXR-so-5we" id="fin-0D-xD0"/>
+                        <outlet property="lblTitle" destination="2CM-9A-bZV" id="4bJ-9r-3q1"/>
                         <outlet property="tvList" destination="2vq-aV-Zzq" id="rBZ-GO-HcD"/>
                         <outlet property="vEmpty" destination="xuQ-fv-XBz" id="32R-FU-ws7"/>
                     </connections>
@@ -1019,6 +1040,8 @@
                     <connections>
                         <outlet property="btnBack" destination="M8I-c6-sA2" id="qmw-zw-hEt"/>
                         <outlet property="cvList" destination="TQ7-BG-OtY" id="jI7-vs-aMT"/>
+                        <outlet property="lblDashboard" destination="qij-hM-EI2" id="79e-dk-cZ3"/>
+                        <outlet property="lblTxtTitle" destination="Ver-fD-eGB" id="LhX-EH-BDH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7h-LT-JiJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1144,6 +1167,7 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="0kg-F9-N0T" id="mjO-ii-fMv"/>
+                        <outlet property="lblDashboard" destination="Je5-lV-6G1" id="mmO-6Y-AY9"/>
                         <outlet property="lblTitle" destination="b56-22-ZeB" id="U1M-r4-ngT"/>
                         <outlet property="tvList" destination="IRm-u7-jkE" id="EVe-f9-mMc"/>
                         <outlet property="vEmptyState" destination="S5G-B5-0gD" id="q0t-Dj-b3U"/>

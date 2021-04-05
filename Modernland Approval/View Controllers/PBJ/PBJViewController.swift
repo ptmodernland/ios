@@ -11,6 +11,9 @@ import UIKit
 class PBJViewController: BaseViewController {
     
     @IBOutlet weak var cvList: UICollectionView!
+    @IBOutlet weak var lblDashboard: UILabel!
+    
+    @IBOutlet weak var lblTxtTitle: UILabel!
     
     let vm = PBJViewModel()
     let buttonTitleList = ["Waiting Approval for PBJ",
@@ -82,19 +85,31 @@ extension PBJViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         }*/
         
         if (self.view.frame.width == 320) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 12)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 12)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 14)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 16)
+        } else if (self.view.frame.width == 375) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 14)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 14)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
+        } else if (self.view.frame.width == 414) {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 16)
-            
-        } else if (self.view.frame.width == 375) {
-            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 21)
-            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 21)
-        } else if (self.view.frame.width == 414) {
-            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 24)
-            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 24)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 20)
         } else if (self.view.frame.width == 768) {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 32)
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 32)
-        } 
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 42)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 45)
+        } else if (self.view.frame.width == 1024) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 45)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 45)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
+        }
         return cell
     }
     

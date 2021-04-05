@@ -12,8 +12,9 @@ import UITextView_Placeholder
 
 class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
     
+    @IBOutlet var detailViewCompare: UIView!
     @IBOutlet weak var lblTitle: UILabel!
-    
+    @IBOutlet weak var lblTxtTitle: UILabel!
     //Class Variable
     let vm = CompareViewModel()
     
@@ -37,9 +38,34 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
     @IBOutlet weak var textViewNotes: UITextView!
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var stackPdf: UIStackView!
-    
+    @IBOutlet weak var lblTxtAdvance: UILabel!
+    @IBOutlet weak var lblTxtProgress: UILabel!
+    @IBOutlet weak var lblTxtPajakReklame: UILabel!
+    @IBOutlet weak var lblTxtDesc: UILabel!
+    @IBOutlet weak var lblTxtDate: UILabel!
+    @IBOutlet weak var lblTxtNomor: UILabel!
+    @IBOutlet weak var lblTxtNoRef: UILabel!
+    @IBOutlet weak var lblTxtDepartemen: UILabel!
+    @IBOutlet weak var lblTxtViewDetail: UILabel!
+    @IBOutlet weak var lblTxtDownloadFile: UILabel!
+    @IBOutlet weak var lblTxtCatatan: UILabel!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var lblDepartemen: UILabel!
+    @IBOutlet weak var btnApprove: UIButton!
+    @IBOutlet weak var btnReject: UIButton!
+    @IBOutlet weak var btnKlikDisini: UIButton!
+    
+    @IBOutlet var myConstraint1 : NSLayoutConstraint!
+    @IBOutlet var myConstraint2 : NSLayoutConstraint!
+    @IBOutlet var myConstraint3 : NSLayoutConstraint!
+    @IBOutlet var myConstraint4 : NSLayoutConstraint!
+    @IBOutlet var myConstraint5 : NSLayoutConstraint!
+    @IBOutlet var myConstraint6 : NSLayoutConstraint!
+    @IBOutlet var myConstraint7 : NSLayoutConstraint!
+    @IBOutlet var myConstraint8 : NSLayoutConstraint!
+    @IBOutlet var myConstraint9 : NSLayoutConstraint!
+    @IBOutlet var myConstraint10 : NSLayoutConstraint!
+    @IBOutlet var myConstraint11 : NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +77,197 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
             stackButton.isHidden = false
         }
         btnBack.layer.cornerRadius = 6
+        if (self.view.frame.width == 320) {
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 14)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 12)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 12)
+            self.lblAdvance.font = UIFont(name: self.lblAdvance.font.fontName, size: 12)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 12)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 12)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 12)
+            self.lblProgress.font = UIFont(name: self.lblProgress.font.fontName, size: 12)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 12)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 12)
+            self.lblPajakReklame.font = UIFont(name: self.lblPajakReklame.font.fontName, size: 12)
+            self.lblDesc.font = UIFont(name: self.lblDesc.font.fontName, size: 12)
+            self.lblTxtAdvance.font = UIFont(name: self.lblTxtAdvance.font.fontName, size: 12)
+            self.lblTxtProgress.font = UIFont(name: self.lblTxtProgress.font.fontName, size: 12)
+            self.lblTxtPajakReklame.font = UIFont(name: self.lblTxtPajakReklame.font.fontName, size: 12)
+            self.lblTxtDesc.font = UIFont(name: self.lblTxtDesc.font.fontName, size: 12)
+            self.lblTxtNoRef.font = UIFont(name: self.lblTxtNoRef.font.fontName, size: 12)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnRef.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 12)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 12)
+            self.myConstraint1.constant = 130
+            self.myConstraint2.constant = 130
+            self.myConstraint3.constant = 130
+            self.myConstraint4.constant = 130
+            self.myConstraint5.constant = 130
+            self.myConstraint6.constant = 130
+            self.myConstraint7.constant = 130
+            self.myConstraint8.constant = 130
+            self.myConstraint9.constant = 130
+            self.myConstraint10.constant = 130
+            self.myConstraint11.constant = 130
+            self.detailViewCompare.layoutIfNeeded()
+        } else if (self.view.frame.width == 375) {
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 14)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 14)
+            self.lblAdvance.font = UIFont(name: self.lblAdvance.font.fontName, size: 14)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 14)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 14)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 14)
+            self.lblProgress.font = UIFont(name: self.lblProgress.font.fontName, size: 14)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 14)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 14)
+            self.lblPajakReklame.font = UIFont(name: self.lblPajakReklame.font.fontName, size: 14)
+            self.lblDesc.font = UIFont(name: self.lblDesc.font.fontName, size: 14)
+            self.lblTxtAdvance.font = UIFont(name: self.lblTxtAdvance.font.fontName, size: 14)
+            self.lblTxtProgress.font = UIFont(name: self.lblTxtProgress.font.fontName, size: 14)
+            self.lblTxtPajakReklame.font = UIFont(name: self.lblTxtPajakReklame.font.fontName, size: 14)
+            self.lblTxtDesc.font = UIFont(name: self.lblTxtDesc.font.fontName, size: 14)
+            self.lblTxtNoRef.font = UIFont(name: self.lblTxtNoRef.font.fontName, size: 14)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnRef.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 14)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 14)
+            self.myConstraint1.constant = 130
+            self.myConstraint2.constant = 130
+            self.myConstraint3.constant = 130
+            self.myConstraint4.constant = 130
+            self.myConstraint5.constant = 130
+            self.myConstraint6.constant = 130
+            self.myConstraint7.constant = 130
+            self.myConstraint8.constant = 130
+            self.myConstraint9.constant = 130
+            self.myConstraint10.constant = 130
+            self.myConstraint11.constant = 130
+            self.detailViewCompare.layoutIfNeeded()
+        } else if (self.view.frame.width == 414) {
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 20)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 16)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 16)
+            self.lblAdvance.font = UIFont(name: self.lblAdvance.font.fontName, size: 16)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 16)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 16)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 16)
+            self.lblProgress.font = UIFont(name: self.lblProgress.font.fontName, size: 16)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 16)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 16)
+            self.lblPajakReklame.font = UIFont(name: self.lblPajakReklame.font.fontName, size: 16)
+            self.lblDesc.font = UIFont(name: self.lblDesc.font.fontName, size: 16)
+            self.lblTxtAdvance.font = UIFont(name: self.lblTxtAdvance.font.fontName, size: 16)
+            self.lblTxtProgress.font = UIFont(name: self.lblTxtProgress.font.fontName, size: 16)
+            self.lblTxtPajakReklame.font = UIFont(name: self.lblTxtPajakReklame.font.fontName, size: 16)
+            self.lblTxtDesc.font = UIFont(name: self.lblTxtDesc.font.fontName, size: 16)
+            self.lblTxtNoRef.font = UIFont(name: self.lblTxtNoRef.font.fontName, size: 16)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnRef.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 16)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 16)
+            self.myConstraint1.constant = 130
+            self.myConstraint2.constant = 130
+            self.myConstraint3.constant = 130
+            self.myConstraint4.constant = 130
+            self.myConstraint5.constant = 130
+            self.myConstraint6.constant = 130
+            self.myConstraint7.constant = 130
+            self.myConstraint8.constant = 130
+            self.myConstraint9.constant = 130
+            self.myConstraint10.constant = 130
+            self.myConstraint11.constant = 130
+            self.detailViewCompare.layoutIfNeeded()
+        } else if (self.view.frame.width == 768) {
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 42)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 45)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 18)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 18)
+            self.lblAdvance.font = UIFont(name: self.lblAdvance.font.fontName, size: 18)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 18)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 18)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 18)
+            self.lblProgress.font = UIFont(name: self.lblProgress.font.fontName, size: 18)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 18)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 18)
+            self.lblPajakReklame.font = UIFont(name: self.lblPajakReklame.font.fontName, size: 18)
+            self.lblDesc.font = UIFont(name: self.lblDesc.font.fontName, size: 18)
+            self.lblTxtAdvance.font = UIFont(name: self.lblTxtAdvance.font.fontName, size: 18)
+            self.lblTxtProgress.font = UIFont(name: self.lblTxtProgress.font.fontName, size: 18)
+            self.lblTxtPajakReklame.font = UIFont(name: self.lblTxtPajakReklame.font.fontName, size: 18)
+            self.lblTxtDesc.font = UIFont(name: self.lblTxtDesc.font.fontName, size: 18)
+            self.lblTxtNoRef.font = UIFont(name: self.lblTxtNoRef.font.fontName, size: 18)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnRef.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 18)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 18)
+            self.myConstraint1.constant = 350
+            self.myConstraint2.constant = 350
+            self.myConstraint3.constant = 350
+            self.myConstraint4.constant = 350
+            self.myConstraint5.constant = 350
+            self.myConstraint6.constant = 350
+            self.myConstraint7.constant = 350
+            self.myConstraint8.constant = 350
+            self.myConstraint9.constant = 350
+            self.myConstraint10.constant = 350
+            self.myConstraint11.constant = 350
+            self.detailViewCompare.layoutIfNeeded()
+        } else if (self.view.frame.width == 1024) {
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 52)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 25)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 25)
+            self.lblAdvance.font = UIFont(name: self.lblAdvance.font.fontName, size: 25)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 25)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 25)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 25)
+            self.lblProgress.font = UIFont(name: self.lblProgress.font.fontName, size: 25)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 25)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 25)
+            self.lblPajakReklame.font = UIFont(name: self.lblPajakReklame.font.fontName, size: 25)
+            self.lblDesc.font = UIFont(name: self.lblDesc.font.fontName, size: 25)
+            self.lblTxtAdvance.font = UIFont(name: self.lblTxtAdvance.font.fontName, size: 25)
+            self.lblTxtProgress.font = UIFont(name: self.lblTxtProgress.font.fontName, size: 25)
+            self.lblTxtPajakReklame.font = UIFont(name: self.lblTxtPajakReklame.font.fontName, size: 25)
+            self.lblTxtDesc.font = UIFont(name: self.lblTxtDesc.font.fontName, size: 25)
+            self.lblTxtNoRef.font = UIFont(name: self.lblTxtNoRef.font.fontName, size: 25)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.btnRef.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 25)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 25)
+            self.myConstraint1.constant = 350
+            self.myConstraint2.constant = 350
+            self.myConstraint3.constant = 350
+            self.myConstraint4.constant = 350
+            self.myConstraint5.constant = 350
+            self.myConstraint6.constant = 350
+            self.myConstraint7.constant = 350
+            self.myConstraint8.constant = 350
+            self.myConstraint9.constant = 350
+            self.myConstraint10.constant = 350
+            self.myConstraint11.constant = 350
+            self.detailViewCompare.layoutIfNeeded()
+        }
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -110,11 +327,13 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
   
     func apiApproveCompare(pin: String) {
         let idUser = UserDefaults().string(forKey: "idUser")
+        let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
         
         let param = [
             "nomor" : self.lblNomor.text ?? "",
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
+            "mac" : macAddress,
             "passwordUser" : pin
             ] as [String : Any]
         vm.approveCompare(
@@ -133,11 +352,13 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate  {
     
     func apiRejectCompare(pin: String) {
         let idUser = UserDefaults().string(forKey: "idUser")
+        let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
         
         let param = [
             "nomor" : self.lblNomor.text ?? "",
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
+            "mac" : macAddress,
             "passwordUser" : pin
             ] as [String : Any]
         vm.rejectCompare(

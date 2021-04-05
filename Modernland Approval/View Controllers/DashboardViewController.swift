@@ -28,6 +28,22 @@ class DashboardViewController: UITabBarController {
         tabBar.layer.borderWidth = 0.5
         tabBar.layer.borderColor = UIColor.lightGray.cgColor
         
+        if (self.view.frame.width == 320) {
+            let font = UIFont(name: "Helvetica", size: 12)!
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        } else if (self.view.frame.width == 375) {
+            let font = UIFont(name: "Helvetica", size: 14)!
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        } else if (self.view.frame.width == 414) {
+            let font = UIFont(name: "Helvetica", size: 16)!
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        } else if (self.view.frame.width == 768) {
+            let font = UIFont(name: "Helvetica", size: 21)!
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        } else if (self.view.frame.width == 1024) {
+            let font = UIFont(name: "Helvetica", size: 21)!
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        }
     }
     
     override func viewDidLayoutSubviews() {

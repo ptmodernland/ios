@@ -14,7 +14,8 @@ class ListHeadKoordinasiViewController: BaseViewController {
     var listHead = [Head]()
     var nomor = ""
     var idIom = ""
-
+    @IBOutlet weak var lblTitle: UILabel!
+    
     @IBOutlet weak var tvList: UITableView!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var vEmpty: UIView!
@@ -99,6 +100,23 @@ extension ListHeadKoordinasiViewController: UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListName", for: indexPath) as! ListNameTableViewCell
         cell.lblName.text = listHead[indexPath.row].namaUser
+        if (self.view.frame.width == 320) {
+            cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 10)
+            self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 12)
+        } else if (self.view.frame.width == 375) {
+            cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 12)
+            self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 14)
+        } else if (self.view.frame.width == 414) {
+            cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 14)
+            self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 16)
+        } else if (self.view.frame.width == 768) {
+            cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 28)
+            self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 32)
+        } else if (self.view.frame.width == 1024) {
+            self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 45)
+            cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 32)
+        }
+        
         return cell
     }
     

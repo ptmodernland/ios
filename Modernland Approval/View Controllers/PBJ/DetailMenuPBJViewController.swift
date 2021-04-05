@@ -14,7 +14,8 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnBack: UIButton!
-
+    @IBOutlet weak var lbltxtTitle: UILabel!
+    
     //Class Variable
     let vm = PBJViewModel()
     var assetPdf = ""
@@ -33,6 +34,28 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var stackPdf: UIStackView!
 
+    @IBOutlet weak var lblTxtDate: UILabel!
+    @IBOutlet weak var lblTxtNomor: UILabel!
+    @IBOutlet weak var lblTxtNama: UILabel!
+    @IBOutlet weak var lblTxtDepartemen: UILabel!
+    
+    @IBOutlet weak var lblTxtViewDetail: UILabel!
+    @IBOutlet weak var lblTxtDownloadFile: UILabel!
+    @IBOutlet weak var lblTxtCatatan: UILabel!
+    @IBOutlet weak var btnKlikDisini: UIButton!
+    
+    @IBOutlet var myConstraint1 : NSLayoutConstraint!
+    @IBOutlet var myConstraint2 : NSLayoutConstraint!
+    @IBOutlet var myConstraint3 : NSLayoutConstraint!
+    @IBOutlet var myConstraint4 : NSLayoutConstraint!
+    @IBOutlet var myConstraint5 : NSLayoutConstraint!
+    @IBOutlet var myConstraint6 : NSLayoutConstraint!
+    @IBOutlet var myConstraint7 : NSLayoutConstraint!
+    
+    @IBOutlet var detailViewPBJ: UIView!
+    
+    @IBOutlet weak var btnApprove: UIButton!
+    @IBOutlet weak var btnReject: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +67,137 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
             stackButton.isHidden = false
         }
         btnBack.layer.cornerRadius = 6
+        if (self.view.frame.width == 320) {
+            self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 14)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 12)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 12)
+            self.lblNama.font = UIFont(name: self.lblNama.font.fontName, size: 12)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 12)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 12)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 12)
+            self.lblTxtNama.font = UIFont(name: self.lblTxtNama.font.fontName, size: 12)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 12)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 12)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 12)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 12)
+            self.myConstraint1.constant = 130
+            self.myConstraint2.constant = 130
+            self.myConstraint3.constant = 130
+            self.myConstraint4.constant = 130
+            self.myConstraint5.constant = 130
+            self.myConstraint6.constant = 130
+            self.myConstraint7.constant = 130
+            self.detailViewPBJ.layoutIfNeeded()
+        } else if (self.view.frame.width == 375) {
+            self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 14)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 14)
+            self.lblNama.font = UIFont(name: self.lblNama.font.fontName, size: 14)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 14)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 14)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 14)
+            self.lblTxtNama.font = UIFont(name: self.lblTxtNama.font.fontName, size: 14)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 14)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 14)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 14)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 14)
+            self.myConstraint1.constant = 130
+            self.myConstraint2.constant = 130
+            self.myConstraint3.constant = 130
+            self.myConstraint4.constant = 130
+            self.myConstraint5.constant = 130
+            self.myConstraint6.constant = 130
+            self.myConstraint7.constant = 130
+            self.detailViewPBJ.layoutIfNeeded()
+        } else if (self.view.frame.width == 414) {
+            self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 20)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 16)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 16)
+            self.lblNama.font = UIFont(name: self.lblNama.font.fontName, size: 16)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 16)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 16)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 16)
+            self.lblTxtNama.font = UIFont(name: self.lblTxtNama.font.fontName, size: 16)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 16)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 16)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 16)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 16)
+            self.myConstraint1.constant = 130
+            self.myConstraint2.constant = 130
+            self.myConstraint3.constant = 130
+            self.myConstraint4.constant = 130
+            self.myConstraint5.constant = 130
+            self.myConstraint6.constant = 130
+            self.myConstraint7.constant = 130
+            self.detailViewPBJ.layoutIfNeeded()
+        } else if (self.view.frame.width == 768) {
+            self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 42)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 45)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 18)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 18)
+            self.lblNama.font = UIFont(name: self.lblNama.font.fontName, size: 18)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 18)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 18)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 18)
+            self.lblTxtNama.font = UIFont(name: self.lblTxtNama.font.fontName, size: 18)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 18)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 18)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 18)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 18)
+            self.myConstraint1.constant = 350
+            self.myConstraint2.constant = 350
+            self.myConstraint3.constant = 350
+            self.myConstraint4.constant = 350
+            self.myConstraint5.constant = 350
+            self.myConstraint6.constant = 350
+            self.myConstraint7.constant = 350
+            self.detailViewPBJ.layoutIfNeeded()
+        } else if (self.view.frame.width == 1024) {
+            self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 52)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+           self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 25)
+           self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 25)
+           self.lblNama.font = UIFont(name: self.lblNama.font.fontName, size: 25)
+           self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 25)
+           self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 25)
+           self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 25)
+           self.lblTxtNama.font = UIFont(name: self.lblTxtNama.font.fontName, size: 25)
+           self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 25)
+           self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 25)
+           self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+           self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+           self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+           self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+           self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 25)
+           self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 25)
+            self.myConstraint1.constant = 350
+            self.myConstraint2.constant = 350
+            self.myConstraint3.constant = 350
+            self.myConstraint4.constant = 350
+            self.myConstraint5.constant = 350
+            self.myConstraint6.constant = 350
+            self.myConstraint7.constant = 350
+            self.detailViewPBJ.layoutIfNeeded()
+       }
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -90,12 +244,14 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
     
     func apiApprovePbj(pin: String) {
         let idUser = UserDefaults().string(forKey: "idUser")
+        let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
         
         let param = [
             "no_permintaan" : self.lblNomor.text ?? "",
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
             "ipaddres" : self.getIPAddress(),
+            "mac" : macAddress,
             "passwordUser" : pin
             ] as [String : Any]
         vm.approvePbj(
@@ -114,12 +270,14 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
     
     func apiRejectPbj(pin: String) {
         let idUser = UserDefaults().string(forKey: "idUser")
+        let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
         
         let param = [
             "no_permintaan" : self.lblNomor.text ?? "",
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
             "ipaddres" : self.getIPAddress(),
+            "mac" : macAddress,
             "passwordUser" : pin
             ] as [String : Any]
         vm.rejectPbj(

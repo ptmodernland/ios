@@ -14,6 +14,7 @@ class ListKategoriIOMViewController: BaseViewController {
     @IBOutlet weak var tvList: UITableView!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var vEmptyState: UIView!
+    @IBOutlet weak var lblDashboard: UILabel!
     
     let vm = IOMViewModel()
     var divisi_id = ""
@@ -51,6 +52,22 @@ class ListKategoriIOMViewController: BaseViewController {
                 }
                 if self.ListKateIOM.isEmpty {
                     self.vEmptyState.isHidden = false
+                    if (self.view.frame.width == 320) {
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 14)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 16)
+                    } else if (self.view.frame.width == 375) {
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 16)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
+                    } else if (self.view.frame.width == 414) {
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 20)
+                    } else if (self.view.frame.width == 768) {
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 42)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 45)
+                    }else if (self.view.frame.width == 1024) {
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 50)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
+                    }
                 }
                 self.tvList.reloadData()
         }, onError: { error in
@@ -94,21 +111,36 @@ extension ListKategoriIOMViewController: UITableViewDelegate, UITableViewDataSou
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
             cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 12)
             cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 12)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 14)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 16)
         } else if (self.view.frame.width == 375) {
             cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 14)
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 21)
             cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 14)
             cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 14)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
         } else if (self.view.frame.width == 414) {
             cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 20)
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 24)
             cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 20)
             cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 12)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 20)
         } else if (self.view.frame.width == 768) {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 26)
             cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 24)
             cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 24)
             cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 24)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 42)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 45)
+        } else if (self.view.frame.width == 1024) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 28)
+            cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 26)
+            cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 26)
+            cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 26)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 50)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
         }
         
         return cell
