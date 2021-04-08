@@ -45,16 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        
         let vc = StoryboardScene.Login.loginViewController.instantiate()
         window?.rootViewController = vc
         return true
     }
     
-
-    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-
         Messaging.messaging().apnsToken = deviceToken
     }
     
@@ -103,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         
-        if let targetValue = userInfo["target"] as? String
+        if let targetValue = userInfo["su"] as? String
         {
             coordinateToSomeVC(targetValue: targetValue, idNya: userInfo["idnya"] as? String ?? "", nomorNya: userInfo["nomornya"] as? String ?? "", idKordinasi: userInfo["idKordinasi"] as? String ?? "")
         }

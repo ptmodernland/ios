@@ -63,7 +63,10 @@ class ListCompareViewController: BaseViewController {
                     } else if (self.view.frame.width == 768) {
                         self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 42)
                         self.lblTitle.font = UIFont.boldSystemFont(ofSize: 45)
-                    }else if (self.view.frame.width == 1024) {
+                    } else if (self.view.frame.width == 1024) {
+                        self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+                    } else {
                         self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
                         self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
                     }
@@ -140,6 +143,13 @@ extension ListCompareViewController: UITableViewDelegate, UITableViewDataSource 
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 45)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 42)
         } else if (self.view.frame.width == 1024) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 28)
+            cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 26)
+            cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 26)
+            cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 26)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+        } else {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 28)
             cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 26)
             cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 26)

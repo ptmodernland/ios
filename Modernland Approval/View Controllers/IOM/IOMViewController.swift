@@ -90,6 +90,11 @@ extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 45)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
             self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
+        } else {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 45)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 45)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
         }
         
         if notif[indexPath.row] == "0" {

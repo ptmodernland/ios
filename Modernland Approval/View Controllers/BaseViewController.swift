@@ -31,7 +31,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-        
+        overrideUserInterfaceStyle = .light  
         onViewLoaded()
     }
     

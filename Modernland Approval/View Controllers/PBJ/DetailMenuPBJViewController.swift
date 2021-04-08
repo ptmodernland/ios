@@ -197,7 +197,33 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
             self.myConstraint6.constant = 350
             self.myConstraint7.constant = 350
             self.detailViewPBJ.layoutIfNeeded()
-       }
+        } else {
+            self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 45)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+           self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 25)
+           self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 25)
+           self.lblNama.font = UIFont(name: self.lblNama.font.fontName, size: 25)
+           self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 25)
+           self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 25)
+           self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 25)
+           self.lblTxtNama.font = UIFont(name: self.lblTxtNama.font.fontName, size: 25)
+           self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 25)
+           self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 25)
+           self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+           self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+           self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+           self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+           self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 25)
+           self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 25)
+            self.myConstraint1.constant = 350
+            self.myConstraint2.constant = 350
+            self.myConstraint3.constant = 350
+            self.myConstraint4.constant = 350
+            self.myConstraint5.constant = 350
+            self.myConstraint6.constant = 350
+            self.myConstraint7.constant = 350
+            self.detailViewPBJ.layoutIfNeeded()
+        }
         self.hideKeyboardWhenTappedAround()
     }
     

@@ -64,6 +64,9 @@ class ListRekomendasiIOMViewController: BaseViewController {
                     }else if (self.view.frame.width == 1024) {
                         self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
                         self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
+                    } else {
+                        self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
                     }
                     self.vEmpty.isHidden = false
                 }
@@ -95,10 +98,10 @@ extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewData
         cell.lblTitle.text = listKoordinasi[indexPath.row].perihal
         cell.lblSubTitle.text = "Dari : \(listKoordinasi[indexPath.row].approve ?? "") | Kepada : \(listKoordinasi[indexPath.row].koordinasi ?? "")"
         
-        if listKoordinasi[indexPath.row].statusKor == "T" {
+        if listKoordinasi[indexPath.row].statusKor == "T" && listKoordinasi[indexPath.row].statusEmail == "T"{
             cell.lblStatus.text = "Waiting Approval"
         } else {
-            cell.lblStatus.text = "Waiting Approval"
+            cell.lblStatus.text = "Approval"
         }
         if (self.view.frame.width == 320) {
             cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 12)
@@ -129,6 +132,13 @@ extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewData
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 42)
             self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 45)
         }else if (self.view.frame.width == 1024) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 28)
+            cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 26)
+            cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 26)
+            cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 26)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
+        } else {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 28)
             cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 26)
             cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 26)

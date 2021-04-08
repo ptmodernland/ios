@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ChangePasswordViewController: BaseViewController {
+class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tfNewPassword: UITextField!
     @IBOutlet weak var tfConfirmPassword: UITextField!
     @IBOutlet weak var tfNewPin: UITextField!
     
+    @IBOutlet weak var lblChangePassword: UILabel!
+    @IBOutlet weak var lblNewPassword: UILabel!
+    @IBOutlet weak var lblConfirmPassword: UILabel!
     
+    @IBOutlet weak var lblNewPin: UILabel!
     @IBOutlet weak var btnEyeNewPassword: UIButton!
     @IBOutlet weak var btnEyeConfirmPassword: UIButton!
     @IBOutlet weak var btnEyeNewPin: UIButton!
@@ -31,13 +35,61 @@ class ChangePasswordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tfNewPin.keyboardType = .numberPad
+        tfNewPin.delegate = self
         btnBack.layer.cornerRadius = 6
         self.hideKeyboardWhenTappedAround()
+        
+        if (self.view.frame.width == 320) {
+            self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 12)
+            self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 12)
+            self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 12)
+            self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 14)
+            self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+        } else if (self.view.frame.width == 375) {
+            self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 14)
+            self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 14)
+            self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 14)
+            self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 16)
+            self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+        } else if (self.view.frame.width == 414) {
+            self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 16)
+            self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 16)
+            self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 16)
+            self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 20)
+            self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+        } else if (self.view.frame.width == 768) {
+            self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 32)
+            self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 32)
+            self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 32)
+            self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 45)
+            self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
+        } else if (self.view.frame.width == 1024) {
+            self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 45)
+            self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 45)
+            self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 45)
+            self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 50)
+            self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
+        } else {
+            self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 45)
+            self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 45)
+            self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 45)
+            self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 50)
+            self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         makeRounded(view: btnBack)
         makeRounded(view: btnSubmit)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 4
+        let currentString: NSString = (textField.text ?? "") as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
     }
     
     func togglePassword(state: Bool, textField: UITextField, buttonEye: UIButton) -> Bool {

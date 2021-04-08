@@ -67,6 +67,9 @@ class ListKategoriIOMViewController: BaseViewController {
                     }else if (self.view.frame.width == 1024) {
                         self.lblTitle.font = UIFont.boldSystemFont(ofSize: 50)
                         self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
+                    }else{
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 50)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 55)
                     }
                 }
                 self.tvList.reloadData()

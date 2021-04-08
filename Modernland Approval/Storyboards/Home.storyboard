@@ -18,31 +18,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogoTitle" translatesAutoresizingMaskIntoConstraints="NO" id="MQA-tI-T5F">
-                                <rect key="frame" x="20" y="64" width="212" height="49.5"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slider1" translatesAutoresizingMaskIntoConstraints="NO" id="Exj-yc-Dwe">
-                                <rect key="frame" x="20" y="133.5" width="374" height="172"/>
+                                <rect key="frame" x="101" y="64" width="212" height="49.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="172" id="qfo-s2-1MB"/>
+                                    <constraint firstAttribute="height" constant="49.5" id="EDm-dw-iNs"/>
+                                    <constraint firstAttribute="width" constant="212" id="mbr-Ow-4eP"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slider1" translatesAutoresizingMaskIntoConstraints="NO" id="LwP-12-z6v">
+                                <rect key="frame" x="10" y="164" width="394" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="372" id="Pss-PT-zab"/>
+                                    <constraint firstAttribute="height" constant="170" id="kUx-OO-nxO"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IVI-6Y-ILf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Exj-yc-Dwe" firstAttribute="leading" secondItem="IVI-6Y-ILf" secondAttribute="leading" constant="20" id="36W-xk-8xY"/>
-                            <constraint firstItem="IVI-6Y-ILf" firstAttribute="trailing" secondItem="Exj-yc-Dwe" secondAttribute="trailing" constant="20" id="Lrx-9S-dO1"/>
+                            <constraint firstItem="LwP-12-z6v" firstAttribute="centerX" secondItem="MQA-tI-T5F" secondAttribute="centerX" id="6Ht-to-sdg"/>
+                            <constraint firstItem="LwP-12-z6v" firstAttribute="centerX" secondItem="IVI-6Y-ILf" secondAttribute="centerX" id="B29-2E-w7P"/>
+                            <constraint firstItem="LwP-12-z6v" firstAttribute="leading" secondItem="IVI-6Y-ILf" secondAttribute="leading" constant="10" id="Dvl-cM-aQG"/>
                             <constraint firstItem="MQA-tI-T5F" firstAttribute="top" secondItem="IVI-6Y-ILf" secondAttribute="top" constant="20" id="MiG-ex-Q5l"/>
-                            <constraint firstItem="Exj-yc-Dwe" firstAttribute="width" secondItem="Hg5-dN-Sav" secondAttribute="width" multiplier="0.903382" id="QSE-4J-uaF"/>
-                            <constraint firstItem="MQA-tI-T5F" firstAttribute="leading" secondItem="IVI-6Y-ILf" secondAttribute="leading" constant="20" id="S1v-BR-mya"/>
-                            <constraint firstItem="Exj-yc-Dwe" firstAttribute="centerX" secondItem="IVI-6Y-ILf" secondAttribute="centerX" id="hpi-OW-uRe"/>
-                            <constraint firstItem="Exj-yc-Dwe" firstAttribute="top" secondItem="MQA-tI-T5F" secondAttribute="bottom" constant="20" id="mGz-eu-7tB"/>
+                            <constraint firstItem="LwP-12-z6v" firstAttribute="top" secondItem="IVI-6Y-ILf" secondAttribute="top" constant="120" id="OSr-F6-M73"/>
+                            <constraint firstItem="MQA-tI-T5F" firstAttribute="centerX" secondItem="IVI-6Y-ILf" secondAttribute="centerX" id="ZqK-ni-rpi"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="LHp-qE-6mq">
                         <color key="badgeColor" red="0.66666666669999997" green="0.098039215690000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="homeView" destination="Hg5-dN-Sav" id="B6y-DV-5se"/>
+                        <outlet property="imgConstrainHeight" destination="EDm-dw-iNs" id="LGk-xB-cS0"/>
+                        <outlet property="imgConstrainLogoHeight" destination="kUx-OO-nxO" id="Zwz-Eb-soO"/>
+                        <outlet property="imgConstrainLogoTop" destination="OSr-F6-M73" id="tsS-g8-GqW"/>
+                        <outlet property="imgConstrainLogoWidth" destination="Pss-PT-zab" id="JhX-fW-pZS"/>
+                        <outlet property="imgConstrainWidth" destination="mbr-Ow-4eP" id="Sca-NB-P2C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGh-NP-6vf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

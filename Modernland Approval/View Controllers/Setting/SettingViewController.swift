@@ -13,11 +13,74 @@ class SettingViewController: BaseViewController {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var imgGender: UIImageView!
+    @IBOutlet weak var lblTxtSetting: UILabel!
+    @IBOutlet weak var imageConstrain1: NSLayoutConstraint!
+    @IBOutlet weak var imageConstrain2: NSLayoutConstraint!
+    
+    @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var btnChangePassword: UIButton!
+    @IBOutlet var settingView: UIView!
     
     let vm = SettingViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (self.view.frame.width == 320) {
+            self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 12)
+            self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 12)
+            self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 14)
+            self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.imageConstrain1.constant = 150
+            self.imageConstrain2.constant = 150
+            self.settingView.layoutIfNeeded()
+        } else if (self.view.frame.width == 375) {
+            self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 14)
+            self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 14)
+            self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 16)
+            self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.imageConstrain1.constant = 150
+            self.imageConstrain2.constant = 150
+            self.settingView.layoutIfNeeded()
+        } else if (self.view.frame.width == 414) {
+            self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 16)
+            self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 16)
+            self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 20)
+            self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.imageConstrain1.constant = 150
+            self.imageConstrain2.constant = 150
+            self.settingView.layoutIfNeeded()
+        } else if (self.view.frame.width == 768) {
+            self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 32)
+            self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 32)
+            self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 45)
+            self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
+            self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
+            self.imageConstrain1.constant = 550
+            self.imageConstrain2.constant = 550
+            self.settingView.layoutIfNeeded()
+        } else if (self.view.frame.width == 1024) {
+            self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 45)
+            self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 45)
+            self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 50)
+            self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
+            self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
+            self.imageConstrain1.constant = 550
+            self.imageConstrain2.constant = 550
+            self.settingView.layoutIfNeeded()
+        } else {
+            self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 45)
+            self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 45)
+            self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 50)
+            self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
+            self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
+            self.imageConstrain1.constant = 450
+            self.imageConstrain2.constant = 450
+            self.settingView.layoutIfNeeded()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

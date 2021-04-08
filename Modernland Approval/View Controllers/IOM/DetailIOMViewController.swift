@@ -507,6 +507,42 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
             self.myConstraint9.constant = 350
             self.myConstraint10.constant = 350
             self.detailViewIOM.layoutIfNeeded()
+        } else {
+            self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 25)
+            self.lblCc.font = UIFont(name: self.lblTitle.font.fontName, size: 25)
+            self.lblFrom.font = UIFont(name: self.lblFrom.font.fontName, size: 25)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 25)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 25)
+            self.lblCategory.font = UIFont(name: self.lblCategory.font.fontName, size: 25)
+            self.lblAbout.font = UIFont(name: self.lblAbout.font.fontName, size: 25)
+            self.lblTxtRecipient.font = UIFont(name: self.lblTxtRecipient.font.fontName, size: 25)
+            self.lblTxtCc.font = UIFont(name: self.lblTxtCc.font.fontName, size: 25)
+            self.lblTxtFrom.font = UIFont(name: self.lblTxtFrom.font.fontName, size: 25)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 25)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 25)
+            self.lblTxtCategory.font = UIFont(name: self.lblTxtCategory.font.fontName, size: 25)
+            self.lblTxtAbout.font = UIFont(name: self.lblTxtAbout.font.fontName, size: 25)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 25)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.btnRecommend.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 25)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 25)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+            self.myConstraint1.constant = 350
+            self.myConstraint2.constant = 350
+            self.myConstraint3.constant = 350
+            self.myConstraint4.constant = 350
+            self.myConstraint5.constant = 350
+            self.myConstraint6.constant = 350
+            self.myConstraint7.constant = 350
+            self.myConstraint8.constant = 350
+            self.myConstraint9.constant = 350
+            self.myConstraint10.constant = 350
+            self.detailViewIOM.layoutIfNeeded()
         }
     }
     

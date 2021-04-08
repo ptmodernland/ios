@@ -115,6 +115,9 @@ extension ListHeadKoordinasiViewController: UITableViewDataSource, UITableViewDe
         } else if (self.view.frame.width == 1024) {
             self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 45)
             cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 32)
+        } else {
+            self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 45)
+            cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 32)
         }
         
         return cell

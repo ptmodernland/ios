@@ -66,6 +66,9 @@ class ListHistoryPBJViewController: BaseViewController {
                     }else if (self.view.frame.width == 1024) {
                         self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
                         self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+                    } else{
+                        self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 45)
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 50)
                     }
                 }
                 self.tvList.reloadData()
@@ -135,8 +138,15 @@ extension ListHistoryPBJViewController: UITableViewDelegate, UITableViewDataSour
             cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 26)
             cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 26)
             cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 26)
-            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
-            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 45)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 50)
+        } else {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 28)
+            cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 26)
+            cell.lblSubTitle.font = UIFont(name: cell.lblSubTitle.font.fontName, size: 26)
+            cell.lblStatus.font = UIFont(name: cell.lblStatus.font.fontName, size: 26)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 45)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 50)
         }
         return cell
     }

@@ -43,6 +43,9 @@ class DashboardViewController: UITabBarController {
         } else if (self.view.frame.width == 1024) {
             let font = UIFont(name: "Helvetica", size: 21)!
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        } else {
+            let font = UIFont(name: "Helvetica", size: 21)!
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         }
     }
     

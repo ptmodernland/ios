@@ -29,6 +29,7 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.viewController = self
         self.hideKeyboardWhenTappedAround()
