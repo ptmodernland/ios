@@ -743,13 +743,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "modernland-approval";
 				CODE_SIGN_ENTITLEMENTS = "Modernland Approval/Modernland Approval.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 85ZVUCDAWG;
 				INFOPLIST_FILE = "Modernland Approval/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.modernland.modernland-approval";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -764,13 +765,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "modernland-approval";
 				CODE_SIGN_ENTITLEMENTS = "Modernland Approval/Modernland Approval.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 85ZVUCDAWG;
 				INFOPLIST_FILE = "Modernland Approval/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.modernland.modernland-approval";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
