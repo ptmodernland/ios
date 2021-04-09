@@ -589,6 +589,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
             })
         } else {
             let previewController = QLPreviewController()
+            Toast.show(message: "File PDF Berhasil Unduh", controller: self)
             previewController.dataSource = self
             self.present(previewController, animated: true, completion: nil)
         }

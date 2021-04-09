@@ -44,7 +44,7 @@ class IOMViewController: BaseViewController {
             self.notif.removeAll()
             self.notif = ["0","0","0"]
             self.notif[0] = response.total ?? ""
-            self.notif[1] = response.totalKoordinasi ?? ""
+            self.notif[2] = response.totalKoordinasi ?? ""
             self.cvList.reloadData()
         }, onError: { error in
             print(error)

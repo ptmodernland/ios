@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Download View Controller-->
+        <scene sceneID="J5M-SX-fcY">
+            <objects>
+                <viewController storyboardIdentifier="DownloadViewController" id="t9A-6I-rnb" customClass="DownloadViewController" customModule="Modernland_Approval" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ecf-1t-WoK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3fd-FA-nrs">
+                                <rect key="frame" x="20" y="451" width="374" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uFU-ns-xhT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3fd-FA-nrs" firstAttribute="centerX" secondItem="uFU-ns-xhT" secondAttribute="centerX" id="4xY-VQ-3RA"/>
+                            <constraint firstItem="3fd-FA-nrs" firstAttribute="centerY" secondItem="uFU-ns-xhT" secondAttribute="centerY" id="X5c-YB-nrI"/>
+                            <constraint firstItem="3fd-FA-nrs" firstAttribute="leading" secondItem="uFU-ns-xhT" secondAttribute="leading" constant="20" id="v7M-DO-uib"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="downloadBar" destination="3fd-FA-nrs" id="3cA-dh-cWY"/>
+                        <outlet property="pdfView" destination="ecf-1t-WoK" id="9Zg-AT-3Dl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGc-QP-hYE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="-191.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
