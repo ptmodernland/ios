@@ -303,12 +303,13 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func downloadPdf(completion: @escaping (_ success: Bool,_ fileLocation: URL?) -> Void){
-        
+        self.showLoading()
         let itemUrl = URL(string: "https://approval.modernland.co.id/assets/file/\(assetPdf)")
         let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let destinationUrl = documentsDirectoryURL.appendingPathComponent("\(assetPdf)")
         
         if FileManager.default.fileExists(atPath: destinationUrl.path) {
+            self.hideLoading()
             debugPrint("The file already exists at path")
             completion(true, destinationUrl)
         } else {
@@ -317,8 +318,10 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
                 do {
                     try FileManager.default.moveItem(at: tempLocation, to: destinationUrl)
                     print("File moved to documents folder")
+                    self.hideLoading()
                     completion(true, destinationUrl)
                 } catch let error as NSError {
+                    self.hideLoading()
                     print(error.localizedDescription)
                     completion(false, nil)
                 }
