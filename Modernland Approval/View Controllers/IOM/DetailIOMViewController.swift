@@ -302,33 +302,6 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
         return newString.length <= maxLength
     }
     
-    func downloadPdf(completion: @escaping (_ success: Bool,_ fileLocation: URL?) -> Void){
-        self.showLoading()
-        let itemUrl = URL(string: "https://approval.modernland.co.id/assets/file/\(assetPdf)")
-        let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let destinationUrl = documentsDirectoryURL.appendingPathComponent("\(assetPdf)")
-        
-        if FileManager.default.fileExists(atPath: destinationUrl.path) {
-            self.hideLoading()
-            debugPrint("The file already exists at path")
-            completion(true, destinationUrl)
-        } else {
-            URLSession.shared.downloadTask(with: itemUrl!, completionHandler: { (location, response, error) -> Void in
-                guard let tempLocation = location, error == nil else { return }
-                do {
-                    try FileManager.default.moveItem(at: tempLocation, to: destinationUrl)
-                    print("File moved to documents folder")
-                    self.hideLoading()
-                    completion(true, destinationUrl)
-                } catch let error as NSError {
-                    self.hideLoading()
-                    print(error.localizedDescription)
-                    completion(false, nil)
-                }
-            }).resume()
-        }
-    }
-    
     func settingView() {
         if (self.view.frame.width == 320) {
             self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 12)
@@ -579,22 +552,53 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func pdfDownloadButtonTap(_ sender: Any) {
-        if pdfDownloaded == false {
+        //if pdfDownloaded == false {
+            self.showLoading()
             self.downloadPdf(completion: {(success, fileLocationURL) in
                 DispatchQueue.main.async {
                     if success {
+                        Toast.show(message: "File PDF Berhasil Unduh", controller: self)
                         self.previewItem = fileLocationURL! as NSURL
-                        self.pdfDownloaded = true
+                        let previewController = QLPreviewController()
+                        previewController.dataSource = self
+                        self.present(previewController, animated: true, completion: nil)
+                        self.hideLoading()
                     } else {
                         Toast.show(message: "Gagal Unduh PDF", controller: self)
+                        self.hideLoading()
                     }
                 }
             })
-        } else {
+        /*}
+        else {
             let previewController = QLPreviewController()
             Toast.show(message: "File PDF Berhasil Unduh", controller: self)
             previewController.dataSource = self
             self.present(previewController, animated: true, completion: nil)
+            self.hideLoading()
+        }*/
+    }
+
+    func downloadPdf(completion: @escaping (_ success: Bool,_ fileLocation: URL?) -> Void){
+        let itemUrl = URL(string: "https://approval.modernland.co.id/assets/file/\(assetPdf)")
+        let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let destinationUrl = documentsDirectoryURL.appendingPathComponent("\(assetPdf)")
+        
+        if FileManager.default.fileExists(atPath: destinationUrl.path) {
+            debugPrint("The file already exists at path")
+            completion(true, destinationUrl)
+        } else {
+            URLSession.shared.downloadTask(with: itemUrl!, completionHandler: { (location, response, error) -> Void in
+                guard let tempLocation = location, error == nil else { return }
+                do {
+                    try FileManager.default.moveItem(at: tempLocation, to: destinationUrl)
+                    print("File moved to documents folder")
+                    completion(true, destinationUrl)
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                    completion(false, nil)
+                }
+            }).resume()
         }
     }
     

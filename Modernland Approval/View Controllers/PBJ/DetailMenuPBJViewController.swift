@@ -404,22 +404,28 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate {
     
     
     @IBAction func pdfDownloadButtonTap(_ sender: Any) {
-        if pdfDownloaded == false {
+       // if pdfDownloaded == false {
+        self.showLoading()
             self.downloadPdf(completion: {(success, fileLocationURL) in
                 DispatchQueue.main.async {
                     if success {
+                        Toast.show(message: "File PDF Berhasil Unduh", controller: self)
                         self.previewItem = fileLocationURL! as NSURL
-                        self.pdfDownloaded = true
+                        let previewController = QLPreviewController()
+                        previewController.dataSource = self
+                        self.present(previewController, animated: true, completion: nil)
+                        self.hideLoading()
                     } else {
                         Toast.show(message: "Gagal Unduh PDF", controller: self)
+                        self.hideLoading()
                     }
                 }
             })
-        } else {
+        /*} else {
             let previewController = QLPreviewController()
             previewController.dataSource = self
             self.present(previewController, animated: true, completion: nil)
-        }
+        }*/
     }
 }
 
