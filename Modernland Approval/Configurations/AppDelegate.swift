@@ -75,11 +75,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         Messaging.messaging().token { token, error in
-          if let error = error {
-            print("Error fetching FCM registration token: \(error)")
-          } else if let token = token {
-            print("FCM registration token: \(token)")
-          }
+            if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+                print("FCM registration token: \(token)")
+            }
         }
         
         print("Firebase registration token: \(String(describing: fcmToken))")
@@ -87,9 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let dataDict:[String: String] = ["token": fcmToken ?? ""]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         //viewController?.loadRequest(for: fcmToken ?? "")
-                if let appDomain = Bundle.main.bundleIdentifier {
-                    UserDefaults.standard.removePersistentDomain(forName: appDomain)
-              }
+        if Bundle.main.bundleIdentifier != nil {
+            UserDefaults.standard.set("", forKey: "fcmToken")
+        }
         UserDefaults.standard.set(fcmToken ?? "", forKey: "fcmToken")
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
@@ -118,26 +118,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //var storyboard = UIStoryboard(name: "Comparasion", bundle: nil)
         //var yourVC = storyboard.instantiateViewController(identifier: "ListCompareViewController")
         if(targetValue == "iom"){
-                //storyboard = UIStoryboard(name: "IOM", bundle: nil)
-                let VC = StoryboardScene.IOM.detailIOMViewController.instantiate()
-                VC.idIom = Int(idNya) ?? 0
-                VC.fromPushNotif = true
-                let navController = UINavigationController(rootViewController: VC)
-                navController.setNavigationBarHidden(true, animated: true)
-//                navController.modalPresentationStyle = .fullScreen
-                window.rootViewController = navController
-//                window.makeKeyAndVisible()
-             //storyboard = UIStoryboard(name: "IOM", bundle: nil)
-             //yourVC = storyboard.instantiateViewController(identifier: "IOMViewController")
+            //storyboard = UIStoryboard(name: "IOM", bundle: nil)
+            let VC = StoryboardScene.IOM.detailIOMViewController.instantiate()
+            VC.idIom = Int(idNya) ?? 0
+            VC.fromPushNotif = true
+            let navController = UINavigationController(rootViewController: VC)
+            navController.setNavigationBarHidden(true, animated: true)
+            //                navController.modalPresentationStyle = .fullScreen
+            window.rootViewController = navController
+            //                window.makeKeyAndVisible()
+            //storyboard = UIStoryboard(name: "IOM", bundle: nil)
+            //yourVC = storyboard.instantiateViewController(identifier: "IOMViewController")
         } else if(targetValue == "pbj"){
             let VC = StoryboardScene.PBJ.detailMenuPBJViewController.instantiate()
             VC.noPermintaan = idNya
             VC.fromPushNotif = true
             let navController = UINavigationController(rootViewController: VC)
             navController.setNavigationBarHidden(true, animated: true)
-//                navController.modalPresentationStyle = .fullScreen
+            //                navController.modalPresentationStyle = .fullScreen
             window.rootViewController = navController
-//            window.makeKeyAndVisible()
+            //            window.makeKeyAndVisible()
         } else if(targetValue == "kordinasi"){
             let VC = StoryboardScene.IOM.detailIOMViewController.instantiate()
             VC.idIom = Int(idNya) ?? 0
@@ -147,41 +147,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             VC.idKoordinasi = idKordinasi
             let navController = UINavigationController(rootViewController: VC)
             navController.setNavigationBarHidden(true, animated: true)
-//                navController.modalPresentationStyle = .fullScreen
+            //                navController.modalPresentationStyle = .fullScreen
             window.rootViewController = navController
-//            window.makeKeyAndVisible()
+            //            window.makeKeyAndVisible()
         } else {
             let VC = StoryboardScene.Comparasion.DetailCompareViewController.instantiate()
             VC.idCompare = Int(idNya) ?? 0
-           VC.fromPushNotif = true
-           let navController = UINavigationController(rootViewController: VC)
-           navController.setNavigationBarHidden(true, animated: true)
-//                navController.modalPresentationStyle = .fullScreen
-           window.rootViewController = navController
-//            window.makeKeyAndVisible()
-       }
+            VC.fromPushNotif = true
+            let navController = UINavigationController(rootViewController: VC)
+            navController.setNavigationBarHidden(true, animated: true)
+            //                navController.modalPresentationStyle = .fullScreen
+            window.rootViewController = navController
+            //            window.makeKeyAndVisible()
+        }
         
     }
     
-
+    
     /*func settingPushNotification() {
-        let app = UIApplication.shared
-        
-        if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
-            
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: authOptions,
-                completionHandler: {_, _ in })
-        } else {
-            let settings: UIUserNotificationSettings =
-                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            app.registerUserNotificationSettings(settings)
-        }
-        
-        app.registerForRemoteNotifications()
-    }*/
+     let app = UIApplication.shared
+     
+     if #available(iOS 10.0, *) {
+     // For iOS 10 display notification (sent via APNS)
+     UNUserNotificationCenter.current().delegate = self
+     
+     let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+     UNUserNotificationCenter.current().requestAuthorization(
+     options: authOptions,
+     completionHandler: {_, _ in })
+     } else {
+     let settings: UIUserNotificationSettings =
+     UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+     app.registerUserNotificationSettings(settings)
+     }
+     
+     app.registerForRemoteNotifications()
+     }*/
 }
 
