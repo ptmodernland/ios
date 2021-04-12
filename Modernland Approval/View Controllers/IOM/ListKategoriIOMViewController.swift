@@ -41,8 +41,10 @@ class ListKategoriIOMViewController: BaseViewController {
     }
     
     func getListKategoriIom() {
+        let cariUsername = UserDefaults().string(forKey: "username") ?? ""
         showLoading()
         vm.postListKategoriIom(
+            username : cariUsername,
             divisiID: divisi_id,
             onSuccess: { response in
                 self.hideLoading()
@@ -152,7 +154,8 @@ extension ListKategoriIOMViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = StoryboardScene.IOM.detailIOMViewController.instantiate()
         vc.idIom = Int("\(ListKateIOM[indexPath.row].idIom ?? "")") ?? 0
-        vc.type = "recommendation"
+        //vc.type = "recommendation"
+            //vc.nomorMemo = ListKateIOM[indexPath.row].nomor ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

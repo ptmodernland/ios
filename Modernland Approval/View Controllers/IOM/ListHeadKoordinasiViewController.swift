@@ -68,7 +68,7 @@ class ListHeadKoordinasiViewController: BaseViewController {
         
         let param = [
             "nomor" : nomor,
-            "id" : idIom,
+            "id_iom" : idIom,
             "head" : head,
             "ipaddres" : self.getIPAddress(),
             "id_user" : idUser ?? ""

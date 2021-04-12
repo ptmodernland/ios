@@ -41,9 +41,10 @@ class ListHistoryIOMViewController: BaseViewController {
     }
     
     func getListIom() {
+        let cariUsername = UserDefaults().string(forKey: "username") ?? ""
         showLoading()
         vm.postListHistoryIom(
-            body: ["username": self.username ?? ""],
+            username : cariUsername,
             onSuccess: { response in
                 self.hideLoading()
                 self.listIOM.removeAll()

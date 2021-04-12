@@ -40,7 +40,10 @@ class IOMViewController: BaseViewController {
     }
     
     func getCounter() {
-        vm.getCounter(onSuccess: { response in
+        let cariUsername = UserDefaults().string(forKey: "username") ?? ""
+        vm.getCounter(
+            username : cariUsername,
+            onSuccess: { response in
             self.notif.removeAll()
             self.notif = ["0","0","0"]
             self.notif[0] = response.total ?? ""

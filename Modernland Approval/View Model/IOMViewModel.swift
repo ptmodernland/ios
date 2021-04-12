@@ -11,9 +11,10 @@ import Foundation
 class IOMViewModel {
     
     let apiHelper = ApiHelper()
-    let username = UserDefaults().string(forKey: "username") ?? ""
+    //let username = UserDefaults().string(forKey: "username") ?? ""
     
-    func getCounter(onSuccess: @escaping (CounterIOM) -> Void,
+    func getCounter(username: String,
+                    onSuccess: @escaping (CounterIOM) -> Void,
                     onError: @escaping (String) -> Void,
                     onFailed: @escaping (String) -> Void) {
         apiHelper.postRequestList(
@@ -26,7 +27,7 @@ class IOMViewModel {
     }
     
     
-    func postListIom(body: [String:Any],
+    func postListIom(username: String,
                      onSuccess: @escaping ([ListIOM]) -> Void,
                      onError: @escaping (String) -> Void,
                      onFailed: @escaping (String) -> Void) {
@@ -39,7 +40,7 @@ class IOMViewModel {
         )
     }
     
-    func postListHistoryIom(body: [String:Any],
+    func postListHistoryIom(username: String,
                             onSuccess: @escaping ([ListIOM]) -> Void,
                             onError: @escaping (String) -> Void,
                             onFailed: @escaping (String) -> Void) {
@@ -65,12 +66,12 @@ class IOMViewModel {
         )
     }
     
-    func getDetailRekomendasi(nomorMemo: String, idIom: String, idKoordinasi: String,
+    func getDetailRekomendasi(nomorMemo: String, approve: String, idIom: String, idKoordinasi: String,
                        onSuccess: @escaping (DetailKoordinasi) -> Void,
                        onError: @escaping (String) -> Void,
                        onFailed: @escaping (String) -> Void) {
         apiHelper.postRequestList(
-            url: Constants.BASE_URL+Constants.GET_KOORDINASI+"?nomormemo=\(nomorMemo)&id=\(idIom)&username=\(username)&id_kordinasi=\(idKoordinasi)",
+            url: Constants.BASE_URL+Constants.GET_KOORDINASI+"?nomormemo=\(nomorMemo)&id=\(idIom)&username=\(approve)&id_kordinasi=\(idKoordinasi)",
             body: ["":""],
             onSuccess: { response in onSuccess(response) },
             onError: { error in onError("\(error)") },
@@ -115,7 +116,7 @@ class IOMViewModel {
         )
     }
     
-    func listKoordinasi(body: [String:Any],
+    func listKoordinasi(username: String,
                         onSuccess: @escaping ([ListKoordinasi]) -> Void,
                         onError: @escaping (String) -> Void,
                         onFailed: @escaping (String) -> Void) {
@@ -167,9 +168,10 @@ class IOMViewModel {
         )
     }
 
-    func getCounterKategori(onSuccess: @escaping (CounterKateori) -> Void,
-                    onError: @escaping (String) -> Void,
-                    onFailed: @escaping (String) -> Void) {
+    func getCounterKategori(username: String,
+                            onSuccess: @escaping (CounterKateori) -> Void,
+                            onError: @escaping (String) -> Void,
+                            onFailed: @escaping (String) -> Void) {
         apiHelper.postRequestList(
             url: Constants.BASE_URL+Constants.COUNTER_KATEGORI+"?username=\(username)",
             body: ["":""],
@@ -180,7 +182,7 @@ class IOMViewModel {
     }
 
     
-    func postListKategoriIom(divisiID: String,
+    func postListKategoriIom(username: String,divisiID: String,
                      onSuccess: @escaping ([ListKategoriIOM]) -> Void,
                      onError: @escaping (String) -> Void,
                      onFailed: @escaping (String) -> Void) {

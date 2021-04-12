@@ -23,12 +23,12 @@ class ListIOMViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnBack.layer.cornerRadius = 6
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupTableView()
         getListIom()
+        btnBack.layer.cornerRadius = 6
         makeRounded(view: btnBack)
     }
     
@@ -41,9 +41,10 @@ class ListIOMViewController: BaseViewController {
     }
     
     func getListIom() {
+        let cariUsername = UserDefaults().string(forKey: "username") ?? ""
         showLoading()
         vm.postListIom(
-            body: ["username": self.username ?? ""],
+            username : cariUsername,
             onSuccess: { response in
                 self.hideLoading()
                 self.listIOM.removeAll()
@@ -158,7 +159,8 @@ extension ListIOMViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = StoryboardScene.IOM.detailIOMViewController.instantiate()
         vc.idIom = Int("\(listIOM[indexPath.row].idIom ?? "")") ?? 0
-        vc.type = "recommendation"
+        //vc.type = "recommendation"
+        //vc.nomorMemo = listIOM[indexPath.row].nomor ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

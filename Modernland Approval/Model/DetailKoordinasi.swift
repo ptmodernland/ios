@@ -19,6 +19,7 @@ struct DetailKoordinasi: Codable {
     let perihal: String?
     let attachments: String?
     let approve: String?
+    let approve_kor: String?
     let status: String?
     let statusEmail: String?
     
@@ -34,6 +35,7 @@ struct DetailKoordinasi: Codable {
         case perihal
         case attachments = "attch_lampiran"
         case approve
+        case approve_kor
         case status
         case statusEmail = "status_email"
     }

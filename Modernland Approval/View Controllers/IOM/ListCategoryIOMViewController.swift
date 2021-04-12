@@ -43,7 +43,10 @@ class ListCategoryIOMViewController: BaseViewController {
         getCounter()
     }
     func getCounter() {
-        vm.getCounterKategori(onSuccess: { response in
+        let cariUsername = UserDefaults().string(forKey: "username") ?? ""
+        vm.getCounterKategori(
+            username : cariUsername,
+            onSuccess: { response in
             self.notif.removeAll()
             self.notif = ["0","0","0","0","0","0","0","0","0","0","0","0","0"]
             self.notif[0] = response.totalmarketingclub ?? ""

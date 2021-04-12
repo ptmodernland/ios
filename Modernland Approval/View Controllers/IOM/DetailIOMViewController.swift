@@ -22,9 +22,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
     var nomorMemo = ""
     var idKoordinasi = ""
     var pdfDownloaded = false
-    
     var fromPushNotif = false
-    
+    var approve = ""
     lazy var previewItem = NSURL()
     
     @IBOutlet var detailViewIOM: UIView!
@@ -100,9 +99,10 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
         showLoading()
         vm.getDetailMemo(
             idIom: idIom,
-            onSuccess: { response in
+            onSuccess: { [self] response in
                 self.hideLoading()
                 print(response)
+                
                 self.lblRecipient.text = response.kepada ?? ""
                 self.lblCc.text = response.cc ?? ""
                 self.lblFrom.text = response.dari ?? ""
@@ -133,9 +133,11 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
         showLoading()
         vm.getDetailRekomendasi(
             nomorMemo: nomorMemo,
+            approve: approve,
             idIom: String(idIom),
             idKoordinasi: idKoordinasi,
             onSuccess: { response in
+                let username = UserDefaults().string(forKey: "username") ?? ""
                 self.hideLoading()
                 print(response)
                 self.lblRecipient.text = response.kepada ?? ""
@@ -148,6 +150,14 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
                 self.assetPdf = response.attachments ?? ""
                 if self.assetPdf == "" {
                     self.stackPdf.isHidden = true
+                }
+                
+                if response.approve_kor != username {
+                    self.stackButton.isHidden = true
+                }
+                
+                if response.status == "T" || response.status == "C" {
+                    self.stackButton.isHidden = true
                 }
         },
             onError: { error in
@@ -547,7 +557,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func buttonRecommendationTap(_ sender: Any) {
         let vc = StoryboardScene.IOM.listHeadKoordinasiViewController.instantiate()
         vc.idIom = String(idIom)
-        vc.nomor = nomorMemo
+        vc.nomor = self.lblNomor.text ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

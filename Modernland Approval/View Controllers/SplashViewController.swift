@@ -17,7 +17,8 @@ class SplashViewController: BaseViewController {
     }
     
     func checkSessionToken() {
-        let checkUsername = username ?? ""
+        //let checkUsername = username ?? ""
+        let checkUsername = UserDefaults().string(forKey: "username") ?? ""
         if checkUsername.isEmpty {
             goToLogin()
         } else {

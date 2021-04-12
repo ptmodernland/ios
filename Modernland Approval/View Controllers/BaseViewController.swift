@@ -92,7 +92,7 @@ class BaseViewController: UIViewController {
         self.navigationController?.setViewControllers([vc], animated: true)
     }
     
-    func isAppAlreadyLaunchedOnce() -> Bool {
+    /*func isAppAlreadyLaunchedOnce() -> Bool {
         let defaults = UserDefaults.standard
         if let _ = defaults.string(forKey: "userFirstInstall") {
             return true
@@ -100,7 +100,7 @@ class BaseViewController: UIViewController {
             defaults.set(true, forKey: "userFirstInstall")
             return false
         }
-    }
+    }*/
     
     func showLoading() {
         hud.textLabel.text = "Loading"

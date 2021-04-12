@@ -39,9 +39,10 @@ class ListRekomendasiIOMViewController: BaseViewController {
     }
     
     func getListIom() {
+        let cariUsername = UserDefaults().string(forKey: "username") ?? ""
         showLoading()
         vm.listKoordinasi(
-            body: ["username": self.username ?? ""],
+            username : cariUsername,
             onSuccess: { response in
                 self.hideLoading()
                 self.listKoordinasi.removeAll()
@@ -98,11 +99,14 @@ extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewData
         cell.lblTitle.text = listKoordinasi[indexPath.row].perihal
         cell.lblSubTitle.text = "Dari : \(listKoordinasi[indexPath.row].approve ?? "") | Kepada : \(listKoordinasi[indexPath.row].koordinasi ?? "")"
         
-        if listKoordinasi[indexPath.row].statusKor == "T" && listKoordinasi[indexPath.row].statusEmail == "T"{
+        if listKoordinasi[indexPath.row].statusKor == "Y" && listKoordinasi[indexPath.row].statusEmail == "T"{
             cell.lblStatus.text = "Waiting Approval"
-        } else {
-            cell.lblStatus.text = "Approval"
+        } else if listKoordinasi[indexPath.row].statusKor == "C" && listKoordinasi[indexPath.row].statusEmail == "T"{
+            cell.lblStatus.text = "Recomendation Cancel"
+        }  else if listKoordinasi[indexPath.row].statusKor == "T" && listKoordinasi[indexPath.row].statusEmail == "T"{
+            cell.lblStatus.text = "Recomendation Approve"
         }
+        
         if (self.view.frame.width == 320) {
             cell.lblNomor.font = UIFont(name: cell.lblNomor.font.fontName, size: 12)
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
@@ -156,6 +160,7 @@ extension ListRekomendasiIOMViewController: UITableViewDelegate, UITableViewData
         vc.type = "rekomendasi"
         vc.nomorMemo = listKoordinasi[indexPath.row].nomor ?? ""
         vc.idKoordinasi = listKoordinasi[indexPath.row].idKordinasi ?? ""
+        vc.approve = listKoordinasi[indexPath.row].approve ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
