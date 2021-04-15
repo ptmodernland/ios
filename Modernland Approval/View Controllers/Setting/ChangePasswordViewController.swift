@@ -90,9 +90,6 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
                                                object: nil)
     }
     
-    /*func loadRequest(for deviceTokenString: String) {
-        deviceToken = deviceTokenString
-    }*/
     @objc func keyboardNotification(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue

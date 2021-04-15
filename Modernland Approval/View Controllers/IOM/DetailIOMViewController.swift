@@ -10,8 +10,10 @@ import UIKit
 import QuickLook
 import UITextView_Placeholder
 
-class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
+class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextViewDelegate {
     
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblTxtTitle: UILabel!
     //Class Variable
@@ -82,6 +84,33 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate {
         btnBack.layer.cornerRadius = 6
         self.hideKeyboardWhenTappedAround()
         self.settingView()
+        textViewNotes.delegate = self
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+    }
+    
+    @objc func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let endFrameY = endFrame?.origin.y ?? 0
+            let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+            if endFrameY >= UIScreen.main.bounds.size.height {
+                self.keyboardHeightLayoutConstraint?.constant = 0.0
+            } else {
+                self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
+            }
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
