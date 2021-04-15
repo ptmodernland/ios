@@ -59,8 +59,8 @@ class SettingViewController: BaseViewController {
             self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 45)
             self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
             self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
-            self.imageConstrain1.constant = 420
-            self.imageConstrain2.constant = 420
+            self.imageConstrain1.constant = 270
+            self.imageConstrain2.constant = 270
             self.settingView.layoutIfNeeded()
         } else if (self.view.frame.width == 1024) {
             self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 45)
@@ -68,8 +68,8 @@ class SettingViewController: BaseViewController {
             self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 50)
             self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
             self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
-            self.imageConstrain1.constant = 550
-            self.imageConstrain2.constant = 550
+            self.imageConstrain1.constant = 270
+            self.imageConstrain2.constant = 270
             self.settingView.layoutIfNeeded()
         } else {
             self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 45)
@@ -77,8 +77,8 @@ class SettingViewController: BaseViewController {
             self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 50)
             self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
             self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
-            self.imageConstrain1.constant = 450
-            self.imageConstrain2.constant = 450
+            self.imageConstrain1.constant = 270
+            self.imageConstrain2.constant = 270
             self.settingView.layoutIfNeeded()
         }
     }

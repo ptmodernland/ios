@@ -10,6 +10,8 @@ import UIKit
 
 class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    
     @IBOutlet weak var tfNewPassword: UITextField!
     @IBOutlet weak var tfConfirmPassword: UITextField!
     @IBOutlet weak var tfNewPin: UITextField!
@@ -35,9 +37,14 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tfNewPin.keyboardType = .numberPad
-        tfNewPin.delegate = self
         btnBack.layer.cornerRadius = 6
         self.hideKeyboardWhenTappedAround()
+        
+        tfNewPassword.delegate = self
+        tfConfirmPassword.delegate = self
+        tfNewPin.delegate = self
+        btnSubmit.layer.cornerRadius = btnSubmit.layer.frame.size.height / 2
+        
         
         if (self.view.frame.width == 320) {
             self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 12)
@@ -77,6 +84,34 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
             self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 45)
         }
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+    }
+    
+    /*func loadRequest(for deviceTokenString: String) {
+        deviceToken = deviceTokenString
+    }*/
+    @objc func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let endFrameY = endFrame?.origin.y ?? 0
+            let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+            if endFrameY >= UIScreen.main.bounds.size.height {
+                self.keyboardHeightLayoutConstraint?.constant = 0.0
+            } else {
+                self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
+            }
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController, UITextFieldDelegate {
+
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
 
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -29,6 +31,9 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfUsername.delegate = self
+        tfPassword.delegate = self
+        btnLogin.layer.cornerRadius = btnLogin.layer.frame.size.height / 2
         overrideUserInterfaceStyle = .light
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.viewController = self
@@ -76,11 +81,36 @@ class LoginViewController: BaseViewController {
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 28)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 28)
         }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
     
     /*func loadRequest(for deviceTokenString: String) {
         deviceToken = deviceTokenString
     }*/
+    @objc func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let endFrameY = endFrame?.origin.y ?? 0
+            let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+            if endFrameY >= UIScreen.main.bounds.size.height {
+                self.keyboardHeightLayoutConstraint?.constant = 0.0
+            } else {
+                self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
+            }
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
+        }
+    }
     
     func callApiLogin(username: String, password: String, token: String) {
         showLoading()
