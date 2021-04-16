@@ -139,13 +139,13 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate, UITe
             self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
             self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 16)
             self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 16)
-            self.myConstraint1.constant = 130
-            self.myConstraint2.constant = 130
-            self.myConstraint3.constant = 130
-            self.myConstraint4.constant = 130
-            self.myConstraint5.constant = 130
-            self.myConstraint6.constant = 130
-            self.myConstraint7.constant = 130
+            self.myConstraint1.constant = 150
+            self.myConstraint2.constant = 150
+            self.myConstraint3.constant = 150
+            self.myConstraint4.constant = 150
+            self.myConstraint5.constant = 150
+            self.myConstraint6.constant = 150
+            self.myConstraint7.constant = 150
             self.detailViewPBJ.layoutIfNeeded()
         } else if (self.view.frame.width == 768) {
             self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 42)

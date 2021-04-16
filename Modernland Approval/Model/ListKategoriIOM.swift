@@ -16,6 +16,7 @@ struct ListKategoriIOM: Codable {
     let status: String?
     let statusEmail: String?
     let koordinasi: String?
+    let dari: String?
     
     enum CodingKeys: String, CodingKey {
         case idIom = "id_iom"
@@ -23,6 +24,7 @@ struct ListKategoriIOM: Codable {
         case perihal
         case approve
         case status
+        case dari
         case statusEmail = "status_email"
         case koordinasi
     }

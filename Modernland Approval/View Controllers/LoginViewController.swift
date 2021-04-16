@@ -24,6 +24,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var lblUsername: UILabel!
 
+    @IBOutlet var myConstraint1 : NSLayoutConstraint!
     
     let vm = LoginViewModel()
     var deviceToken = ""
@@ -45,6 +46,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 12.0)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 12.0)
+            self.myConstraint1.constant = 49.5
         } else if (self.view.frame.width == 375) {
             lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 21)
             lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 19)
@@ -52,6 +54,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 17)
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 17)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 17)
+            self.myConstraint1.constant = 49.5
         } else if (self.view.frame.width == 414) {
             lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 24)
             lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 22)
@@ -59,6 +62,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 20)
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 20)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 20)
+            self.myConstraint1.constant = 90
         } else if (self.view.frame.width == 768) {
             lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 50)
             lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 32)
@@ -66,6 +70,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 28)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 28)
+            self.myConstraint1.constant = 120
         } else if (self.view.frame.width == 1024) {
             lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 50)
             lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 32)
@@ -73,6 +78,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 28)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 28)
+            self.myConstraint1.constant = 150
         }else {
             lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 50)
             lblUsername.font = UIFont(name: lblUsername.font.fontName, size: 32)
@@ -80,6 +86,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             btnLogin.titleLabel?.font =  UIFont(name: "Helvetica", size: 32)
             tfUsername.font =  UIFont.init(name: "Helvetica", size: 28)
             tfPassword.font =  UIFont.init(name: "Helvetica", size: 28)
+            self.myConstraint1.constant = 150
         }
         
         NotificationCenter.default.addObserver(self,

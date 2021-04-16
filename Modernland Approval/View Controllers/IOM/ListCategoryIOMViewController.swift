@@ -35,12 +35,13 @@ class ListCategoryIOMViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnBack.layer.cornerRadius = 6
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupCollectionView()
         getCounter()
+        btnBack.layer.cornerRadius = 6
+        makeRounded(view: btnBack)
     }
     func getCounter() {
         let cariUsername = UserDefaults().string(forKey: "username") ?? ""
@@ -207,52 +208,52 @@ extension ListCategoryIOMViewController: UICollectionViewDelegate, UICollectionV
         }
         if listKategori[indexPath.row].contains("Town") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "4"
+            vc.divisi_id = "11"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Technical") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "5"
+            vc.divisi_id = "7"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Human") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "6"
+            vc.divisi_id = "10"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Legal") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "7"
+            vc.divisi_id = "4"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Purchasing") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "8"
+            vc.divisi_id = "5"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Business") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "9"
+            vc.divisi_id = "6"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Landed") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "10"
+            vc.divisi_id = "12"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Marketing") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "11"
+            vc.divisi_id = "9"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Permit") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "12"
+            vc.divisi_id = "13"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if listKategori[indexPath.row].contains("Promosi") {
             let vc = StoryboardScene.IOM.listKategoriIOMViewController.instantiate()
-            vc.divisi_id = "13"
+            vc.divisi_id = "8"
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

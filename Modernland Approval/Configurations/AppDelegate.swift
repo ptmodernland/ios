@@ -105,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         
-        if let targetValue = userInfo["su"] as? String
+        if let targetValue = userInfo["target"] as? String
         {
             coordinateToSomeVC(targetValue: targetValue, idNya: userInfo["idnya"] as? String ?? "", nomorNya: userInfo["nomornya"] as? String ?? "", idKordinasi: userInfo["idKordinasi"] as? String ?? "")
         }

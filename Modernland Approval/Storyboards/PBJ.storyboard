@@ -420,6 +420,9 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="input catatan anda"/>
+                                                </userDefinedRuntimeAttributes>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5e-q5-fLt">
                                                 <rect key="frame" x="150" y="422" width="244" height="1"/>
@@ -570,17 +573,17 @@
                                 <rect key="frame" x="0.0" y="137" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ap5-lB-RxS">
-                                        <rect key="frame" x="117" y="287.5" width="180.5" height="150"/>
+                                        <rect key="frame" x="119.5" y="287.5" width="175" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.stack.3d.up.slash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rad-d7-lAa">
-                                                <rect key="frame" x="0.0" y="0.0" width="180.5" height="120.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="120.5"/>
                                                 <color key="tintColor" red="0.66666666669999997" green="0.098039215690000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="Rhy-JE-jWp"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="data histtory tidak ada" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2P-bN-9Xf">
-                                                <rect key="frame" x="0.0" y="130" width="180.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="data history tidak ada" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2P-bN-9Xf">
+                                                <rect key="frame" x="0.0" y="130" width="175" height="20"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

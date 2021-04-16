@@ -439,16 +439,16 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 18)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 20)
-            self.myConstraint1.constant = 130
-            self.myConstraint2.constant = 130
-            self.myConstraint3.constant = 130
-            self.myConstraint4.constant = 130
-            self.myConstraint5.constant = 130
-            self.myConstraint6.constant = 130
-            self.myConstraint7.constant = 130
-            self.myConstraint8.constant = 130
-            self.myConstraint9.constant = 130
-            self.myConstraint10.constant = 130
+            self.myConstraint1.constant = 150
+            self.myConstraint2.constant = 150
+            self.myConstraint3.constant = 150
+            self.myConstraint4.constant = 150
+            self.myConstraint5.constant = 150
+            self.myConstraint6.constant = 150
+            self.myConstraint7.constant = 150
+            self.myConstraint8.constant = 150
+            self.myConstraint9.constant = 150
+            self.myConstraint10.constant = 150
             self.detailViewIOM.layoutIfNeeded()
         } else if (self.view.frame.width == 768) {
             self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 20)

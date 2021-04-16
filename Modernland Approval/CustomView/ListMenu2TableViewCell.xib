@@ -17,28 +17,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permohonan Budget IT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw8-lR-jgt">
-                        <rect key="frame" x="20" y="20" width="175.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Permohonan Budget IT" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw8-lR-jgt">
+                        <rect key="frame" x="20" y="20" width="305.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perihal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ja7-n5-r5k">
-                        <rect key="frame" x="20" y="46" width="39" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Perihal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ja7-n5-r5k">
+                        <rect key="frame" x="20" y="46" width="369" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="001/XI/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0b-Zt-Eg8">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="001/XI/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0b-Zt-Eg8">
                         <rect key="frame" x="20" y="66" width="69" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-1f-vgJ">
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-1f-vgJ">
                         <rect key="frame" x="20" y="86" width="87.5" height="18"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting Approval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gib-In-YLA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Waiting Approval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gib-In-YLA">
                                 <rect key="frame" x="3" y="3" width="81.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,6 +59,8 @@
                     <constraint firstItem="s0b-Zt-Eg8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="3ON-tf-BTS"/>
                     <constraint firstItem="ja7-n5-r5k" firstAttribute="top" secondItem="iw8-lR-jgt" secondAttribute="bottom" constant="5" id="Ef4-d6-hXb"/>
                     <constraint firstItem="iw8-lR-jgt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="IJv-Es-amc"/>
+                    <constraint firstItem="ja7-n5-r5k" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.121875" constant="330" id="Imr-Df-jWq"/>
+                    <constraint firstItem="iw8-lR-jgt" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.548438" constant="130" id="S7C-JA-2iW"/>
                     <constraint firstItem="iw8-lR-jgt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Y8Q-Hn-Uxr"/>
                     <constraint firstItem="rdS-1f-vgJ" firstAttribute="top" secondItem="s0b-Zt-Eg8" secondAttribute="bottom" constant="5" id="ebq-EV-Fc9"/>
                     <constraint firstItem="s0b-Zt-Eg8" firstAttribute="top" secondItem="ja7-n5-r5k" secondAttribute="bottom" constant="5" id="he0-mS-iqJ"/>

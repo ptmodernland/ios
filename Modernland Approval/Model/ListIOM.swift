@@ -16,12 +16,14 @@ struct ListIOM: Codable {
     let status: String?
     let statusEmail: String?
     let koordinasi: String?
+    let dari: String?
     
     enum CodingKeys: String, CodingKey {
         case idIom = "id_iom"
         case nomor
         case perihal
         case approve
+        case dari
         case status
         case statusEmail = "status_email"
         case koordinasi

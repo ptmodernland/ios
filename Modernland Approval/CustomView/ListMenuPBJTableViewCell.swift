@@ -20,6 +20,8 @@ class ListMenuPBJTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         vStatus.layer.cornerRadius = 6
+        lblSubTitle.lineBreakMode = NSLineBreakMode.byWordWrapping
+        lblSubTitle.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
