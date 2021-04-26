@@ -210,7 +210,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
             "id_iom" : idIom,
-            "mac" : macAddress,
+            "macaddress" : macAddress,
+            "ipaddres" : self.getIPAddress(),
             "passwordUser" : pin
             ] as [String : Any]
         vm.approveIom(
@@ -236,7 +237,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
             "id_iom" : idIom,
-            "mac" : macAddress,
+            "ipaddres" : self.getIPAddress(),
+            "macaddress" : macAddress,
             "passwordUser" : pin
             ] as [String : Any]
         vm.rejectIom(
@@ -263,7 +265,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             "id_kordinasi" : idKoordinasi,
             "id_user" : idUser ?? "",
             "ipaddres" : self.getIPAddress(),
-            "mac" : macAddress,
+            "macaddress" : macAddress,
+            "ipaddres" : self.getIPAddress(),
             "komen" : self.textViewNotes.text ?? ""
             ] as [String : Any]
         vm.approveRekomendasi(
@@ -290,7 +293,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             "id_kordinasi" : idKoordinasi,
             "id_user" : idUser ?? "",
             "ipaddres" : self.getIPAddress(),
-            "mac" : macAddress,
+            "macaddress" : macAddress,
             "komen" : self.textViewNotes.text ?? ""
             ] as [String : Any]
         vm.rejectRekomendasi(

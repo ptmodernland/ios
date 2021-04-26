@@ -306,7 +306,7 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate, UITe
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
             "ipaddres" : self.getIPAddress(),
-            "mac" : macAddress,
+            "macaddress" : macAddress,
             "passwordUser" : pin
             ] as [String : Any]
         vm.approvePbj(
@@ -332,7 +332,7 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate, UITe
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
             "ipaddres" : self.getIPAddress(),
-            "mac" : macAddress,
+            "macaddress" : macAddress,
             "passwordUser" : pin
             ] as [String : Any]
         vm.rejectPbj(

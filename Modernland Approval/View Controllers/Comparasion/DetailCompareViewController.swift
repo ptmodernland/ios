@@ -400,7 +400,7 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate, UITe
             "nomor" : self.lblNomor.text ?? "",
             "id_user" : idUser ?? "",
             "komen" : self.textViewNotes.text ?? "",
-            "mac" : macAddress,
+            "macaddress" : macAddress,
             "ipaddres" : self.getIPAddress(),
             "passwordUser" : pin
             ] as [String : Any]
@@ -427,7 +427,7 @@ class DetailCompareViewController: BaseViewController, UITextFieldDelegate, UITe
             "id_user" : idUser ?? "",
             "ipaddres" : self.getIPAddress(),
             "komen" : self.textViewNotes.text ?? "",
-            "mac" : macAddress,
+            "macaddress" : macAddress,
             "passwordUser" : pin
             ] as [String : Any]
         vm.rejectCompare(
