@@ -29,6 +29,7 @@ class ListHeadKoordinasiViewController: BaseViewController {
         setupTableView()
         getListHead()
         makeRounded(view: btnBack)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func setupTableView() {
@@ -106,7 +107,13 @@ extension ListHeadKoordinasiViewController: UITableViewDataSource, UITableViewDe
         } else if (self.view.frame.width == 375) {
             cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 12)
             self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 14)
+        } else if (self.view.frame.width == 390) {
+            cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 12)
+            self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 14)
         } else if (self.view.frame.width == 414) {
+            cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 14)
+            self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 16)
+        } else if (self.view.frame.width == 428) {
             cell.lblName.font = UIFont(name: cell.lblName.font.fontName, size: 14)
             self.lblTitle.font = UIFont(name: self.lblTitle.font.fontName, size: 16)
         } else if (self.view.frame.width == 768) {

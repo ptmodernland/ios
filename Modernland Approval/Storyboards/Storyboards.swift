@@ -41,6 +41,21 @@ internal enum StoryboardScene {
         
         internal static let listHistoryPBJViewController = SceneType<ListHistoryPBJViewController>(storyboard: PBJ.self, identifier: "ListHistoryPBJViewController")
     }
+   
+    internal enum Kasbon: StoryboardType {
+        internal static let storyboardName = "Kasbon"
+        internal static let listKasbonViewController = SceneType<ListKasbonViewController>(storyboard: Kasbon.self, identifier: "ListKasbonViewController")
+        internal static let detailMenuKasbonViewController = SceneType<DetailMenuKasbonViewController>(storyboard: Kasbon.self, identifier: "DetailMenuKasbonViewController")
+        internal static let listHistoryKasbonViewController = SceneType<ListHistoryKasbonViewController>(storyboard: Kasbon.self, identifier: "ListHistoryKasbonViewController")
+    }
+    
+    internal enum Realisasi: StoryboardType {
+        internal static let storyboardName = "Realisasi"
+        internal static let listRealisasiViewController = SceneType<ListRealisasiViewController>(storyboard: Realisasi.self, identifier: "ListRealisasiViewController")
+        internal static let detailMenuRealisasiViewController = SceneType<DetailMenuRealisasiViewController>(storyboard: Realisasi.self, identifier: "DetailMenuRealisasiViewController")
+        internal static let listHistoryRealisasiViewController = SceneType<ListHistoryRealisasiViewController>(storyboard: Realisasi.self, identifier: "ListHistoryRealisasiViewController")
+    }
+
     
     internal enum IOM: StoryboardType {
         internal static let storyboardName = "IOM"
@@ -61,6 +76,7 @@ internal enum StoryboardScene {
         
         internal static let listKategoriIOMViewController = SceneType<ListKategoriIOMViewController>(storyboard: IOM.self, identifier: "ListKategoriIOMViewController")
         
+        internal static let statusIOMViewController = SceneType<StatusIOMViewController>(storyboard: IOM.self, identifier: "StatusIOMViewController")
     }
     
     internal enum Setting: StoryboardType {

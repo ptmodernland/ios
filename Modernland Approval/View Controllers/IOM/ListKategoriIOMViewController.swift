@@ -30,6 +30,7 @@ class ListKategoriIOMViewController: BaseViewController {
         setupTableView()
         getListKategoriIom()
         makeRounded(view: btnBack)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func setupTableView() {
@@ -60,7 +61,13 @@ class ListKategoriIOMViewController: BaseViewController {
                     } else if (self.view.frame.width == 375) {
                         self.lblTitle.font = UIFont.boldSystemFont(ofSize: 16)
                         self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
+                    } else if (self.view.frame.width == 390) {
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 16)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
                     } else if (self.view.frame.width == 414) {
+                        self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+                        self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 20)
+                    } else if (self.view.frame.width == 428) {
                         self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
                         self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 20)
                     } else if (self.view.frame.width == 768) {

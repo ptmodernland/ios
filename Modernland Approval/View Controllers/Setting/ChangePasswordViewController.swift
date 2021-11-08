@@ -32,6 +32,7 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     var hideConfirmPassword = true
     var hideNewPin = true
     
+    
     let vm = SettingViewModel()
     
     override func viewDidLoad() {
@@ -40,8 +41,8 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         btnBack.layer.cornerRadius = 6
         self.hideKeyboardWhenTappedAround()
         
-        tfNewPassword.delegate = self
-        tfConfirmPassword.delegate = self
+        //tfNewPassword.delegate = self
+        //tfConfirmPassword.delegate = self
         tfNewPin.delegate = self
         btnSubmit.layer.cornerRadius = btnSubmit.layer.frame.size.height / 2
         
@@ -58,7 +59,19 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
             self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 14)
             self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 16)
             self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+        } else if (self.view.frame.width == 390) {
+            self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 14)
+            self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 14)
+            self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 14)
+            self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 16)
+            self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
         } else if (self.view.frame.width == 414) {
+            self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 16)
+            self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 16)
+            self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 16)
+            self.lblChangePassword.font = UIFont.boldSystemFont(ofSize: 20)
+            self.btnSubmit.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+        } else if (self.view.frame.width == 428) {
             self.lblConfirmPassword.font = UIFont(name: self.lblChangePassword.font.fontName, size: 16)
             self.lblNewPassword.font = UIFont(name: self.lblNewPassword.font.fontName, size: 16)
             self.lblNewPin.font = UIFont(name: self.lblNewPin.font.fontName, size: 16)
@@ -114,6 +127,7 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         makeRounded(view: btnBack)
         makeRounded(view: btnSubmit)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4I-fC-gSm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4I-fC-gSm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +15,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1a-gH-eQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290" y="-579"/>
+            <point key="canvasLocation" x="220" y="-573"/>
         </scene>
         <!--IOM-->
         <scene sceneID="0om-eo-4zM">
@@ -24,17 +25,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSy-4Y-0bG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290" y="-501"/>
+            <point key="canvasLocation" x="220" y="-529"/>
         </scene>
         <!--Comparasion-->
         <scene sceneID="Mse-eo-FbI">
             <objects>
                 <viewControllerPlaceholder storyboardName="Comparasion" id="Qu8-M4-JJf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Comp'" image="arrow.up.arrow.down" catalog="system" id="dFR-9y-0B3"/>
+                    <tabBarItem key="tabBarItem" title="Comp" image="arrow.up.arrow.down" catalog="system" id="dFR-9y-0B3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhV-JJ-JZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275" y="-255"/>
+            <point key="canvasLocation" x="194" y="-378"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nnv-1M-959">
@@ -70,7 +71,9 @@
                         <segue destination="YTj-qN-c4m" kind="relationship" relationship="viewControllers" id="i4Y-nW-NU8"/>
                         <segue destination="BWS-qp-Ttt" kind="relationship" relationship="viewControllers" id="DXo-Ps-2tn"/>
                         <segue destination="Qu8-M4-JJf" kind="relationship" relationship="viewControllers" id="u7W-h5-4LI"/>
-                        <segue destination="NgY-sJ-Z0a" kind="relationship" relationship="viewControllers" id="ESF-KD-gT4"/>
+                        <segue destination="leu-BZ-meM" kind="relationship" relationship="viewControllers" id="SZx-sf-tX1"/>
+                        <segue destination="zkw-Ht-jzl" kind="relationship" relationship="viewControllers" id="kJ1-ti-keT"/>
+                        <segue destination="NgY-sJ-Z0a" kind="relationship" relationship="viewControllers" id="ZWX-aU-8jK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crK-c0-oi1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -87,7 +90,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlK-NW-G5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290" y="-396"/>
+            <point key="canvasLocation" x="228" y="-471"/>
         </scene>
         <!--Setting-->
         <scene sceneID="bzv-37-iFd">
@@ -97,13 +100,35 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCy-S1-w1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281" y="-334"/>
+            <point key="canvasLocation" x="193" y="-233"/>
+        </scene>
+        <!--Kasbon-->
+        <scene sceneID="yUa-ev-IPJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Kasbon" id="leu-BZ-meM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Kasbon" image="dollarsign.circle" catalog="system" id="JhX-AP-Hmi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEM-Sz-UVN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205" y="-319"/>
+        </scene>
+        <!--Realisasi-->
+        <scene sceneID="Hs3-Ur-6iE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Realisasi" id="zkw-Ht-jzl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Realisasi" image="dollarsign.square" catalog="system" id="cs5-Rb-dkJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHD-i6-pIE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="-271"/>
         </scene>
     </scenes>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
-        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
-        <image name="book" catalog="system" width="128" height="101"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+        <image name="dollarsign.square" catalog="system" width="128" height="114"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
     </resources>

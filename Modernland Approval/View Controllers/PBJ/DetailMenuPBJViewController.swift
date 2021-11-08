@@ -95,6 +95,32 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate, UITe
             self.myConstraint6.constant = 130
             self.myConstraint7.constant = 130
             self.detailViewPBJ.layoutIfNeeded()
+        } else if (self.view.frame.width == 390) {
+            self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 14)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 14)
+            self.lblNama.font = UIFont(name: self.lblNama.font.fontName, size: 14)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 14)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 14)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 14)
+            self.lblTxtNama.font = UIFont(name: self.lblTxtNama.font.fontName, size: 14)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 14)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 14)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 14)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 14)
+            self.myConstraint1.constant = 130
+            self.myConstraint2.constant = 130
+            self.myConstraint3.constant = 130
+            self.myConstraint4.constant = 130
+            self.myConstraint5.constant = 130
+            self.myConstraint6.constant = 130
+            self.myConstraint7.constant = 130
+            self.detailViewPBJ.layoutIfNeeded()
         } else if (self.view.frame.width == 375) {
             self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
@@ -122,6 +148,32 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate, UITe
             self.myConstraint7.constant = 130
             self.detailViewPBJ.layoutIfNeeded()
         } else if (self.view.frame.width == 414) {
+            self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 20)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 16)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 16)
+            self.lblNama.font = UIFont(name: self.lblNama.font.fontName, size: 16)
+            self.lblDepartemen.font = UIFont(name: self.lblDepartemen.font.fontName, size: 16)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 16)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 16)
+            self.lblTxtNama.font = UIFont(name: self.lblTxtNama.font.fontName, size: 16)
+            self.lblTxtDepartemen.font = UIFont(name: self.lblTxtDepartemen.font.fontName, size: 16)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 16)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 16)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 16)
+            self.myConstraint1.constant = 150
+            self.myConstraint2.constant = 150
+            self.myConstraint3.constant = 150
+            self.myConstraint4.constant = 150
+            self.myConstraint5.constant = 150
+            self.myConstraint6.constant = 150
+            self.myConstraint7.constant = 150
+            self.detailViewPBJ.layoutIfNeeded()
+        } else if (self.view.frame.width == 428) {
             self.lbltxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 20)
             self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 16)
@@ -263,6 +315,7 @@ class DetailMenuPBJViewController: BaseViewController, UITextFieldDelegate, UITe
             getApiDetail()
         }
         makeRounded(view: btnBack)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func getApiDetail() {

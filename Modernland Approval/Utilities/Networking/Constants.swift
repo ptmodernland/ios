@@ -26,6 +26,7 @@ class Constants {
     static let CANCEL_MEMO = "/androidiom/proses_cancel_memo.jsp"
     static let PROSES_APPROVE = "/androidiom/proses_approve.jsp"
     static let LIST_KATEGORI_MEMO = "/androidiom/list_approve_kategori.jsp" //history
+    static let LIST_STATUS = "/androidiom/status_iom.jsp" //history
 
     //Compare
     static let LIST_COMPARE = "/androidiom/list_approve_compare.jsp" //waiting approval
@@ -48,7 +49,9 @@ class Constants {
     static let COUNTER_PBJ = "/androidiom/counter_permohonan.jsp"
     static let COUNTER_COMPARE = "/androidiom/counter_compare.jsp"
     static let COUNTER_KATEGORI = "/androidiom/counter_kategori.jsp"
-
+    static let COUNTER_KASBON = "/androidiom/counter_kasbon.jsp"
+    static let COUNTER_REALISASI = "/androidiom/counter_realisasi.jsp"
+    
     //REKOMENDASI
     static let LIST_HEAD = "/androidiom/get_head.jsp"
     static let PROSES_KOORDINASI = "/androidiom/proses_kordinasi.jsp"
@@ -56,4 +59,18 @@ class Constants {
     static let GET_KOORDINASI = "/androidiom/get_kordinasi.jsp"
     static let PROSES_APPROVE_KOORDINASI = "/androidiom/proses_approve_kordinasi.jsp"
     static let PROSES_CANCEL_KOORDINASI = "/androidiom/proses_cancel_kordinasi.jsp"
+    
+    //KASBON
+    static let LIST_KASBON = "/androidiom/list_approve_kasbon.jsp" //waiting approval
+    static let LIST_HISTORY_KASBON = "/androidiom/list_kasbon.jsp" //waiting approval
+    static let GET_KASBON = "/androidiom/get_kasbon.jsp" //detail
+    static let CANCEL_KASBON = "/androidiom/proses_cancel_kasbon.jsp"
+    static let PROSES_KASBON = "/androidiom/proses_approve_kasbon.jsp"
+    
+    //REALISASI
+    static let LIST_REALISASI = "/androidiom/list_approve_realisasi.jsp" //waiting approval
+    static let LIST_HISTORY_REALISASI = "/androidiom/list_realisasi.jsp" //waiting approval
+    static let GET_REALISASI = "/androidiom/get_realisasi.jsp" //detail
+    static let CANCEL_REALISASI = "/androidiom/proses_cancel_realisasi.jsp"
+    static let PROSES_REALISASI = "/androidiom/proses_approve_realisasi.jsp"
 }

@@ -84,11 +84,13 @@ class BaseViewController: UIViewController {
     
     func goToLogin() {
         let vc = StoryboardScene.Login.loginViewController.instantiate()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.setViewControllers([vc], animated: true)
     }
     
     func goToHome() {
         let vc = StoryboardScene.Dashboard.dashboardViewController.instantiate()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.setViewControllers([vc], animated: true)
     }
     

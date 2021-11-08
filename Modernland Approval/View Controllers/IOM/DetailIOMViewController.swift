@@ -56,6 +56,9 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var lblTxtDownloadPdf: UILabel!
     @IBOutlet weak var lblTxtCatatan: UILabel!
     
+    @IBOutlet weak var lblTxtStatus: UILabel!
+    @IBOutlet weak var btnStatusKlikDisini: UIButton!
+    
     @IBOutlet var myConstraint1 : NSLayoutConstraint!
     @IBOutlet var myConstraint2 : NSLayoutConstraint!
     @IBOutlet var myConstraint3 : NSLayoutConstraint!
@@ -66,6 +69,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
     @IBOutlet var myConstraint8 : NSLayoutConstraint!
     @IBOutlet var myConstraint9 : NSLayoutConstraint!
     @IBOutlet var myConstraint10 : NSLayoutConstraint!
+    @IBOutlet var myConstraint11 : NSLayoutConstraint!
     
     @IBOutlet weak var btnReject: UIButton!
     @IBOutlet weak var btnApprove: UIButton!
@@ -122,6 +126,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             getApiDetail()
         }
         makeRounded(view: btnBack)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func getApiDetail() {
@@ -259,44 +264,58 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
         let idUser = UserDefaults().string(forKey: "idUser")
         let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
         
-        let param = [
-            "nomor" : self.lblNomor.text ?? "",
-            "id" : idIom,
-            "id_kordinasi" : idKoordinasi,
-            "id_user" : idUser ?? "",
-            "ipaddres" : self.getIPAddress(),
-            "macaddress" : macAddress,
-            "ipaddres" : self.getIPAddress(),
-            "komen" : self.textViewNotes.text ?? ""
-            ] as [String : Any]
-        vm.approveRekomendasi(
-            param: param,
-            onSuccess: { response in
-                self.navigationController?.popViewController(animated: true)
-        }, onError: { error in
-            print(error)
-            Toast.show(message: error, controller: self)
-        }, onFailed: { failed in
-            print(failed)
-            Toast.show(message: failed, controller: self)
-        })
-        self.view.endEditing(true)
+        let refreshAlert = UIAlertController(title: "Approve Recomendation", message: "Are You Sure??.", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            
+            let param = [
+                "nomor" : self.lblNomor.text ?? "",
+                "id" : self.idIom,
+                "id_kordinasi" : self.idKoordinasi,
+                "id_user" : idUser ?? "",
+                "ipaddres" : self.getIPAddress(),
+                "macaddress" : macAddress,
+                "komen" : self.textViewNotes.text ?? ""
+                ] as [String : Any]
+            
+            self.vm.approveRekomendasi(
+                param: param,
+                onSuccess: { response in
+                    self.navigationController?.popViewController(animated: true)
+            }, onError: { error in
+                print(error)
+                Toast.show(message: error, controller: self)
+            }, onFailed: { failed in
+                print(failed)
+                Toast.show(message: failed, controller: self)
+            })
+          }))
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+          //print("Handle Cancel Logic here")
+          }))
+        present(refreshAlert, animated: true, completion: nil)
+        
+        //self.view.endEditing(true)
     }
     
     func apiRejectRekomendasi() {
         let idUser = UserDefaults().string(forKey: "idUser")
         let macAddress = UIDevice().identifierForVendor?.uuidString ?? ""
         
+        let refreshAlert = UIAlertController(title: "Reject Recomendation", message: "Are You Sure??.", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            
         let param = [
             "nomor" : self.lblNomor.text ?? "",
-            "id" : idIom,
-            "id_kordinasi" : idKoordinasi,
+            "id" : self.idIom,
+            "id_kordinasi" : self.idKoordinasi,
             "id_user" : idUser ?? "",
             "ipaddres" : self.getIPAddress(),
             "macaddress" : macAddress,
             "komen" : self.textViewNotes.text ?? ""
             ] as [String : Any]
-        vm.rejectRekomendasi(
+            self.vm.rejectRekomendasi(
             param: param,
             onSuccess: { response in
                 self.navigationController?.popViewController(animated: true)
@@ -307,7 +326,11 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             print(failed)
             Toast.show(message: failed, controller: self)
         })
-        self.view.endEditing(true)
+        }))
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+          //print("Handle Cancel Logic here")
+          }))
+      present(refreshAlert, animated: true, completion: nil)
     }
     
     func callAlertTextBox(type: String) {
@@ -366,6 +389,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.btnRecommend.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
             self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
             self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
+            self.lblTxtStatus.font = UIFont(name: self.lblTxtStatus.font.fontName, size: 12)
+            self.btnStatusKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 12)
             self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 12)
             self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 12)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 14)
@@ -380,6 +405,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.myConstraint8.constant = 130
             self.myConstraint9.constant = 130
             self.myConstraint10.constant = 130
+            self.myConstraint11.constant = 130
             self.detailViewIOM.layoutIfNeeded()
         } else if (self.view.frame.width == 375) {
             self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 14)
@@ -406,6 +432,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 14)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblTxtStatus.font = UIFont(name: self.lblTxtStatus.font.fontName, size: 14)
+            self.btnStatusKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
             self.myConstraint1.constant = 130
             self.myConstraint2.constant = 130
             self.myConstraint3.constant = 130
@@ -416,6 +444,46 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.myConstraint8.constant = 130
             self.myConstraint9.constant = 130
             self.myConstraint10.constant = 130
+            self.myConstraint11.constant = 130
+            self.detailViewIOM.layoutIfNeeded()
+        } else if (self.view.frame.width == 390) {
+            self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 14)
+            self.lblCc.font = UIFont(name: self.lblTitle.font.fontName, size: 14)
+            self.lblFrom.font = UIFont(name: self.lblFrom.font.fontName, size: 14)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 14)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 14)
+            self.lblCategory.font = UIFont(name: self.lblCategory.font.fontName, size: 14)
+            self.lblAbout.font = UIFont(name: self.lblAbout.font.fontName, size: 14)
+            self.lblTxtRecipient.font = UIFont(name: self.lblTxtRecipient.font.fontName, size: 14)
+            self.lblTxtCc.font = UIFont(name: self.lblTxtCc.font.fontName, size: 14)
+            self.lblTxtFrom.font = UIFont(name: self.lblTxtFrom.font.fontName, size: 14)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 14)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 14)
+            self.lblTxtCategory.font = UIFont(name: self.lblTxtCategory.font.fontName, size: 14)
+            self.lblTxtAbout.font = UIFont(name: self.lblTxtAbout.font.fontName, size: 14)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 14)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnRecommend.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 14)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 14)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblTxtStatus.font = UIFont(name: self.lblTxtStatus.font.fontName, size: 14)
+            self.btnStatusKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.myConstraint1.constant = 130
+            self.myConstraint2.constant = 130
+            self.myConstraint3.constant = 130
+            self.myConstraint4.constant = 130
+            self.myConstraint5.constant = 130
+            self.myConstraint6.constant = 130
+            self.myConstraint7.constant = 130
+            self.myConstraint8.constant = 130
+            self.myConstraint9.constant = 130
+            self.myConstraint10.constant = 130
+            self.myConstraint11.constant = 130
             self.detailViewIOM.layoutIfNeeded()
         } else if (self.view.frame.width == 414) {
             self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 18)
@@ -442,6 +510,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 18)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 20)
+            self.lblTxtStatus.font = UIFont(name: self.lblTxtStatus.font.fontName, size: 18)
+            self.btnStatusKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
             self.myConstraint1.constant = 150
             self.myConstraint2.constant = 150
             self.myConstraint3.constant = 150
@@ -452,6 +522,46 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.myConstraint8.constant = 150
             self.myConstraint9.constant = 150
             self.myConstraint10.constant = 150
+            self.myConstraint11.constant = 150
+            self.detailViewIOM.layoutIfNeeded()
+        } else if (self.view.frame.width == 428) {
+            self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 18)
+            self.lblCc.font = UIFont(name: self.lblTitle.font.fontName, size: 18)
+            self.lblFrom.font = UIFont(name: self.lblFrom.font.fontName, size: 18)
+            self.lblDate.font = UIFont(name: self.lblDate.font.fontName, size: 18)
+            self.lblNomor.font = UIFont(name: self.lblNomor.font.fontName, size: 18)
+            self.lblCategory.font = UIFont(name: self.lblCategory.font.fontName, size: 18)
+            self.lblAbout.font = UIFont(name: self.lblAbout.font.fontName, size: 18)
+            self.lblTxtRecipient.font = UIFont(name: self.lblTxtRecipient.font.fontName, size: 18)
+            self.lblTxtCc.font = UIFont(name: self.lblTxtCc.font.fontName, size: 18)
+            self.lblTxtFrom.font = UIFont(name: self.lblTxtFrom.font.fontName, size: 18)
+            self.lblTxtDate.font = UIFont(name: self.lblTxtDate.font.fontName, size: 18)
+            self.lblTxtNomor.font = UIFont(name: self.lblTxtNomor.font.fontName, size: 18)
+            self.lblTxtCategory.font = UIFont(name: self.lblTxtCategory.font.fontName, size: 18)
+            self.lblTxtAbout.font = UIFont(name: self.lblTxtAbout.font.fontName, size: 18)
+            self.lblTxtCatatan.font = UIFont(name: self.lblTxtCatatan.font.fontName, size: 18)
+            self.btnFile.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnRecommend.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnApprove.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.btnReject.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.lblTxtViewDetail.font = UIFont(name: self.lblTxtViewDetail.font.fontName, size: 18)
+            self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 18)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblTitle.font = UIFont.boldSystemFont(ofSize: 20)
+            self.lblTxtStatus.font = UIFont(name: self.lblTxtStatus.font.fontName, size: 18)
+            self.btnStatusKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 18)
+            self.myConstraint1.constant = 150
+            self.myConstraint2.constant = 150
+            self.myConstraint3.constant = 150
+            self.myConstraint4.constant = 150
+            self.myConstraint5.constant = 150
+            self.myConstraint6.constant = 150
+            self.myConstraint7.constant = 150
+            self.myConstraint8.constant = 150
+            self.myConstraint9.constant = 150
+            self.myConstraint10.constant = 150
+            self.myConstraint11.constant = 150
             self.detailViewIOM.layoutIfNeeded()
         } else if (self.view.frame.width == 768) {
             self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 20)
@@ -478,6 +588,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 20)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 42)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 45)
+            self.lblTxtStatus.font = UIFont(name: self.lblTxtStatus.font.fontName, size: 20)
+            self.btnStatusKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 20)
             self.myConstraint1.constant = 350
             self.myConstraint2.constant = 350
             self.myConstraint3.constant = 350
@@ -488,6 +600,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.myConstraint8.constant = 350
             self.myConstraint9.constant = 350
             self.myConstraint10.constant = 350
+            self.myConstraint11.constant = 350
             self.detailViewIOM.layoutIfNeeded()
         } else if (self.view.frame.width == 1024) {
             self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 25)
@@ -514,6 +627,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 25)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+            self.lblTxtStatus.font = UIFont(name: self.lblTxtStatus.font.fontName, size: 25)
+            self.btnStatusKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
             self.myConstraint1.constant = 350
             self.myConstraint2.constant = 350
             self.myConstraint3.constant = 350
@@ -524,6 +639,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.myConstraint8.constant = 350
             self.myConstraint9.constant = 350
             self.myConstraint10.constant = 350
+            self.myConstraint11.constant = 350
             self.detailViewIOM.layoutIfNeeded()
         } else {
             self.lblRecipient.font = UIFont(name: self.lblNomor.font.fontName, size: 25)
@@ -550,6 +666,8 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.lblTxtDownloadFile.font = UIFont(name: self.lblTxtDownloadFile.font.fontName, size: 25)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 50)
             self.lblTitle.font = UIFont.boldSystemFont(ofSize: 55)
+            self.lblTxtStatus.font = UIFont(name: self.lblTxtStatus.font.fontName, size: 25)
+            self.btnStatusKlikDisini.titleLabel?.font =  UIFont(name: "Helvetica", size: 25)
             self.myConstraint1.constant = 350
             self.myConstraint2.constant = 350
             self.myConstraint3.constant = 350
@@ -560,6 +678,7 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
             self.myConstraint8.constant = 350
             self.myConstraint9.constant = 350
             self.myConstraint10.constant = 350
+            self.myConstraint11.constant = 350
             self.detailViewIOM.layoutIfNeeded()
         }
     }
@@ -583,6 +702,13 @@ class DetailIOMViewController: BaseViewController, UITextFieldDelegate, UITextVi
     @IBAction func buttonDetailWebviewTap(_ sender: Any) {
         let vc = StoryboardScene.WebView.webViewViewController.instantiate()
         vc.url = "https://approval.modernland.co.id/memo/view_mobile/\(idIom)"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    @IBAction func buttonStatusKlikDisini(_ sender: Any) {
+        let vc = StoryboardScene.IOM.statusIOMViewController.instantiate()
+        vc.idIom = String(idIom)
+        vc.nomor = self.lblNomor.text ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

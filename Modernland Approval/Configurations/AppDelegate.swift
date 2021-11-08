@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import netfox
+//import netfox
 import UserNotifications
 import Firebase
 import FirebaseMessaging
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         Messaging.messaging().isAutoInitEnabled = true
-        NFX.sharedInstance().start()
+        //NFX.sharedInstance().start()
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
@@ -150,6 +150,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             //                navController.modalPresentationStyle = .fullScreen
             window.rootViewController = navController
             //            window.makeKeyAndVisible()
+        } else if(targetValue == "kasbon"){
+            let VC = StoryboardScene.Kasbon.detailMenuKasbonViewController.instantiate()
+            VC.idKasbon = idNya
+            VC.noKasbon = nomorNya
+            VC.fromPushNotif = true
+            let navController = UINavigationController(rootViewController: VC)
+            navController.setNavigationBarHidden(true, animated: true)
+            //                navController.modalPresentationStyle = .fullScreen
+            window.rootViewController = navController
+        } else if(targetValue == "realisasi"){
+            let vc = StoryboardScene.Realisasi.detailMenuRealisasiViewController.instantiate()
+            vc.noRealisasi = nomorNya
+            vc.idRealisasi = idNya
+            vc.fromPushNotif = true
+            let navController = UINavigationController(rootViewController: vc)
+            navController.setNavigationBarHidden(true, animated: true)
+            //                navController.modalPresentationStyle = .fullScreen
+            window.rootViewController = navController
         } else {
             let VC = StoryboardScene.Comparasion.DetailCompareViewController.instantiate()
             VC.idCompare = Int(idNya) ?? 0

@@ -42,7 +42,9 @@ class ListCategoryIOMViewController: BaseViewController {
         getCounter()
         btnBack.layer.cornerRadius = 6
         makeRounded(view: btnBack)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
     func getCounter() {
         let cariUsername = UserDefaults().string(forKey: "username") ?? ""
         vm.getCounterKategori(
@@ -106,7 +108,17 @@ extension ListCategoryIOMViewController: UICollectionViewDelegate, UICollectionV
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 14)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
             self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
+        } else if (self.view.frame.width == 390) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 14)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 14)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
         } else if (self.view.frame.width == 414) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 16)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 20)
+        } else if (self.view.frame.width == 428) {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 16)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)

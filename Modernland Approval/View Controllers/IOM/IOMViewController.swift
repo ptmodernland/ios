@@ -28,6 +28,7 @@ class IOMViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupCollectionView()
         getCounter()
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func setupCollectionView() {
@@ -67,7 +68,6 @@ extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         
         cell.lblTitle.text = buttonTitleList[indexPath.row]
         
-        
         if (self.view.frame.width == 320) {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 12)
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 12)
@@ -78,12 +78,22 @@ extension IOMViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 14)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
             self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
+        } else if (self.view.frame.width == 390) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 14)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 14)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 18)
         } else if (self.view.frame.width == 414) {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 16)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
             self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 20)
-        } else if (self.view.frame.width == 768) {
+        } else if (self.view.frame.width == 428) {
+            cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 16)
+            cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 16)
+            self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 18)
+            self.lblDashboard.font = UIFont.boldSystemFont(ofSize: 20)
+        }else if (self.view.frame.width == 768) {
             cell.lblTitle.font = UIFont(name: cell.lblTitle.font.fontName, size: 32)
             cell.lblCounter.font = UIFont(name: cell.lblCounter.font.fontName, size: 32)
             self.lblTxtTitle.font = UIFont.boldSystemFont(ofSize: 42)

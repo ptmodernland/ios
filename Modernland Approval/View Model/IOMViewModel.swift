@@ -194,4 +194,18 @@ class IOMViewModel {
             onFailed: { failed in onFailed("\(failed)") }
         )
     }
+    
+    func postListStatus(nomorMemo: String, idIom: String,
+                     onSuccess: @escaping ([ListStatus]) -> Void,
+                     onError: @escaping (String) -> Void,
+                     onFailed: @escaping (String) -> Void) {
+        apiHelper.postRequestList(
+            url: Constants.BASE_URL+Constants.LIST_STATUS+"?nomorMemo=\(nomorMemo)&idIom=\(idIom)",
+            body: ["":""],
+            onSuccess: { response in onSuccess(response) },
+            onError: { error in onError("\(error)") },
+            onFailed: { failed in onFailed("\(failed)") }
+        )
+    }
+    
 }

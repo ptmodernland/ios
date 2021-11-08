@@ -8,13 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		634105FAF10ABF7C08CEB74F /* Pods_Modernland_Approval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285BA58006927C166BD1F137 /* Pods_Modernland_Approval.framework */; };
+		AE0283AA265CCF9600387E06 /* DetailMenuKasbonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0283A9265CCF9600387E06 /* DetailMenuKasbonViewController.swift */; };
+		AE0283AC265CD8B300387E06 /* DetailKASBON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0283AB265CD8B300387E06 /* DetailKASBON.swift */; };
 		AE2AD04D2604909900B5BA01 /* PBJViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD04C2604909900B5BA01 /* PBJViewModel.swift */; };
 		AE2AD0502604953300B5BA01 /* CounterPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD04F2604953300B5BA01 /* CounterPBJ.swift */; };
 		AE2AD053260499B600B5BA01 /* ListPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD052260499B600B5BA01 /* ListPBJ.swift */; };
 		AE2AD0632604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2AD0622604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift */; };
+		AE5E35C32738C34500FE0AD9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E35C22738C34500FE0AD9 /* HomeViewModel.swift */; };
+		AE5F42C5265B794000E4DA99 /* Kasbon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5F42C4265B794000E4DA99 /* Kasbon.storyboard */; };
+		AE5F42C8265B828900E4DA99 /* KasbonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F42C7265B828900E4DA99 /* KasbonViewController.swift */; };
+		AE5F42CA265B83C100E4DA99 /* KasbonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F42C9265B83C100E4DA99 /* KasbonViewModel.swift */; };
+		AE5F42CC265B855D00E4DA99 /* CounterKasbon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F42CB265B855D00E4DA99 /* CounterKasbon.swift */; };
 		AE6734CF2612D9EE0088977B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE6734CE2612D9EE0088977B /* GoogleService-Info.plist */; };
 		AE7BCD57260F481300F990A1 /* ListCategoryIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7BCD56260F481300F990A1 /* ListCategoryIOMViewController.swift */; };
 		AE7BCD5A260F4A9300F990A1 /* CounterKategori.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7BCD59260F4A9300F990A1 /* CounterKategori.swift */; };
+		AE87A5EE2664BA19007680DB /* RealisasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87A5ED2664BA19007680DB /* RealisasiViewController.swift */; };
+		AE87A5F02664BC2F007680DB /* RealisasiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87A5EF2664BC2F007680DB /* RealisasiViewModel.swift */; };
+		AE87A5F22664BC79007680DB /* CounterRealisasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87A5F12664BC79007680DB /* CounterRealisasi.swift */; };
+		AE87A5F42664BEBE007680DB /* ListRealisasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87A5F32664BEBE007680DB /* ListRealisasiViewController.swift */; };
+		AE87A5F62664BF2A007680DB /* ListRealisasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87A5F52664BF2A007680DB /* ListRealisasi.swift */; };
+		AE87A5F82664C65C007680DB /* DetailMenuRealisasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87A5F72664C65C007680DB /* DetailMenuRealisasiViewController.swift */; };
+		AE87A5FA2664CCFE007680DB /* DetailRealisasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87A5F92664CCFE007680DB /* DetailRealisasi.swift */; };
+		AE8A62E12660990E004D053E /* Realisasi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8A62E02660990E004D053E /* Realisasi.storyboard */; };
 		AE923F5A260D8376005F4FB8 /* ListCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F58260D8376005F4FB8 /* ListCompareViewController.swift */; };
 		AE923F5B260D8376005F4FB8 /* ComparasionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F59260D8376005F4FB8 /* ComparasionViewController.swift */; };
 		AE923F5E260D83AE005F4FB8 /* CompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F5D260D83AE005F4FB8 /* CompareViewModel.swift */; };
@@ -25,9 +40,18 @@
 		AE923F72260DBE0E005F4FB8 /* ListHistoryCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE923F71260DBE0E005F4FB8 /* ListHistoryCompareViewController.swift */; };
 		AEBC0664261059BC008E0F72 /* ListKategoriIOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC0663261059BC008E0F72 /* ListKategoriIOM.swift */; };
 		AEBC0667261060E3008E0F72 /* ListKategoriIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC0666261060E3008E0F72 /* ListKategoriIOMViewController.swift */; };
+		AEC7D95827390A8700DAB05D /* CounterALL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7D95727390A8700DAB05D /* CounterALL.swift */; };
+		AED0622A265F7C7200B985F5 /* ListHistoryKasbonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED06229265F7C7200B985F5 /* ListHistoryKasbonViewController.swift */; };
+		AEE05540266A08BC00573AF1 /* StatusTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEE0553F266A08BC00573AF1 /* StatusTable.xib */; };
+		AEE05542266A0C0B00573AF1 /* StatusTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE05541266A0C0B00573AF1 /* StatusTable.swift */; };
+		AEE05544266A0D7B00573AF1 /* StatusIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE05543266A0D7B00573AF1 /* StatusIOMViewController.swift */; };
+		AEE05546266A0FF600573AF1 /* ListStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE05545266A0FF600573AF1 /* ListStatus.swift */; };
 		AEE65E802604ACD700384E55 /* ListMenuPBJTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEE65E7F2604ACD700384E55 /* ListMenuPBJTableViewCell.xib */; };
 		AEE65E832604B26000384E55 /* DetailPBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE65E822604B26000384E55 /* DetailPBJ.swift */; };
 		AEF189F52609DCEE00F6959E /* ListHistoryPBJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF189F42609DCEE00F6959E /* ListHistoryPBJViewController.swift */; };
+		AEF597CB26678C3C00720911 /* ListHistoryRealisasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF597CA26678C3C00720911 /* ListHistoryRealisasiViewController.swift */; };
+		AEFF51C8265BA22100774ACF /* ListKasbonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFF51C7265BA22100774ACF /* ListKasbonViewController.swift */; };
+		AEFF51CA265BA38300774ACF /* listKASBON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFF51C9265BA38300774ACF /* listKASBON.swift */; };
 		EE2E70C125FDFBD00000F2A5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C025FDFBD00000F2A5 /* Status.swift */; };
 		EE2E70C325FE03830000F2A5 /* ListHistoryIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */; };
 		EE2E70C525FE03940000F2A5 /* ListRekomendasiIOMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E70C425FE03940000F2A5 /* ListRekomendasiIOMViewController.swift */; };
@@ -92,13 +116,28 @@
 		2821F56438DAE6329C3045C2 /* Pods-Modernland Approval.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.release.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.release.xcconfig"; sourceTree = "<group>"; };
 		285BA58006927C166BD1F137 /* Pods_Modernland_Approval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modernland_Approval.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D58A5D31E49A0DD38E88EC /* Pods-Modernland Approval.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modernland Approval.debug.xcconfig"; path = "Target Support Files/Pods-Modernland Approval/Pods-Modernland Approval.debug.xcconfig"; sourceTree = "<group>"; };
+		AE0283A9265CCF9600387E06 /* DetailMenuKasbonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuKasbonViewController.swift; sourceTree = "<group>"; };
+		AE0283AB265CD8B300387E06 /* DetailKASBON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailKASBON.swift; sourceTree = "<group>"; };
 		AE2AD04C2604909900B5BA01 /* PBJViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBJViewModel.swift; sourceTree = "<group>"; };
 		AE2AD04F2604953300B5BA01 /* CounterPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPBJ.swift; sourceTree = "<group>"; };
 		AE2AD052260499B600B5BA01 /* ListPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPBJ.swift; sourceTree = "<group>"; };
 		AE2AD0622604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuPBJTableViewCell.swift; sourceTree = "<group>"; };
+		AE5E35C22738C34500FE0AD9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AE5F42C4265B794000E4DA99 /* Kasbon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Kasbon.storyboard; sourceTree = "<group>"; };
+		AE5F42C7265B828900E4DA99 /* KasbonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasbonViewController.swift; sourceTree = "<group>"; };
+		AE5F42C9265B83C100E4DA99 /* KasbonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasbonViewModel.swift; sourceTree = "<group>"; };
+		AE5F42CB265B855D00E4DA99 /* CounterKasbon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterKasbon.swift; sourceTree = "<group>"; };
 		AE6734CE2612D9EE0088977B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AE7BCD56260F481300F990A1 /* ListCategoryIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoryIOMViewController.swift; sourceTree = "<group>"; };
 		AE7BCD59260F4A9300F990A1 /* CounterKategori.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterKategori.swift; sourceTree = "<group>"; };
+		AE87A5ED2664BA19007680DB /* RealisasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealisasiViewController.swift; sourceTree = "<group>"; };
+		AE87A5EF2664BC2F007680DB /* RealisasiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealisasiViewModel.swift; sourceTree = "<group>"; };
+		AE87A5F12664BC79007680DB /* CounterRealisasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRealisasi.swift; sourceTree = "<group>"; };
+		AE87A5F32664BEBE007680DB /* ListRealisasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRealisasiViewController.swift; sourceTree = "<group>"; };
+		AE87A5F52664BF2A007680DB /* ListRealisasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRealisasi.swift; sourceTree = "<group>"; };
+		AE87A5F72664C65C007680DB /* DetailMenuRealisasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuRealisasiViewController.swift; sourceTree = "<group>"; };
+		AE87A5F92664CCFE007680DB /* DetailRealisasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRealisasi.swift; sourceTree = "<group>"; };
+		AE8A62E02660990E004D053E /* Realisasi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Realisasi.storyboard; sourceTree = "<group>"; };
 		AE923F58260D8376005F4FB8 /* ListCompareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCompareViewController.swift; sourceTree = "<group>"; };
 		AE923F59260D8376005F4FB8 /* ComparasionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparasionViewController.swift; sourceTree = "<group>"; };
 		AE923F5D260D83AE005F4FB8 /* CompareViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompareViewModel.swift; sourceTree = "<group>"; };
@@ -111,9 +150,18 @@
 		AEACB9D12611BB9D00426C49 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		AEBC0663261059BC008E0F72 /* ListKategoriIOM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKategoriIOM.swift; sourceTree = "<group>"; };
 		AEBC0666261060E3008E0F72 /* ListKategoriIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKategoriIOMViewController.swift; sourceTree = "<group>"; };
+		AEC7D95727390A8700DAB05D /* CounterALL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterALL.swift; sourceTree = "<group>"; };
+		AED06229265F7C7200B985F5 /* ListHistoryKasbonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryKasbonViewController.swift; sourceTree = "<group>"; };
+		AEE0553F266A08BC00573AF1 /* StatusTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusTable.xib; sourceTree = "<group>"; };
+		AEE05541266A0C0B00573AF1 /* StatusTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTable.swift; sourceTree = "<group>"; };
+		AEE05543266A0D7B00573AF1 /* StatusIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIOMViewController.swift; sourceTree = "<group>"; };
+		AEE05545266A0FF600573AF1 /* ListStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStatus.swift; sourceTree = "<group>"; };
 		AEE65E7F2604ACD700384E55 /* ListMenuPBJTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMenuPBJTableViewCell.xib; sourceTree = "<group>"; };
 		AEE65E822604B26000384E55 /* DetailPBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPBJ.swift; sourceTree = "<group>"; };
 		AEF189F42609DCEE00F6959E /* ListHistoryPBJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryPBJViewController.swift; sourceTree = "<group>"; };
+		AEF597CA26678C3C00720911 /* ListHistoryRealisasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryRealisasiViewController.swift; sourceTree = "<group>"; };
+		AEFF51C7265BA22100774ACF /* ListKasbonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKasbonViewController.swift; sourceTree = "<group>"; };
+		AEFF51C9265BA38300774ACF /* listKASBON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listKASBON.swift; sourceTree = "<group>"; };
 		EE2E70C025FDFBD00000F2A5 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		EE2E70C225FE03830000F2A5 /* ListHistoryIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryIOMViewController.swift; sourceTree = "<group>"; };
 		EE2E70C425FE03940000F2A5 /* ListRekomendasiIOMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRekomendasiIOMViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +265,28 @@
 			path = PBJ;
 			sourceTree = "<group>";
 		};
+		AE5F42C6265B826500E4DA99 /* Kasbon */ = {
+			isa = PBXGroup;
+			children = (
+				AE5F42C7265B828900E4DA99 /* KasbonViewController.swift */,
+				AEFF51C7265BA22100774ACF /* ListKasbonViewController.swift */,
+				AE0283A9265CCF9600387E06 /* DetailMenuKasbonViewController.swift */,
+				AED06229265F7C7200B985F5 /* ListHistoryKasbonViewController.swift */,
+			);
+			path = Kasbon;
+			sourceTree = "<group>";
+		};
+		AE87A5EC2664B9CB007680DB /* Realisasi */ = {
+			isa = PBXGroup;
+			children = (
+				AE87A5ED2664BA19007680DB /* RealisasiViewController.swift */,
+				AE87A5F32664BEBE007680DB /* ListRealisasiViewController.swift */,
+				AE87A5F72664C65C007680DB /* DetailMenuRealisasiViewController.swift */,
+				AEF597CA26678C3C00720911 /* ListHistoryRealisasiViewController.swift */,
+			);
+			path = Realisasi;
+			sourceTree = "<group>";
+		};
 		AE923F55260D835E005F4FB8 /* Comparasion */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +318,7 @@
 				EE2E70C625FE03A80000F2A5 /* ListHeadKoordinasiViewController.swift */,
 				AE7BCD56260F481300F990A1 /* ListCategoryIOMViewController.swift */,
 				AEBC0666261060E3008E0F72 /* ListKategoriIOMViewController.swift */,
+				AEE05543266A0D7B00573AF1 /* StatusIOMViewController.swift */,
 			);
 			path = IOM;
 			sourceTree = "<group>";
@@ -265,6 +336,8 @@
 				EECEB4E225FFB0250001416D /* ListNameTableViewCell.xib */,
 				AE2AD0622604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift */,
 				AEE65E7F2604ACD700384E55 /* ListMenuPBJTableViewCell.xib */,
+				AEE0553F266A08BC00573AF1 /* StatusTable.xib */,
+				AEE05541266A0C0B00573AF1 /* StatusTable.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -296,6 +369,9 @@
 				EEAD3EC125FDAF09007D08A5 /* SettingViewModel.swift */,
 				EEAD3EC725FDBBCC007D08A5 /* IOMViewModel.swift */,
 				AE2AD04C2604909900B5BA01 /* PBJViewModel.swift */,
+				AE5F42C9265B83C100E4DA99 /* KasbonViewModel.swift */,
+				AE87A5EF2664BC2F007680DB /* RealisasiViewModel.swift */,
+				AE5E35C22738C34500FE0AD9 /* HomeViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -320,6 +396,14 @@
 				AE923F6E260DA95D005F4FB8 /* DetailCompare.swift */,
 				AE7BCD59260F4A9300F990A1 /* CounterKategori.swift */,
 				AEBC0663261059BC008E0F72 /* ListKategoriIOM.swift */,
+				AE5F42CB265B855D00E4DA99 /* CounterKasbon.swift */,
+				AEFF51C9265BA38300774ACF /* listKASBON.swift */,
+				AE0283AB265CD8B300387E06 /* DetailKASBON.swift */,
+				AE87A5F12664BC79007680DB /* CounterRealisasi.swift */,
+				AE87A5F52664BF2A007680DB /* ListRealisasi.swift */,
+				AE87A5F92664CCFE007680DB /* DetailRealisasi.swift */,
+				AEE05545266A0FF600573AF1 /* ListStatus.swift */,
+				AEC7D95727390A8700DAB05D /* CounterALL.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +459,8 @@
 				EECF43E625F52B9F007447F1 /* PBJ.storyboard */,
 				EEAD3EC525FDB919007D08A5 /* SplashScreen.storyboard */,
 				EE2E70C825FE06730000F2A5 /* WebView.storyboard */,
+				AE5F42C4265B794000E4DA99 /* Kasbon.storyboard */,
+				AE8A62E02660990E004D053E /* Realisasi.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -382,6 +468,8 @@
 		EEFDD0D125EBCEB900B926BA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AE87A5EC2664B9CB007680DB /* Realisasi */,
+				AE5F42C6265B826500E4DA99 /* Kasbon */,
 				AE923F55260D835E005F4FB8 /* Comparasion */,
 				EE9E62E4260C50F100EC5D00 /* Setting */,
 				AE2AD04726048F2E00B5BA01 /* PBJ */,
@@ -444,7 +532,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = Modernland;
 				TargetAttributes = {
 					EEFDD0B425EBCD9300B926BA = {
@@ -475,12 +563,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8A62E12660990E004D053E /* Realisasi.storyboard in Resources */,
 				EECF43EE25F5322F007447F1 /* ListBoxCollectionViewCell.xib in Resources */,
 				EEFDD0CE25EBCE4D00B926BA /* Login.storyboard in Resources */,
 				EECF43F425F5BFD5007447F1 /* ListMenuTableViewCell.xib in Resources */,
 				EEFDD0DB25EBD6A500B926BA /* Dashboard.storyboard in Resources */,
 				EEFDD0E125EBD7E800B926BA /* IOM.storyboard in Resources */,
 				EEFDD0D925EBD52C00B926BA /* Default-568h@2x.png in Resources */,
+				AE5F42C5265B794000E4DA99 /* Kasbon.storyboard in Resources */,
 				EEF192BB25F726A8003E62A6 /* ListMenu2TableViewCell.xib in Resources */,
 				AEE65E802604ACD700384E55 /* ListMenuPBJTableViewCell.xib in Resources */,
 				EEFDD0DD25EBD7AE00B926BA /* Home.storyboard in Resources */,
@@ -488,6 +578,7 @@
 				EEFDD0E325EBD7F000B926BA /* Setting.storyboard in Resources */,
 				AE6734CF2612D9EE0088977B /* GoogleService-Info.plist in Resources */,
 				EECEB4E425FFB0250001416D /* ListNameTableViewCell.xib in Resources */,
+				AEE05540266A08BC00573AF1 /* StatusTable.xib in Resources */,
 				EE2E70C925FE06730000F2A5 /* WebView.storyboard in Resources */,
 				EEFDD0DF25EBD7DF00B926BA /* Comparasion.storyboard in Resources */,
 				EEFDD0C525EBCD9500B926BA /* LaunchScreen.storyboard in Resources */,
@@ -548,7 +639,9 @@
 				EEFDD0EF25EBDE4000B926BA /* IOMViewController.swift in Sources */,
 				EEF758D725F89CE6005568D9 /* Toast.swift in Sources */,
 				EECF43F025F550BC007447F1 /* ListPBJViewController.swift in Sources */,
+				AE5E35C32738C34500FE0AD9 /* HomeViewModel.swift in Sources */,
 				EEAD3EC225FDAF09007D08A5 /* SettingViewModel.swift in Sources */,
+				AE0283AC265CD8B300387E06 /* DetailKASBON.swift in Sources */,
 				AE7BCD5A260F4A9300F990A1 /* CounterKategori.swift in Sources */,
 				AE923F5E260D83AE005F4FB8 /* CompareViewModel.swift in Sources */,
 				AEF189F52609DCEE00F6959E /* ListHistoryPBJViewController.swift in Sources */,
@@ -558,21 +651,31 @@
 				AEE65E832604B26000384E55 /* DetailPBJ.swift in Sources */,
 				AE923F6F260DA95D005F4FB8 /* DetailCompare.swift in Sources */,
 				EE9E62E6260C511A00EC5D00 /* ChangePasswordViewController.swift in Sources */,
+				AEFF51CA265BA38300774ACF /* listKASBON.swift in Sources */,
 				AE2AD0632604AA5800B5BA01 /* ListMenuPBJTableViewCell.swift in Sources */,
+				AE87A5F22664BC79007680DB /* CounterRealisasi.swift in Sources */,
+				AEF597CB26678C3C00720911 /* ListHistoryRealisasiViewController.swift in Sources */,
 				EEF758C725F8820A005568D9 /* BaseResponse.swift in Sources */,
+				AE87A5F62664BF2A007680DB /* ListRealisasi.swift in Sources */,
 				EECEB4E825FFC1230001416D /* CounterIOM.swift in Sources */,
 				AEBC0667261060E3008E0F72 /* ListKategoriIOMViewController.swift in Sources */,
 				AE7BCD57260F481300F990A1 /* ListCategoryIOMViewController.swift in Sources */,
 				EEAD3EC825FDBBCC007D08A5 /* IOMViewModel.swift in Sources */,
+				AE0283AA265CCF9600387E06 /* DetailMenuKasbonViewController.swift in Sources */,
 				AE923F5A260D8376005F4FB8 /* ListCompareViewController.swift in Sources */,
 				EEF192BD25F72AFE003E62A6 /* DetailMenuPBJViewController.swift in Sources */,
 				EEFDD0B925EBCD9300B926BA /* AppDelegate.swift in Sources */,
 				EE2E70C125FDFBD00000F2A5 /* Status.swift in Sources */,
 				EEF758D325F88B94005568D9 /* UIDevice.swift in Sources */,
+				AE87A5F42664BEBE007680DB /* ListRealisasiViewController.swift in Sources */,
 				EE2FF1EB25FDCC4300CE1459 /* DetailIOM.swift in Sources */,
 				EEFDD0E725EBDA8C00B926BA /* DashboardViewController.swift in Sources */,
 				EEAD3ECA25FDBBFE007D08A5 /* ListIOM.swift in Sources */,
 				EE7B473926025522007D745E /* DetailKoordinasi.swift in Sources */,
+				AE87A5F82664C65C007680DB /* DetailMenuRealisasiViewController.swift in Sources */,
+				AE5F42CC265B855D00E4DA99 /* CounterKasbon.swift in Sources */,
+				AE5F42CA265B83C100E4DA99 /* KasbonViewModel.swift in Sources */,
+				AEE05546266A0FF600573AF1 /* ListStatus.swift in Sources */,
 				EEFDD0D325EBCED700B926BA /* LoginViewController.swift in Sources */,
 				EE2FF1E925FDC3FB00CE1459 /* DetailIOMViewController.swift in Sources */,
 				AE923F61260D83CB005F4FB8 /* CounterCompare.swift in Sources */,
@@ -582,8 +685,11 @@
 				AE2AD0502604953300B5BA01 /* CounterPBJ.swift in Sources */,
 				EE2E70C325FE03830000F2A5 /* ListHistoryIOMViewController.swift in Sources */,
 				EE2E70C525FE03940000F2A5 /* ListRekomendasiIOMViewController.swift in Sources */,
+				AE87A5FA2664CCFE007680DB /* DetailRealisasi.swift in Sources */,
 				EEFDD0F125EBDE4A00B926BA /* SettingViewController.swift in Sources */,
 				EEFDD0E925EBDABE00B926BA /* DashboardNavigationController.swift in Sources */,
+				AE87A5F02664BC2F007680DB /* RealisasiViewModel.swift in Sources */,
+				AEE05542266A0C0B00573AF1 /* StatusTable.swift in Sources */,
 				EEF758C525F87B72005568D9 /* ApiHelper.swift in Sources */,
 				AEBC0664261059BC008E0F72 /* ListKategoriIOM.swift in Sources */,
 				AE2AD04D2604909900B5BA01 /* PBJViewModel.swift in Sources */,
@@ -593,13 +699,19 @@
 				EEF758CB25F88270005568D9 /* Constants.swift in Sources */,
 				EEAD3EC425FDB2FA007D08A5 /* SplashViewController.swift in Sources */,
 				AE923F64260D83DA005F4FB8 /* ListCompare.swift in Sources */,
+				AEC7D95827390A8700DAB05D /* CounterALL.swift in Sources */,
+				AEFF51C8265BA22100774ACF /* ListKasbonViewController.swift in Sources */,
 				EEAD3ECD25FDBE6F007D08A5 /* ListIOMViewController.swift in Sources */,
 				EECF43F325F5BFD5007447F1 /* ListMenuTableViewCell.swift in Sources */,
+				AEE05544266A0D7B00573AF1 /* StatusIOMViewController.swift in Sources */,
 				EEF192BA25F726A8003E62A6 /* ListMenu2TableViewCell.swift in Sources */,
 				EEAD3EC025FDABC8007D08A5 /* LoginSuccess.swift in Sources */,
 				EECEB4DE25FFAAD70001416D /* Head.swift in Sources */,
+				AED0622A265F7C7200B985F5 /* ListHistoryKasbonViewController.swift in Sources */,
 				EEFDD0EB25EBDD3700B926BA /* HomeViewController.swift in Sources */,
 				EEFDD0D725EBD3E300B926BA /* ButtonTemplate.swift in Sources */,
+				AE5F42C8265B828900E4DA99 /* KasbonViewController.swift in Sources */,
+				AE87A5EE2664BA19007680DB /* RealisasiViewController.swift in Sources */,
 				EE9E62EA260C56D900EC5D00 /* UITextField.swift in Sources */,
 				AE2AD053260499B600B5BA01 /* ListPBJ.swift in Sources */,
 				EE2E70CB25FE06CB0000F2A5 /* WebViewViewController.swift in Sources */,
@@ -648,6 +760,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -708,6 +821,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -750,7 +864,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.modernland.modernland-approval";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -772,7 +886,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.modernland.modernland-approval";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

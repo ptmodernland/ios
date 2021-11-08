@@ -20,10 +20,12 @@ class DashboardViewController: UITabBarController {
         self.tabBar.isTranslucent = true
         self.tabBar.barStyle = UIBarStyle.black
         self.tabBar.layer.cornerRadius = 20
+        
         if #available(iOS 11.0, *) {
             self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         } else {
         }
+        
         tabBar.barTintColor = UIColor.white
         tabBar.layer.borderWidth = 0.5
         tabBar.layer.borderColor = UIColor.lightGray.cgColor
@@ -34,10 +36,16 @@ class DashboardViewController: UITabBarController {
         } else if (self.view.frame.width == 375) {
             let font = UIFont(name: "Helvetica", size: 14)!
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        } else if (self.view.frame.width == 390) {
+            let font = UIFont(name: "Helvetica", size: 14)!
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         } else if (self.view.frame.width == 414) {
             let font = UIFont(name: "Helvetica", size: 16)!
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
-        } else if (self.view.frame.width == 768) {
+        } else if (self.view.frame.width == 428) {
+            let font = UIFont(name: "Helvetica", size: 16)!
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        }else if (self.view.frame.width == 768) {
             let font = UIFont(name: "Helvetica", size: 21)!
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         } else if (self.view.frame.width == 1024) {
@@ -47,9 +55,12 @@ class DashboardViewController: UITabBarController {
             let font = UIFont(name: "Helvetica", size: 21)!
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         }
+        
+
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
 }

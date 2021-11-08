@@ -44,7 +44,16 @@ class SettingViewController: BaseViewController {
             self.imageConstrain1.constant = 150
             self.imageConstrain2.constant = 150
             self.settingView.layoutIfNeeded()
-        } else if (self.view.frame.width == 414) {
+        } else if (self.view.frame.width == 390) {
+            self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 14)
+            self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 14)
+            self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 16)
+            self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 14)
+            self.imageConstrain1.constant = 150
+            self.imageConstrain2.constant = 150
+            self.settingView.layoutIfNeeded()
+        }  else if (self.view.frame.width == 414) {
             self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 16)
             self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 16)
             self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 20)
@@ -53,7 +62,16 @@ class SettingViewController: BaseViewController {
             self.imageConstrain1.constant = 150
             self.imageConstrain2.constant = 150
             self.settingView.layoutIfNeeded()
-        } else if (self.view.frame.width == 768) {
+        } else if (self.view.frame.width == 428) {
+            self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 16)
+            self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 16)
+            self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 20)
+            self.btnChangePassword.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.btnLogout.titleLabel?.font =  UIFont(name: "Helvetica", size: 16)
+            self.imageConstrain1.constant = 150
+            self.imageConstrain2.constant = 150
+            self.settingView.layoutIfNeeded()
+        }  else if (self.view.frame.width == 768) {
             self.lblName.font = UIFont(name: self.lblName.font.fontName, size: 32)
             self.lblEmail.font = UIFont(name: self.lblEmail.font.fontName, size: 32)
             self.lblTxtSetting.font = UIFont.boldSystemFont(ofSize: 45)
@@ -89,6 +107,8 @@ class SettingViewController: BaseViewController {
         if UserDefaults().string(forKey: "gender") == "P" {
             imgGender.image = UIImage(named: "imgFemale")
         }
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func callApiLogout(username: String) {
